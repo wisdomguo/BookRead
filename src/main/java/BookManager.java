@@ -9,6 +9,7 @@ public class BookManager {
     private static final String MENU_FILE = "menu.json";
     private static final String READING_FILE = "reading.json";
     private static final String READ_FILE = "read.json";
+    private static final String MAXIM_DIR = "src/main/resources/maxim";
 
     private List<Book> allBooks;
     private List<Book> readBooks;
@@ -17,6 +18,8 @@ public class BookManager {
 
     public BookManager() {
         this.objectMapper = new ObjectMapper();
+        // 创建好词好句目录
+        new File(MAXIM_DIR).mkdirs();
         loadBooks();
     }
 
@@ -28,6 +31,11 @@ public class BookManager {
                 System.out.println("正在加载菜单文件...");
                 allBooks = objectMapper.readValue(menuFile, new TypeReference<List<Book>>() {});
                 System.out.println("成功加载 " + allBooks.size() + " 本书籍");
+
+                // 为每本书加载好词好句数量
+                for (Book book : allBooks) {
+                    book.setMaximCount(getMaximCount(book));
+                }
             } else {
                 System.out.println("菜单文件不存在或为空: " + MENU_FILE);
                 allBooks = new ArrayList<>();
@@ -40,6 +48,11 @@ public class BookManager {
                 try {
                     readBooks = objectMapper.readValue(readFile, new TypeReference<List<Book>>() {});
                     System.out.println("已读书籍: " + readBooks.size() + " 本");
+
+                    // 为已读书籍加载好词好句数量
+                    for (Book book : readBooks) {
+                        book.setMaximCount(getMaximCount(book));
+                    }
                 } catch (Exception e) {
                     System.err.println("读取已读书籍文件出错，重置为空列表");
                     readBooks = new ArrayList<>();
@@ -54,12 +67,15 @@ public class BookManager {
             if (readingFile.exists() && readingFile.length() > 0) {
                 try {
                     currentBook = objectMapper.readValue(readingFile, Book.class);
+                    // 加载当前书籍的好词好句数量
+                    currentBook.setMaximCount(getMaximCount(currentBook));
                     System.out.println("当前阅读书籍: " + currentBook.getTitle());
                 } catch (Exception e1) {
                     try {
                         List<Book> readingList = objectMapper.readValue(readingFile, new TypeReference<List<Book>>() {});
                         if (!readingList.isEmpty()) {
                             currentBook = readingList.get(0);
+                            currentBook.setMaximCount(getMaximCount(currentBook));
                             System.out.println("当前阅读书籍(从列表中): " + currentBook.getTitle());
                             saveCurrentBook();
                         } else {
@@ -85,25 +101,86 @@ public class BookManager {
         }
     }
 
+    // 获取书籍的好词好句文件路径
+    private String getMaximFilePath(Book book) {
+        String fileName = book.getTitle() + "_" + book.getAuthor() + ".json";
+        // 替换文件名中的非法字符
+        fileName = fileName.replaceAll("[\\\\/:*?\"<>|]", "_");
+        return MAXIM_DIR + File.separator + fileName;
+    }
+
+    // 保存好词好句
+    public void saveMaxim(Book book, Maxim maxim) {
+        try {
+            String filePath = getMaximFilePath(book);
+            File maximFile = new File(filePath);
+
+            List<Maxim> maxims;
+            if (maximFile.exists()) {
+                maxims = objectMapper.readValue(maximFile, new TypeReference<List<Maxim>>() {});
+            } else {
+                maxims = new ArrayList<>();
+            }
+
+            maxims.add(maxim);
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(maximFile, maxims);
+
+            // 更新书籍的好词好句数量
+            book.setMaximCount(maxims.size());
+
+            // 如果这本书在已读列表中，更新已读列表中的对应书籍
+            if (readBooks.contains(book)) {
+                int index = readBooks.indexOf(book);
+                readBooks.get(index).setMaximCount(book.getMaximCount());
+                saveReadBooks();
+            }
+
+            System.out.println("成功保存好词好句，当前数量: " + book.getMaximCount());
+
+        } catch (IOException e) {
+            System.err.println("保存好词好句时出错: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    // 获取书籍的好词好句列表
+    public List<Maxim> getMaxims(Book book) {
+        try {
+            String filePath = getMaximFilePath(book);
+            File maximFile = new File(filePath);
+
+            if (maximFile.exists()) {
+                return objectMapper.readValue(maximFile, new TypeReference<List<Maxim>>() {});
+            }
+        } catch (IOException e) {
+            System.err.println("读取好词好句时出错: " + e.getMessage());
+            e.printStackTrace();
+        }
+        return new ArrayList<>();
+    }
+
+    // 获取书籍的好词好句数量
+    public int getMaximCount(Book book) {
+        return getMaxims(book).size();
+    }
+
+    // 其余方法保持不变...
     private void createSampleData() {
         System.out.println("创建示例数据...");
         allBooks.add(new Book("示例书籍", "示例作者", "中国", "现代"));
         saveAllBooks();
     }
 
-    // 获取未读书籍列表
     public List<Book> getUnreadBooks() {
         List<Book> unreadBooks = new ArrayList<>(allBooks);
         unreadBooks.removeAll(readBooks);
         return unreadBooks;
     }
 
-    // 获取已读书籍列表
     public List<Book> getReadBooks() {
         return new ArrayList<>(readBooks);
     }
 
-    // 搜索未读书籍
     public List<Book> searchUnreadBooks(String keyword) {
         if (keyword == null || keyword.trim().isEmpty()) {
             return getUnreadBooks();
@@ -117,7 +194,6 @@ public class BookManager {
                 .collect(Collectors.toList());
     }
 
-    // 搜索已读书籍
     public List<Book> searchReadBooks(String keyword) {
         if (keyword == null || keyword.trim().isEmpty()) {
             return getReadBooks();
@@ -131,7 +207,6 @@ public class BookManager {
                 .collect(Collectors.toList());
     }
 
-    // 设置指定书籍为当前阅读
     public boolean setCurrentBook(Book book) {
         if (book != null && allBooks.contains(book)) {
             currentBook = book;
@@ -141,15 +216,8 @@ public class BookManager {
         return false;
     }
 
-    // 重新阅读已读书籍
-// 修改 rereadBook 方法，移除阅读次数增加的逻辑
     public boolean rereadBook(Book book) {
-        if (setCurrentBook(book)) {
-            // 注意：这里不再增加阅读次数
-            // 阅读次数只在标记为已读时增加
-            return true;
-        }
-        return false;
+        return setCurrentBook(book);
     }
 
     public Book getRandomBook() {
@@ -171,15 +239,12 @@ public class BookManager {
         return currentBook;
     }
 
-    // 确保 markAsRead 方法正确增加阅读次数
     public void markAsRead() {
         if (currentBook != null) {
-            // 如果书籍已经在已读列表中，增加阅读次数
             if (readBooks.contains(currentBook)) {
                 int index = readBooks.indexOf(currentBook);
                 readBooks.get(index).incrementReadCount();
             } else {
-                // 否则添加到已读列表，并设置阅读次数为1
                 currentBook.setReadCount(1);
                 readBooks.add(currentBook);
             }

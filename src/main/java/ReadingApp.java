@@ -63,6 +63,8 @@ public class ReadingApp extends JFrame {
         add(mainPanel);
     }
 
+    // 在 initializeUI() 方法中修改 createTopPanel() 方法：
+
     private JPanel createTopPanel() {
         JPanel panel = new JPanel(new BorderLayout(10, 10));
 
@@ -78,20 +80,81 @@ public class ReadingApp extends JFrame {
     }
 
     private JPanel createBookPanel() {
-        JPanel panel = new JPanel(new GridLayout(4, 1, 5, 5));
+        JPanel panel = new JPanel(new BorderLayout(5, 5));
         panel.setBorder(BorderFactory.createTitledBorder("当前阅读书籍"));
 
+        // 顶部按钮面板
+        JPanel topButtonPanel = new JPanel(new BorderLayout());
+
+        // 左上角：查看好词好句按钮
+        JButton viewMaximButton = new JButton("查看摘抄");
+        viewMaximButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                viewMaxims();
+            }
+        });
+        topButtonPanel.add(viewMaximButton, BorderLayout.WEST);
+
+        // 右上角：添加好词好句按钮
+        JButton addMaximButton = new JButton("添加摘抄");
+        addMaximButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                addMaxim();
+            }
+        });
+        topButtonPanel.add(addMaximButton, BorderLayout.EAST);
+
+        panel.add(topButtonPanel, BorderLayout.NORTH);
+
+        // 书籍信息面板
+        JPanel infoPanel = new JPanel(new GridLayout(4, 1, 5, 5));
         titleLabel = createStyledLabel("", Font.BOLD, 16);
         authorLabel = createStyledLabel("", Font.PLAIN, 14);
         nationLabel = createStyledLabel("", Font.PLAIN, 12);
         eraLabel = createStyledLabel("", Font.PLAIN, 12);
 
-        panel.add(titleLabel);
-        panel.add(authorLabel);
-        panel.add(nationLabel);
-        panel.add(eraLabel);
+        infoPanel.add(titleLabel);
+        infoPanel.add(authorLabel);
+        infoPanel.add(nationLabel);
+        infoPanel.add(eraLabel);
+
+        panel.add(infoPanel, BorderLayout.CENTER);
 
         return panel;
+    }
+
+    private void addMaxim() {
+        Book currentBook = bookManager.getCurrentBook();
+        if (currentBook != null) {
+            new MaximDialog(this, currentBook, bookManager).setVisible(true);
+            refreshBookLists(); // 刷新列表以更新摘抄数量显示
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "当前没有正在阅读的书籍！",
+                    "提示",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+    }
+
+    private void viewMaxims() {
+        Book currentBook = bookManager.getCurrentBook();
+        if (currentBook != null) {
+            if (currentBook.getMaximCount() > 0) {
+                new MaximListDialog(this, currentBook, bookManager).setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "这本书还没有保存任何好词好句摘抄！",
+                        "提示",
+                        JOptionPane.INFORMATION_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "当前没有正在阅读的书籍！",
+                    "提示",
+                    JOptionPane.WARNING_MESSAGE);
+        }
     }
 
     private JPanel createStatsPanel() {
@@ -264,6 +327,12 @@ public class ReadingApp extends JFrame {
                     } else {
                         label.setForeground(new Color(0, 200, 0)); // 亮绿色
                     }
+                }
+
+                // 如果有摘抄，添加特殊标记
+                if (book.getMaximCount() > 0) {
+                    label.setIcon(new ImageIcon("src/main/resources/icons/note.png")); // 可选：添加图标
+                    label.setToolTipText("有 " + book.getMaximCount() + " 条摘抄");
                 }
             }
             return label;

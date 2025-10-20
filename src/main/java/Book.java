@@ -5,10 +5,12 @@ public class Book {
     private String author;
     private String nation;
     private String era;
-    private int readCount; // 新增：阅读次数统计
+    private int readCount;
+    private int maximCount; // 新增：好词好句数量
 
     public Book() {
         this.readCount = 0;
+        this.maximCount = 0;
     }
 
     public Book(String title, String author, String nation, String era) {
@@ -17,6 +19,7 @@ public class Book {
         this.nation = nation;
         this.era = era;
         this.readCount = 0;
+        this.maximCount = 0;
     }
 
     // Getters and Setters
@@ -35,15 +38,23 @@ public class Book {
     public int getReadCount() { return readCount; }
     public void setReadCount(int readCount) { this.readCount = readCount; }
 
+    public int getMaximCount() { return maximCount; }
+    public void setMaximCount(int maximCount) { this.maximCount = maximCount; }
+
     // 增加阅读次数的方法
     public void incrementReadCount() {
         this.readCount++;
     }
 
+    // 增加好词好句数量
+    public void incrementMaximCount() {
+        this.maximCount++;
+    }
+
     @JsonIgnore
     public String getDisplayText() {
-        return String.format("《%s》 - %s (%s, %s) - 已读%d次",
-                title, author, nation, era, readCount);
+        return String.format("《%s》 - %s (%s, %s) - 已读%d次 - 摘抄%d条",
+                title, author, nation, era, readCount, maximCount);
     }
 
     @Override
