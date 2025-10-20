@@ -6,8 +6,8 @@ public class Book {
     private String nation;
     private String era;
     private int readCount;      // 阅读次数
-    private int finishedCount;  // 新增：已读完次数
-    private boolean isRead;     // 新增：是否已读（至少读过一次）
+    private int finishedCount;  // 已读完次数
+    private boolean isRead;     // 是否已读（至少读过一次）
     private int maximCount;     // 好词好句数量
 
     public Book() {
@@ -70,20 +70,20 @@ public class Book {
         this.maximCount++;
     }
 
+    // 获取完整的显示信息
     @JsonIgnore
-    public String getDisplayText() {
-        // 修复Bug3：正确显示已读次数和已读完次数
+    public String getFullDisplayText() {
         StringBuilder sb = new StringBuilder();
-        sb.append("《").append(title).append("》 - ").append(author)
+        sb.append(title).append(" - ").append(author)
                 .append(" (").append(nation).append(", ").append(era).append(")");
 
-        if (finishedCount > 0) {
-            sb.append(" - 已读完").append(finishedCount).append("次");
-            if (readCount > finishedCount) {
+        if (isRead) {
+            if (finishedCount > 0) {
+                sb.append(" - 已读").append(readCount).append("次")
+                        .append(" - 已读完").append(finishedCount).append("次");
+            } else {
                 sb.append(" - 已读").append(readCount).append("次");
             }
-        } else if (isRead) {
-            sb.append(" - 已读").append(readCount).append("次");
         }
 
         if (maximCount > 0) {
@@ -91,6 +91,12 @@ public class Book {
         }
 
         return sb.toString();
+    }
+
+    // 获取简化的显示信息（用于未读列表）
+    @JsonIgnore
+    public String getSimpleDisplayText() {
+        return title + " - " + author + " (" + nation + ", " + era + ")";
     }
 
     @JsonIgnore
@@ -106,7 +112,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return getDisplayText();
+        return getFullDisplayText();
     }
 
     @Override

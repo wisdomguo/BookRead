@@ -109,7 +109,7 @@ public class BookManager {
         return MAXIM_DIR + File.separator + fileName;
     }
 
-    // 保存好词好句
+    // 保存好词好句 - 修复摘抄逻辑
     public void saveMaxim(Book book, Maxim maxim) {
         try {
             String filePath = getMaximFilePath(book);
@@ -128,7 +128,7 @@ public class BookManager {
             // 更新书籍的好词好句数量
             book.setMaximCount(maxims.size());
 
-            // 标记为已读（但不增加阅读次数）
+            // 修复：标记为已读但不增加阅读次数
             if (!book.isRead()) {
                 book.setRead(true);
                 // 如果这本书不在已读列表中，添加到已读列表
@@ -141,8 +141,12 @@ public class BookManager {
             // 如果这本书在已读列表中，更新已读列表中的对应书籍
             if (readBooks.contains(book)) {
                 int index = readBooks.indexOf(book);
-                readBooks.get(index).setMaximCount(book.getMaximCount());
-                readBooks.get(index).setRead(true); // 确保标记为已读
+                Book existingBook = readBooks.get(index);
+                existingBook.setMaximCount(book.getMaximCount());
+                existingBook.setRead(true); // 确保标记为已读
+                // 保持原有的阅读次数和已读完次数
+                existingBook.setReadCount(book.getReadCount());
+                existingBook.setFinishedCount(book.getFinishedCount());
                 saveReadBooks();
             }
 
@@ -178,8 +182,10 @@ public class BookManager {
     // 标记为已读（不增加已读完次数，不清空当前书籍）
     public void markAsRead() {
         if (currentBook != null) {
-            // 增加阅读次数 - 修复Bug4：确保只增加一次
-            currentBook.incrementReadCount();
+            // 增加阅读次数 - 确保只增加一次
+            int oldReadCount = currentBook.getReadCount();
+            currentBook.setReadCount(oldReadCount + 1);
+            currentBook.setRead(true);
 
             // 如果书籍不在已读列表中，添加到已读列表
             if (!readBooks.contains(currentBook)) {
@@ -188,6 +194,7 @@ public class BookManager {
                 // 如果已经在已读列表中，更新阅读次数
                 int index = readBooks.indexOf(currentBook);
                 readBooks.get(index).setReadCount(currentBook.getReadCount());
+                readBooks.get(index).setRead(true);
             }
 
             saveReadBooks();
@@ -199,8 +206,10 @@ public class BookManager {
     // 标记为已读完（增加已读完次数，清空当前书籍）
     public void markAsFinished() {
         if (currentBook != null) {
-            // 增加已读完次数 - 修复Bug5：确保只增加一次
-            currentBook.incrementFinishedCount();
+            // 增加已读完次数 - 确保只增加一次
+            int oldFinishedCount = currentBook.getFinishedCount();
+            currentBook.setFinishedCount(oldFinishedCount + 1);
+            currentBook.setRead(true);
 
             // 如果书籍不在已读列表中，添加到已读列表
             if (!readBooks.contains(currentBook)) {
@@ -209,6 +218,7 @@ public class BookManager {
                 // 如果已经在已读列表中，更新已读完次数
                 int index = readBooks.indexOf(currentBook);
                 readBooks.get(index).setFinishedCount(currentBook.getFinishedCount());
+                readBooks.get(index).setRead(true);
             }
 
             saveReadBooks();
@@ -275,7 +285,7 @@ public class BookManager {
                 .collect(Collectors.toList());
     }
 
-    // 搜索已读完书籍 - 修复Bug2
+    // 搜索已读完书籍
     public List<Book> searchFinishedBooks(String keyword) {
         if (keyword == null || keyword.trim().isEmpty()) {
             return getFinishedBooks();

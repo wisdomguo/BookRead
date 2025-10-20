@@ -61,4 +61,13 @@
   "finishedCount" : 2,
   "maximCount" : 1,
   "read" : true
+}, {
+  "title" : "隋唐演义",
+  "author" : "褚人获",
+  "nation" : "中国",
+  "era" : "明末清初",
+  "readCount" : 0,
+  "finishedCount" : 0,
+  "maximCount" : 1,
+  "read" : true
 } ]

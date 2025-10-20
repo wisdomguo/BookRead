@@ -1,6 +1,7 @@
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,43 +17,44 @@ public class ReadingApp extends JFrame {
     private JLabel authorLabel;
     private JLabel nationLabel;
     private JLabel eraLabel;
-    private JLabel statusLabel; // 新增：书籍状态标签
+    private JLabel statusLabel;
     private JLabel statsLabel;
     private JButton readButton;
-    private JButton finishedButton; // 新增：已读完按钮
+    private JButton finishedButton;
     private JButton nextButton;
 
     // 目录区域组件
     private JTabbedPane tabbedPane;
 
-    // 未读目录组件
-    private JList<Book> unreadList;
-    private DefaultListModel<Book> unreadListModel;
+    // 表格模型和排序器
+    private BookTableModel unreadTableModel;
+    private BookTableModel readTableModel;
+    private BookTableModel finishedTableModel;
+    private TableRowSorter<BookTableModel> unreadSorter;
+    private TableRowSorter<BookTableModel> readSorter;
+    private TableRowSorter<BookTableModel> finishedSorter;
+
+    // 表格组件
+    private JTable unreadTable;
+    private JTable readTable;
+    private JTable finishedTable;
+
+    // 搜索字段
     private JTextField unreadSearchField;
-    private JButton setUnreadAsCurrentButton;
-
-    // 已读目录组件
-    private JList<Book> readList;
-    private DefaultListModel<Book> readListModel;
     private JTextField readSearchField;
-    private JButton rereadButton;
-
-    // 已读完目录组件 - 修复Bug1：添加成员变量
-    private JList<Book> finishedList;
-    private DefaultListModel<Book> finishedListModel;
-    private JTextField finishedSearchField; // 修复Bug2：添加搜索框
+    private JTextField finishedSearchField;
 
     public ReadingApp() {
         bookManager = new BookManager();
         initializeUI();
         loadCurrentBook();
-        refreshBookLists();
+        refreshBookTables();
     }
 
     private void initializeUI() {
-        setTitle("随机书籍阅读器 - 增强版");
+        setTitle("随机书籍阅读器 - 表格版");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(900, 600);
+        setSize(1000, 700);
         setLocationRelativeTo(null);
 
         // 创建主面板 - 使用BorderLayout
@@ -114,12 +116,12 @@ public class ReadingApp extends JFrame {
         panel.add(topButtonPanel, BorderLayout.NORTH);
 
         // 书籍信息面板
-        JPanel infoPanel = new JPanel(new GridLayout(5, 1, 5, 5)); // 改为5行，添加状态行
+        JPanel infoPanel = new JPanel(new GridLayout(5, 1, 5, 5));
         titleLabel = createStyledLabel("", Font.BOLD, 16);
         authorLabel = createStyledLabel("", Font.PLAIN, 14);
         nationLabel = createStyledLabel("", Font.PLAIN, 12);
         eraLabel = createStyledLabel("", Font.PLAIN, 12);
-        statusLabel = createStyledLabel("", Font.ITALIC, 12); // 状态标签
+        statusLabel = createStyledLabel("", Font.ITALIC, 12);
 
         infoPanel.add(titleLabel);
         infoPanel.add(authorLabel);
@@ -141,7 +143,7 @@ public class ReadingApp extends JFrame {
         // 添加按钮
         JPanel buttonPanel = new JPanel(new FlowLayout());
         readButton = new JButton("标记为已读");
-        finishedButton = new JButton("标记为已读完"); // 新增按钮
+        finishedButton = new JButton("标记为已读完");
         nextButton = new JButton("随机抽取下一本");
 
         readButton.addActionListener(new ActionListener() {
@@ -210,14 +212,20 @@ public class ReadingApp extends JFrame {
         searchPanel.add(unreadSearchField, BorderLayout.CENTER);
         panel.add(searchPanel, BorderLayout.NORTH);
 
-        // 书籍列表
-        unreadListModel = new DefaultListModel<>();
-        unreadList = new JList<>(unreadListModel);
-        unreadList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        unreadList.setCellRenderer(new BookListCellRenderer());
+        // 书籍表格
+        unreadTableModel = new BookTableModel(bookManager.getUnreadBooks(), false);
+        unreadTable = new JTable(unreadTableModel);
+        unreadSorter = new TableRowSorter<>(unreadTableModel);
+        unreadTable.setRowSorter(unreadSorter);
+
+        // 设置列宽
+        unreadTable.getColumnModel().getColumn(0).setPreferredWidth(200); // 书名
+        unreadTable.getColumnModel().getColumn(1).setPreferredWidth(150); // 作者
+        unreadTable.getColumnModel().getColumn(2).setPreferredWidth(80);  // 国籍
+        unreadTable.getColumnModel().getColumn(3).setPreferredWidth(80);  // 年代
 
         // 双击未读书籍设置为当前阅读
-        unreadList.addMouseListener(new MouseAdapter() {
+        unreadTable.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if (e.getClickCount() == 2) {
@@ -226,12 +234,12 @@ public class ReadingApp extends JFrame {
             }
         });
 
-        JScrollPane scrollPane = new JScrollPane(unreadList);
+        JScrollPane scrollPane = new JScrollPane(unreadTable);
         panel.add(scrollPane, BorderLayout.CENTER);
 
         // 操作按钮面板
         JPanel buttonPanel = new JPanel(new FlowLayout());
-        setUnreadAsCurrentButton = new JButton("设为当前阅读");
+        JButton setUnreadAsCurrentButton = new JButton("设为当前阅读");
         setUnreadAsCurrentButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -262,14 +270,23 @@ public class ReadingApp extends JFrame {
         searchPanel.add(readSearchField, BorderLayout.CENTER);
         panel.add(searchPanel, BorderLayout.NORTH);
 
-        // 书籍列表
-        readListModel = new DefaultListModel<>();
-        readList = new JList<>(readListModel);
-        readList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        readList.setCellRenderer(new BookListCellRenderer());
+        // 书籍表格
+        readTableModel = new BookTableModel(bookManager.getReadBooks(), true);
+        readTable = new JTable(readTableModel);
+        readSorter = new TableRowSorter<>(readTableModel);
+        readTable.setRowSorter(readSorter);
+
+        // 设置列宽
+        readTable.getColumnModel().getColumn(0).setPreferredWidth(200); // 书名
+        readTable.getColumnModel().getColumn(1).setPreferredWidth(150); // 作者
+        readTable.getColumnModel().getColumn(2).setPreferredWidth(80);  // 国籍
+        readTable.getColumnModel().getColumn(3).setPreferredWidth(80);  // 年代
+        readTable.getColumnModel().getColumn(4).setPreferredWidth(80);  // 已读次数
+        readTable.getColumnModel().getColumn(5).setPreferredWidth(80);  // 已读完次数
+        readTable.getColumnModel().getColumn(6).setPreferredWidth(80);  // 摘抄数量
 
         // 双击已读书籍重新阅读
-        readList.addMouseListener(new MouseAdapter() {
+        readTable.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if (e.getClickCount() == 2) {
@@ -278,12 +295,12 @@ public class ReadingApp extends JFrame {
             }
         });
 
-        JScrollPane scrollPane = new JScrollPane(readList);
+        JScrollPane scrollPane = new JScrollPane(readTable);
         panel.add(scrollPane, BorderLayout.CENTER);
 
         // 操作按钮面板
         JPanel buttonPanel = new JPanel(new FlowLayout());
-        rereadButton = new JButton("重新阅读");
+        JButton rereadButton = new JButton("重新阅读");
         rereadButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -299,7 +316,7 @@ public class ReadingApp extends JFrame {
     private JPanel createFinishedDirectoryPanel() {
         JPanel panel = new JPanel(new BorderLayout(5, 5));
 
-        // 搜索面板 - 修复Bug2：添加搜索功能
+        // 搜索面板
         JPanel searchPanel = new JPanel(new BorderLayout(5, 5));
         searchPanel.add(new JLabel("搜索书名/作者:"), BorderLayout.WEST);
         finishedSearchField = new JTextField();
@@ -314,22 +331,31 @@ public class ReadingApp extends JFrame {
         searchPanel.add(finishedSearchField, BorderLayout.CENTER);
         panel.add(searchPanel, BorderLayout.NORTH);
 
-        // 书籍列表
-        finishedListModel = new DefaultListModel<>();
-        finishedList = new JList<>(finishedListModel);
-        finishedList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        finishedList.setCellRenderer(new BookListCellRenderer());
+        // 书籍表格
+        finishedTableModel = new BookTableModel(bookManager.getFinishedBooks(), true);
+        finishedTable = new JTable(finishedTableModel);
+        finishedSorter = new TableRowSorter<>(finishedTableModel);
+        finishedTable.setRowSorter(finishedSorter);
+
+        // 设置列宽
+        finishedTable.getColumnModel().getColumn(0).setPreferredWidth(200); // 书名
+        finishedTable.getColumnModel().getColumn(1).setPreferredWidth(150); // 作者
+        finishedTable.getColumnModel().getColumn(2).setPreferredWidth(80);  // 国籍
+        finishedTable.getColumnModel().getColumn(3).setPreferredWidth(80);  // 年代
+        finishedTable.getColumnModel().getColumn(4).setPreferredWidth(80);  // 已读次数
+        finishedTable.getColumnModel().getColumn(5).setPreferredWidth(80);  // 已读完次数
+        finishedTable.getColumnModel().getColumn(6).setPreferredWidth(80);  // 摘抄数量
 
         // 双击已读完书籍重新阅读
-        finishedList.addMouseListener(new MouseAdapter() {
+        finishedTable.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if (e.getClickCount() == 2) {
-                    Book selectedBook = finishedList.getSelectedValue();
+                    Book selectedBook = getSelectedFinishedBook();
                     if (selectedBook != null) {
                         if (bookManager.rereadBook(selectedBook)) {
                             displayBook(selectedBook);
-                            refreshBookLists();
+                            refreshBookTables();
                             JOptionPane.showMessageDialog(ReadingApp.this,
                                     "已重新开始阅读《" + selectedBook.getTitle() + "》",
                                     "重新阅读",
@@ -340,36 +366,10 @@ public class ReadingApp extends JFrame {
             }
         });
 
-        JScrollPane scrollPane = new JScrollPane(finishedList);
+        JScrollPane scrollPane = new JScrollPane(finishedTable);
         panel.add(scrollPane, BorderLayout.CENTER);
 
         return panel;
-    }
-
-    // 自定义列表单元格渲染器，用于显示书籍信息
-    private class BookListCellRenderer extends DefaultListCellRenderer {
-        @Override
-        public Component getListCellRendererComponent(JList<?> list, Object value, int index,
-                                                      boolean isSelected, boolean cellHasFocus) {
-            JLabel label = (JLabel) super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-            if (value instanceof Book) {
-                Book book = (Book) value;
-                label.setText(book.getDisplayText());
-
-                // 根据书籍状态设置不同的颜色
-                if (book.getFinishedCount() > 0) {
-                    // 已读完的书籍用深绿色显示
-                    label.setForeground(new Color(0, 100, 0));
-                } else if (book.isRead()) {
-                    // 已读但未读完的书籍用蓝色显示
-                    label.setForeground(new Color(0, 0, 150));
-                } else {
-                    // 未读的书籍用默认颜色
-                    label.setForeground(Color.BLACK);
-                }
-            }
-            return label;
-        }
     }
 
     private JLabel createStyledLabel(String text, int style, int size) {
@@ -393,7 +393,7 @@ public class ReadingApp extends JFrame {
         if (nextBook != null) {
             displayBook(nextBook);
             updateStats();
-            refreshBookLists();
+            refreshBookTables();
         } else {
             JOptionPane.showMessageDialog(this,
                     "恭喜！您已经阅读完所有书籍！",
@@ -407,7 +407,7 @@ public class ReadingApp extends JFrame {
         authorLabel.setText("作者: " + book.getAuthor());
         nationLabel.setText("国籍: " + book.getNation());
         eraLabel.setText("年代: " + book.getEra());
-        statusLabel.setText("状态: " + book.getStatusText()); // 显示书籍状态
+        statusLabel.setText("状态: " + book.getStatusText());
     }
 
     private void clearBookDisplay() {
@@ -431,7 +431,7 @@ public class ReadingApp extends JFrame {
             if (result == JOptionPane.YES_OPTION) {
                 bookManager.markAsRead();
                 updateStats();
-                refreshBookLists();
+                refreshBookTables();
                 // 更新当前书籍状态显示
                 displayBook(currentBook);
             }
@@ -456,7 +456,7 @@ public class ReadingApp extends JFrame {
             if (result == JOptionPane.YES_OPTION) {
                 bookManager.markAsFinished();
                 updateStats();
-                refreshBookLists();
+                refreshBookTables();
                 clearBookDisplay();
             }
         } else {
@@ -478,7 +478,7 @@ public class ReadingApp extends JFrame {
                 total, read, finished, remaining, ((read + finished) * 100.0 / total)
         ));
 
-        // 只有在tabbedPane已经初始化的情况下才更新标签页标题
+        // 更新标签页标题
         if (tabbedPane != null && tabbedPane.getTabCount() >= 3) {
             tabbedPane.setTitleAt(0, "未读目录 (" + remaining + ")");
             tabbedPane.setTitleAt(1, "已读目录 (" + read + ")");
@@ -486,84 +486,63 @@ public class ReadingApp extends JFrame {
         }
     }
 
-    private void refreshBookLists() {
-        // 刷新未读列表
-        if (unreadListModel != null) {
-            unreadListModel.clear();
-            List<Book> unreadBooks = bookManager.searchUnreadBooks(
-                    unreadSearchField != null ? unreadSearchField.getText() : "");
-            for (Book book : unreadBooks) {
-                unreadListModel.addElement(book);
-            }
+    private void refreshBookTables() {
+        // 刷新未读表格
+        if (unreadTableModel != null) {
+            unreadTableModel.setBooks(bookManager.searchUnreadBooks(
+                    unreadSearchField != null ? unreadSearchField.getText() : ""));
         }
 
-        // 刷新已读列表
-        if (readListModel != null) {
-            readListModel.clear();
-            List<Book> readBooks = bookManager.searchReadBooks(
-                    readSearchField != null ? readSearchField.getText() : "");
-            for (Book book : readBooks) {
-                readListModel.addElement(book);
-            }
+        // 刷新已读表格
+        if (readTableModel != null) {
+            readTableModel.setBooks(bookManager.searchReadBooks(
+                    readSearchField != null ? readSearchField.getText() : ""));
         }
 
-        // 修复Bug1：刷新已读完列表
-        if (finishedListModel != null) {
-            finishedListModel.clear();
-            List<Book> finishedBooks = bookManager.searchFinishedBooks(
-                    finishedSearchField != null ? finishedSearchField.getText() : "");
-            for (Book book : finishedBooks) {
-                finishedListModel.addElement(book);
-            }
+        // 刷新已读完表格
+        if (finishedTableModel != null) {
+            finishedTableModel.setBooks(bookManager.searchFinishedBooks(
+                    finishedSearchField != null ? finishedSearchField.getText() : ""));
         }
 
         updateStats();
     }
 
     private void filterUnreadBooks() {
-        if (unreadListModel != null) {
-            unreadListModel.clear();
-            List<Book> filteredBooks = bookManager.searchUnreadBooks(
-                    unreadSearchField != null ? unreadSearchField.getText() : "");
-            for (Book book : filteredBooks) {
-                unreadListModel.addElement(book);
-            }
+        if (unreadTableModel != null) {
+            unreadTableModel.setBooks(bookManager.searchUnreadBooks(
+                    unreadSearchField != null ? unreadSearchField.getText() : ""));
         }
     }
 
     private void filterReadBooks() {
-        if (readListModel != null) {
-            readListModel.clear();
-            List<Book> filteredBooks = bookManager.searchReadBooks(
-                    readSearchField != null ? readSearchField.getText() : "");
-            for (Book book : filteredBooks) {
-                readListModel.addElement(book);
-            }
+        if (readTableModel != null) {
+            readTableModel.setBooks(bookManager.searchReadBooks(
+                    readSearchField != null ? readSearchField.getText() : ""));
         }
     }
 
-    // 修复Bug2：添加已读完列表搜索
     private void filterFinishedBooks() {
-        if (finishedListModel != null) {
-            finishedListModel.clear();
-            List<Book> filteredBooks = bookManager.searchFinishedBooks(
-                    finishedSearchField != null ? finishedSearchField.getText() : "");
-            for (Book book : filteredBooks) {
-                finishedListModel.addElement(book);
-            }
+        if (finishedTableModel != null) {
+            finishedTableModel.setBooks(bookManager.searchFinishedBooks(
+                    finishedSearchField != null ? finishedSearchField.getText() : ""));
         }
     }
 
     private void setSelectedUnreadAsCurrent() {
-        if (unreadList != null) {
-            Book selectedBook = unreadList.getSelectedValue();
-            if (selectedBook != null) {
-                if (bookManager.setCurrentBook(selectedBook)) {
-                    displayBook(selectedBook);
-                    JOptionPane.showMessageDialog(this,
-                            "已设置《" + selectedBook.getTitle() + "》为当前阅读书籍",
-                            "设置成功",
-                            JOptionPane.INFORMATION_MESSAGE);
+        if (unreadTable != null) {
+            int selectedRow = unreadTable.getSelectedRow();
+            if (selectedRow >= 0) {
+                int modelRow = unreadTable.convertRowIndexToModel(selectedRow);
+                Book selectedBook = unreadTableModel.getBookAt(modelRow);
+                if (selectedBook != null) {
+                    if (bookManager.setCurrentBook(selectedBook)) {
+                        displayBook(selectedBook);
+                        JOptionPane.showMessageDialog(this,
+                                "已设置《" + selectedBook.getTitle() + "》为当前阅读书籍",
+                                "设置成功",
+                                JOptionPane.INFORMATION_MESSAGE);
+                    }
                 }
             } else {
                 JOptionPane.showMessageDialog(this,
@@ -575,16 +554,20 @@ public class ReadingApp extends JFrame {
     }
 
     private void rereadSelectedBook() {
-        if (readList != null) {
-            Book selectedBook = readList.getSelectedValue();
-            if (selectedBook != null) {
-                if (bookManager.rereadBook(selectedBook)) {
-                    displayBook(selectedBook);
-                    refreshBookLists(); // 刷新列表以更新阅读次数
-                    JOptionPane.showMessageDialog(this,
-                            "已重新开始阅读《" + selectedBook.getTitle() + "》",
-                            "重新阅读",
-                            JOptionPane.INFORMATION_MESSAGE);
+        if (readTable != null) {
+            int selectedRow = readTable.getSelectedRow();
+            if (selectedRow >= 0) {
+                int modelRow = readTable.convertRowIndexToModel(selectedRow);
+                Book selectedBook = readTableModel.getBookAt(modelRow);
+                if (selectedBook != null) {
+                    if (bookManager.rereadBook(selectedBook)) {
+                        displayBook(selectedBook);
+                        refreshBookTables();
+                        JOptionPane.showMessageDialog(this,
+                                "已重新开始阅读《" + selectedBook.getTitle() + "》",
+                                "重新阅读",
+                                JOptionPane.INFORMATION_MESSAGE);
+                    }
                 }
             } else {
                 JOptionPane.showMessageDialog(this,
@@ -595,12 +578,23 @@ public class ReadingApp extends JFrame {
         }
     }
 
-    // 好词好句相关方法保持不变
+    private Book getSelectedFinishedBook() {
+        if (finishedTable != null) {
+            int selectedRow = finishedTable.getSelectedRow();
+            if (selectedRow >= 0) {
+                int modelRow = finishedTable.convertRowIndexToModel(selectedRow);
+                return finishedTableModel.getBookAt(modelRow);
+            }
+        }
+        return null;
+    }
+
+    // 好词好句相关方法
     private void addMaxim() {
         Book currentBook = bookManager.getCurrentBook();
         if (currentBook != null) {
             new MaximDialog(this, currentBook, bookManager).setVisible(true);
-            refreshBookLists(); // 刷新列表以更新摘抄数量显示
+            refreshBookTables();
             // 更新当前书籍状态显示（因为摘抄会自动标记为已读）
             displayBook(currentBook);
         } else {
@@ -631,6 +625,9 @@ public class ReadingApp extends JFrame {
     }
 
     public static void main(String[] args) {
+        // 抑制 libpng 警告
+        System.setProperty("sun.awt.silent", "true");
+
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
