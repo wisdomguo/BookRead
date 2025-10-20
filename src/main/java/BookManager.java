@@ -3,6 +3,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class BookManager {
     private static final String MENU_FILE = "menu.json";
@@ -30,7 +31,6 @@ public class BookManager {
             } else {
                 System.out.println("菜单文件不存在或为空: " + MENU_FILE);
                 allBooks = new ArrayList<>();
-                // 创建示例数据
                 createSampleData();
             }
 
@@ -49,25 +49,21 @@ public class BookManager {
                 System.out.println("已读书籍文件不存在，创建新文件");
             }
 
-            // 加载当前阅读书籍 - 修复这里！
+            // 加载当前阅读书籍
             File readingFile = new File(READING_FILE);
             if (readingFile.exists() && readingFile.length() > 0) {
                 try {
-                    // 首先尝试作为单个Book对象读取
                     currentBook = objectMapper.readValue(readingFile, Book.class);
                     System.out.println("当前阅读书籍: " + currentBook.getTitle());
                 } catch (Exception e1) {
                     try {
-                        // 如果失败，尝试作为Book列表读取，取第一个
                         List<Book> readingList = objectMapper.readValue(readingFile, new TypeReference<List<Book>>() {});
                         if (!readingList.isEmpty()) {
                             currentBook = readingList.get(0);
                             System.out.println("当前阅读书籍(从列表中): " + currentBook.getTitle());
-                            // 重新保存为单个对象格式
                             saveCurrentBook();
                         } else {
                             currentBook = null;
-                            System.out.println("阅读列表为空");
                         }
                     } catch (Exception e2) {
                         System.err.println("无法解析阅读文件，重置为空");
@@ -82,13 +78,9 @@ public class BookManager {
         } catch (Exception e) {
             System.err.println("加载书籍数据时出错: " + e.getMessage());
             e.printStackTrace();
-
-            // 创建空列表作为后备
             allBooks = new ArrayList<>();
             readBooks = new ArrayList<>();
             currentBook = null;
-
-            // 如果文件损坏，创建示例数据
             createSampleData();
         }
     }
@@ -99,23 +91,72 @@ public class BookManager {
         saveAllBooks();
     }
 
-    private void saveAllBooks() {
-        try {
-            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(MENU_FILE), allBooks);
-        } catch (IOException e) {
-            e.printStackTrace();
+    // 获取未读书籍列表
+    public List<Book> getUnreadBooks() {
+        List<Book> unreadBooks = new ArrayList<>(allBooks);
+        unreadBooks.removeAll(readBooks);
+        return unreadBooks;
+    }
+
+    // 获取已读书籍列表
+    public List<Book> getReadBooks() {
+        return new ArrayList<>(readBooks);
+    }
+
+    // 搜索未读书籍
+    public List<Book> searchUnreadBooks(String keyword) {
+        if (keyword == null || keyword.trim().isEmpty()) {
+            return getUnreadBooks();
         }
+
+        String lowerKeyword = keyword.toLowerCase();
+        return getUnreadBooks().stream()
+                .filter(book ->
+                        book.getTitle().toLowerCase().contains(lowerKeyword) ||
+                                book.getAuthor().toLowerCase().contains(lowerKeyword))
+                .collect(Collectors.toList());
+    }
+
+    // 搜索已读书籍
+    public List<Book> searchReadBooks(String keyword) {
+        if (keyword == null || keyword.trim().isEmpty()) {
+            return getReadBooks();
+        }
+
+        String lowerKeyword = keyword.toLowerCase();
+        return getReadBooks().stream()
+                .filter(book ->
+                        book.getTitle().toLowerCase().contains(lowerKeyword) ||
+                                book.getAuthor().toLowerCase().contains(lowerKeyword))
+                .collect(Collectors.toList());
+    }
+
+    // 设置指定书籍为当前阅读
+    public boolean setCurrentBook(Book book) {
+        if (book != null && allBooks.contains(book)) {
+            currentBook = book;
+            saveCurrentBook();
+            return true;
+        }
+        return false;
+    }
+
+    // 重新阅读已读书籍
+    public boolean rereadBook(Book book) {
+        if (setCurrentBook(book)) {
+            // 如果这本书已经在已读列表中，增加阅读次数
+            if (readBooks.contains(book)) {
+                int index = readBooks.indexOf(book);
+                readBooks.get(index).incrementReadCount();
+                saveReadBooks();
+            }
+            return true;
+        }
+        return false;
     }
 
     public Book getRandomBook() {
-        if (allBooks.isEmpty()) {
-            return null;
-        }
-
-        // 获取未阅读的书籍
-        List<Book> unreadBooks = new ArrayList<>(allBooks);
-        unreadBooks.removeAll(readBooks);
-
+        List<Book> unreadBooks = getUnreadBooks();
         if (unreadBooks.isEmpty()) {
             return null;
         }
@@ -134,8 +175,16 @@ public class BookManager {
     }
 
     public void markAsRead() {
-        if (currentBook != null && !readBooks.contains(currentBook)) {
-            readBooks.add(currentBook);
+        if (currentBook != null) {
+            // 如果书籍已经在已读列表中，增加阅读次数
+            if (readBooks.contains(currentBook)) {
+                int index = readBooks.indexOf(currentBook);
+                readBooks.get(index).incrementReadCount();
+            } else {
+                // 否则添加到已读列表，并设置阅读次数为1
+                currentBook.setReadCount(1);
+                readBooks.add(currentBook);
+            }
             saveReadBooks();
             currentBook = null;
             saveCurrentBook();
@@ -153,6 +202,14 @@ public class BookManager {
     private void saveReadBooks() {
         try {
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(READ_FILE), readBooks);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void saveAllBooks() {
+        try {
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(MENU_FILE), allBooks);
         } catch (IOException e) {
             e.printStackTrace();
         }
