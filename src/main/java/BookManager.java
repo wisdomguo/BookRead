@@ -12,7 +12,7 @@ public class BookManager {
     private static final String MAXIM_DIR = "src/main/resources/maxim";
 
     private List<Book> allBooks;
-    private List<Book> readBooks;
+    private List<Book> readBooks; // 现在包含所有已读过的书籍（包括已读完）
     private Book currentBook;
     private final ObjectMapper objectMapper;
 
@@ -128,10 +128,21 @@ public class BookManager {
             // 更新书籍的好词好句数量
             book.setMaximCount(maxims.size());
 
+            // 标记为已读（但不增加阅读次数）
+            if (!book.isRead()) {
+                book.setRead(true);
+                // 如果这本书不在已读列表中，添加到已读列表
+                if (!readBooks.contains(book)) {
+                    readBooks.add(book);
+                    saveReadBooks();
+                }
+            }
+
             // 如果这本书在已读列表中，更新已读列表中的对应书籍
             if (readBooks.contains(book)) {
                 int index = readBooks.indexOf(book);
                 readBooks.get(index).setMaximCount(book.getMaximCount());
+                readBooks.get(index).setRead(true); // 确保标记为已读
                 saveReadBooks();
             }
 
@@ -164,6 +175,53 @@ public class BookManager {
         return getMaxims(book).size();
     }
 
+    // 标记为已读（不增加已读完次数，不清空当前书籍）
+    public void markAsRead() {
+        if (currentBook != null) {
+            // 增加阅读次数
+            currentBook.incrementReadCount();
+
+            // 如果书籍不在已读列表中，添加到已读列表
+            if (!readBooks.contains(currentBook)) {
+                readBooks.add(currentBook);
+            } else {
+                // 如果已经在已读列表中，更新阅读次数
+                int index = readBooks.indexOf(currentBook);
+                readBooks.get(index).incrementReadCount();
+            }
+
+            saveReadBooks();
+            // 注意：不保存当前书籍，不清空当前阅读状态
+            System.out.println("标记为已读，阅读次数: " + currentBook.getReadCount());
+        }
+    }
+
+    // 标记为已读完（增加已读完次数，清空当前书籍）
+    public void markAsFinished() {
+        if (currentBook != null) {
+            // 增加已读完次数
+            currentBook.incrementFinishedCount();
+
+            // 如果书籍不在已读列表中，添加到已读列表
+            if (!readBooks.contains(currentBook)) {
+                readBooks.add(currentBook);
+            } else {
+                // 如果已经在已读列表中，更新已读完次数
+                int index = readBooks.indexOf(currentBook);
+                readBooks.get(index).incrementFinishedCount();
+            }
+
+            saveReadBooks();
+
+            // 清空当前阅读书籍
+            Book finishedBook = currentBook;
+            currentBook = null;
+            saveCurrentBook();
+
+            System.out.println("标记为已读完，已读完次数: " + finishedBook.getFinishedCount());
+        }
+    }
+
     // 其余方法保持不变...
     private void createSampleData() {
         System.out.println("创建示例数据...");
@@ -177,10 +235,19 @@ public class BookManager {
         return unreadBooks;
     }
 
+    // 获取已读书籍列表（包括已读完）
     public List<Book> getReadBooks() {
         return new ArrayList<>(readBooks);
     }
 
+    // 获取已读完书籍列表（finishedCount > 0）
+    public List<Book> getFinishedBooks() {
+        return readBooks.stream()
+                .filter(book -> book.getFinishedCount() > 0)
+                .collect(Collectors.toList());
+    }
+
+    // 搜索未读书籍
     public List<Book> searchUnreadBooks(String keyword) {
         if (keyword == null || keyword.trim().isEmpty()) {
             return getUnreadBooks();
@@ -194,6 +261,7 @@ public class BookManager {
                 .collect(Collectors.toList());
     }
 
+    // 搜索已读书籍
     public List<Book> searchReadBooks(String keyword) {
         if (keyword == null || keyword.trim().isEmpty()) {
             return getReadBooks();
@@ -239,21 +307,6 @@ public class BookManager {
         return currentBook;
     }
 
-    public void markAsRead() {
-        if (currentBook != null) {
-            if (readBooks.contains(currentBook)) {
-                int index = readBooks.indexOf(currentBook);
-                readBooks.get(index).incrementReadCount();
-            } else {
-                currentBook.setReadCount(1);
-                readBooks.add(currentBook);
-            }
-            saveReadBooks();
-            currentBook = null;
-            saveCurrentBook();
-        }
-    }
-
     private void saveCurrentBook() {
         try {
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(READING_FILE), currentBook);
@@ -284,6 +337,10 @@ public class BookManager {
 
     public int getReadBooksCount() {
         return readBooks.size();
+    }
+
+    public int getFinishedBooksCount() {
+        return getFinishedBooks().size();
     }
 
     public int getRemainingBooksCount() {

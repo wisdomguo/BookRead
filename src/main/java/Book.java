@@ -5,11 +5,15 @@ public class Book {
     private String author;
     private String nation;
     private String era;
-    private int readCount;
-    private int maximCount; // 新增：好词好句数量
+    private int readCount;      // 阅读次数
+    private int finishedCount;  // 新增：已读完次数
+    private boolean isRead;     // 新增：是否已读（至少读过一次）
+    private int maximCount;     // 好词好句数量
 
     public Book() {
         this.readCount = 0;
+        this.finishedCount = 0;
+        this.isRead = false;
         this.maximCount = 0;
     }
 
@@ -19,6 +23,8 @@ public class Book {
         this.nation = nation;
         this.era = era;
         this.readCount = 0;
+        this.finishedCount = 0;
+        this.isRead = false;
         this.maximCount = 0;
     }
 
@@ -38,12 +44,25 @@ public class Book {
     public int getReadCount() { return readCount; }
     public void setReadCount(int readCount) { this.readCount = readCount; }
 
+    public int getFinishedCount() { return finishedCount; }
+    public void setFinishedCount(int finishedCount) { this.finishedCount = finishedCount; }
+
+    public boolean isRead() { return isRead; }
+    public void setRead(boolean read) { isRead = read; }
+
     public int getMaximCount() { return maximCount; }
     public void setMaximCount(int maximCount) { this.maximCount = maximCount; }
 
     // 增加阅读次数的方法
     public void incrementReadCount() {
         this.readCount++;
+        this.isRead = true; // 标记为已读
+    }
+
+    // 增加已读完次数
+    public void incrementFinishedCount() {
+        this.finishedCount++;
+        this.isRead = true; // 标记为已读
     }
 
     // 增加好词好句数量
@@ -53,8 +72,27 @@ public class Book {
 
     @JsonIgnore
     public String getDisplayText() {
-        return String.format("《%s》 - %s (%s, %s) - 已读%d次 - 摘抄%d条",
-                title, author, nation, era, readCount, maximCount);
+        if (finishedCount > 0) {
+            return String.format("《%s》 - %s (%s, %s) - 已读完%d次 - 摘抄%d条",
+                    title, author, nation, era, finishedCount, maximCount);
+        } else if (isRead) {
+            return String.format("《%s》 - %s (%s, %s) - 已读%d次 - 摘抄%d条",
+                    title, author, nation, era, readCount, maximCount);
+        } else {
+            return String.format("《%s》 - %s (%s, %s)",
+                    title, author, nation, era);
+        }
+    }
+
+    @JsonIgnore
+    public String getStatusText() {
+        if (finishedCount > 0) {
+            return "已读完 " + finishedCount + " 次";
+        } else if (isRead) {
+            return "已读 " + readCount + " 次";
+        } else {
+            return "未读";
+        }
     }
 
     @Override

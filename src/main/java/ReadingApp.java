@@ -16,8 +16,10 @@ public class ReadingApp extends JFrame {
     private JLabel authorLabel;
     private JLabel nationLabel;
     private JLabel eraLabel;
+    private JLabel statusLabel; // 新增：书籍状态标签
     private JLabel statsLabel;
     private JButton readButton;
+    private JButton finishedButton; // 新增：已读完按钮
     private JButton nextButton;
 
     // 目录区域组件
@@ -63,8 +65,6 @@ public class ReadingApp extends JFrame {
         add(mainPanel);
     }
 
-    // 在 initializeUI() 方法中修改 createTopPanel() 方法：
-
     private JPanel createTopPanel() {
         JPanel panel = new JPanel(new BorderLayout(10, 10));
 
@@ -109,69 +109,47 @@ public class ReadingApp extends JFrame {
         panel.add(topButtonPanel, BorderLayout.NORTH);
 
         // 书籍信息面板
-        JPanel infoPanel = new JPanel(new GridLayout(4, 1, 5, 5));
+        JPanel infoPanel = new JPanel(new GridLayout(5, 1, 5, 5)); // 改为5行，添加状态行
         titleLabel = createStyledLabel("", Font.BOLD, 16);
         authorLabel = createStyledLabel("", Font.PLAIN, 14);
         nationLabel = createStyledLabel("", Font.PLAIN, 12);
         eraLabel = createStyledLabel("", Font.PLAIN, 12);
+        statusLabel = createStyledLabel("", Font.ITALIC, 12); // 状态标签
 
         infoPanel.add(titleLabel);
         infoPanel.add(authorLabel);
         infoPanel.add(nationLabel);
         infoPanel.add(eraLabel);
+        infoPanel.add(statusLabel);
 
         panel.add(infoPanel, BorderLayout.CENTER);
 
         return panel;
     }
 
-    private void addMaxim() {
-        Book currentBook = bookManager.getCurrentBook();
-        if (currentBook != null) {
-            new MaximDialog(this, currentBook, bookManager).setVisible(true);
-            refreshBookLists(); // 刷新列表以更新摘抄数量显示
-        } else {
-            JOptionPane.showMessageDialog(this,
-                    "当前没有正在阅读的书籍！",
-                    "提示",
-                    JOptionPane.WARNING_MESSAGE);
-        }
-    }
-
-    private void viewMaxims() {
-        Book currentBook = bookManager.getCurrentBook();
-        if (currentBook != null) {
-            if (currentBook.getMaximCount() > 0) {
-                new MaximListDialog(this, currentBook, bookManager).setVisible(true);
-            } else {
-                JOptionPane.showMessageDialog(this,
-                        "这本书还没有保存任何好词好句摘抄！",
-                        "提示",
-                        JOptionPane.INFORMATION_MESSAGE);
-            }
-        } else {
-            JOptionPane.showMessageDialog(this,
-                    "当前没有正在阅读的书籍！",
-                    "提示",
-                    JOptionPane.WARNING_MESSAGE);
-        }
-    }
-
     private JPanel createStatsPanel() {
         JPanel panel = new JPanel(new FlowLayout());
         statsLabel = new JLabel();
-        // 不在这里调用updateStats()，等所有组件初始化完成后再调用
+        updateStats();
         panel.add(statsLabel);
 
         // 添加按钮
         JPanel buttonPanel = new JPanel(new FlowLayout());
         readButton = new JButton("标记为已读");
+        finishedButton = new JButton("标记为已读完"); // 新增按钮
         nextButton = new JButton("随机抽取下一本");
 
         readButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 markAsRead();
+            }
+        });
+
+        finishedButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                markAsFinished();
             }
         });
 
@@ -183,6 +161,7 @@ public class ReadingApp extends JFrame {
         });
 
         buttonPanel.add(readButton);
+        buttonPanel.add(finishedButton);
         buttonPanel.add(nextButton);
 
         panel.add(buttonPanel);
@@ -195,11 +174,15 @@ public class ReadingApp extends JFrame {
 
         // 未读目录标签页
         JPanel unreadPanel = createUnreadDirectoryPanel();
-        pane.addTab("未读目录", unreadPanel);
+        pane.addTab("未读目录 (" + bookManager.getUnreadBooks().size() + ")", unreadPanel);
 
         // 已读目录标签页
         JPanel readPanel = createReadDirectoryPanel();
-        pane.addTab("已读目录", readPanel);
+        pane.addTab("已读目录 (" + bookManager.getReadBooks().size() + ")", readPanel);
+
+        // 已读完目录标签页
+        JPanel finishedPanel = createFinishedDirectoryPanel();
+        pane.addTab("已读完目录 (" + bookManager.getFinishedBooksCount() + ")", finishedPanel);
 
         return pane;
     }
@@ -308,6 +291,52 @@ public class ReadingApp extends JFrame {
         return panel;
     }
 
+    private JPanel createFinishedDirectoryPanel() {
+        JPanel panel = new JPanel(new BorderLayout(5, 5));
+
+        // 说明标签
+        JPanel infoPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        infoPanel.add(new JLabel("已读完的书籍列表（已读完次数 > 0）"));
+        panel.add(infoPanel, BorderLayout.NORTH);
+
+        // 书籍列表
+        DefaultListModel<Book> finishedListModel = new DefaultListModel<>();
+        JList<Book> finishedList = new JList<>(finishedListModel);
+        finishedList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        finishedList.setCellRenderer(new BookListCellRenderer());
+
+        // 加载已读完书籍
+        List<Book> finishedBooks = bookManager.getFinishedBooks();
+        for (Book book : finishedBooks) {
+            finishedListModel.addElement(book);
+        }
+
+        // 双击已读完书籍重新阅读
+        finishedList.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (e.getClickCount() == 2) {
+                    Book selectedBook = finishedList.getSelectedValue();
+                    if (selectedBook != null) {
+                        if (bookManager.rereadBook(selectedBook)) {
+                            displayBook(selectedBook);
+                            refreshBookLists();
+                            JOptionPane.showMessageDialog(ReadingApp.this,
+                                    "已重新开始阅读《" + selectedBook.getTitle() + "》",
+                                    "重新阅读",
+                                    JOptionPane.INFORMATION_MESSAGE);
+                        }
+                    }
+                }
+            }
+        });
+
+        JScrollPane scrollPane = new JScrollPane(finishedList);
+        panel.add(scrollPane, BorderLayout.CENTER);
+
+        return panel;
+    }
+
     // 自定义列表单元格渲染器，用于显示书籍信息
     private class BookListCellRenderer extends DefaultListCellRenderer {
         @Override
@@ -318,21 +347,16 @@ public class ReadingApp extends JFrame {
                 Book book = (Book) value;
                 label.setText(book.getDisplayText());
 
-                // 根据阅读次数设置不同的颜色
-                if (book.getReadCount() > 0) {
-                    if (book.getReadCount() == 1) {
-                        label.setForeground(new Color(0, 100, 0)); // 深绿色
-                    } else if (book.getReadCount() == 2) {
-                        label.setForeground(new Color(0, 150, 0)); // 绿色
-                    } else {
-                        label.setForeground(new Color(0, 200, 0)); // 亮绿色
-                    }
-                }
-
-                // 如果有摘抄，添加特殊标记
-                if (book.getMaximCount() > 0) {
-                    label.setIcon(new ImageIcon("src/main/resources/icons/note.png")); // 可选：添加图标
-                    label.setToolTipText("有 " + book.getMaximCount() + " 条摘抄");
+                // 根据书籍状态设置不同的颜色
+                if (book.getFinishedCount() > 0) {
+                    // 已读完的书籍用深绿色显示
+                    label.setForeground(new Color(0, 100, 0));
+                } else if (book.isRead()) {
+                    // 已读但未读完的书籍用蓝色显示
+                    label.setForeground(new Color(0, 0, 150));
+                } else {
+                    // 未读的书籍用默认颜色
+                    label.setForeground(Color.BLACK);
                 }
             }
             return label;
@@ -374,6 +398,7 @@ public class ReadingApp extends JFrame {
         authorLabel.setText("作者: " + book.getAuthor());
         nationLabel.setText("国籍: " + book.getNation());
         eraLabel.setText("年代: " + book.getEra());
+        statusLabel.setText("状态: " + book.getStatusText()); // 显示书籍状态
     }
 
     private void clearBookDisplay() {
@@ -381,18 +406,46 @@ public class ReadingApp extends JFrame {
         authorLabel.setText("");
         nationLabel.setText("");
         eraLabel.setText("");
+        statusLabel.setText("");
     }
 
+    // 标记为已读（不增加已读完次数，不清空当前书籍）
     private void markAsRead() {
         Book currentBook = bookManager.getCurrentBook();
         if (currentBook != null) {
             int result = JOptionPane.showConfirmDialog(this,
-                    "确定要将《" + currentBook.getTitle() + "》标记为已读吗？",
-                    "确认标记",
+                    "确定要将《" + currentBook.getTitle() + "》标记为已读吗？\n" +
+                            "（这将增加阅读次数，但不会清空当前阅读状态）",
+                    "确认标记为已读",
                     JOptionPane.YES_NO_OPTION);
 
             if (result == JOptionPane.YES_OPTION) {
                 bookManager.markAsRead();
+                updateStats();
+                refreshBookLists();
+                // 更新当前书籍状态显示
+                displayBook(currentBook);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "当前没有正在阅读的书籍！",
+                    "提示",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+    }
+
+    // 标记为已读完（增加已读完次数，清空当前书籍）
+    private void markAsFinished() {
+        Book currentBook = bookManager.getCurrentBook();
+        if (currentBook != null) {
+            int result = JOptionPane.showConfirmDialog(this,
+                    "确定要将《" + currentBook.getTitle() + "》标记为已读完吗？\n" +
+                            "（这将增加已读完次数，并清空当前阅读状态）",
+                    "确认标记为已读完",
+                    JOptionPane.YES_NO_OPTION);
+
+            if (result == JOptionPane.YES_OPTION) {
+                bookManager.markAsFinished();
                 updateStats();
                 refreshBookLists();
                 clearBookDisplay();
@@ -408,17 +461,19 @@ public class ReadingApp extends JFrame {
     private void updateStats() {
         int total = bookManager.getTotalBooksCount();
         int read = bookManager.getReadBooksCount();
+        int finished = bookManager.getFinishedBooksCount();
         int remaining = bookManager.getRemainingBooksCount();
 
         statsLabel.setText(String.format(
-                "总计: %d本 | 已读: %d本 | 剩余: %d本 | 进度: %.1f%%",
-                total, read, remaining, (read * 100.0 / total)
+                "总计: %d本 | 已读: %d本 | 已读完: %d本 | 剩余: %d本 | 进度: %.1f%%",
+                total, read, finished, remaining, ((read + finished) * 100.0 / total)
         ));
 
         // 只有在tabbedPane已经初始化的情况下才更新标签页标题
-        if (tabbedPane != null && tabbedPane.getTabCount() >= 2) {
+        if (tabbedPane != null && tabbedPane.getTabCount() >= 3) {
             tabbedPane.setTitleAt(0, "未读目录 (" + remaining + ")");
             tabbedPane.setTitleAt(1, "已读目录 (" + read + ")");
+            tabbedPane.setTitleAt(2, "已读完目录 (" + finished + ")");
         }
     }
 
@@ -496,7 +551,7 @@ public class ReadingApp extends JFrame {
                     displayBook(selectedBook);
                     refreshBookLists(); // 刷新列表以更新阅读次数
                     JOptionPane.showMessageDialog(this,
-                            "已重新开始阅读《" + selectedBook.getTitle() + "》，阅读次数: " + selectedBook.getReadCount(),
+                            "已重新开始阅读《" + selectedBook.getTitle() + "》",
                             "重新阅读",
                             JOptionPane.INFORMATION_MESSAGE);
                 }
@@ -506,6 +561,41 @@ public class ReadingApp extends JFrame {
                         "提示",
                         JOptionPane.WARNING_MESSAGE);
             }
+        }
+    }
+
+    // 好词好句相关方法保持不变
+    private void addMaxim() {
+        Book currentBook = bookManager.getCurrentBook();
+        if (currentBook != null) {
+            new MaximDialog(this, currentBook, bookManager).setVisible(true);
+            refreshBookLists(); // 刷新列表以更新摘抄数量显示
+            // 更新当前书籍状态显示（因为摘抄会自动标记为已读）
+            displayBook(currentBook);
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "当前没有正在阅读的书籍！",
+                    "提示",
+                    JOptionPane.WARNING_MESSAGE);
+        }
+    }
+
+    private void viewMaxims() {
+        Book currentBook = bookManager.getCurrentBook();
+        if (currentBook != null) {
+            if (currentBook.getMaximCount() > 0) {
+                new MaximListDialog(this, currentBook, bookManager).setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "这本书还没有保存任何好词好句摘抄！",
+                        "提示",
+                        JOptionPane.INFORMATION_MESSAGE);
+            }
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "当前没有正在阅读的书籍！",
+                    "提示",
+                    JOptionPane.WARNING_MESSAGE);
         }
     }
 
