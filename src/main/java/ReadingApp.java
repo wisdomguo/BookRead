@@ -97,7 +97,7 @@ public class ReadingApp extends JFrame {
     private JPanel createStatsPanel() {
         JPanel panel = new JPanel(new FlowLayout());
         statsLabel = new JLabel();
-        updateStats();
+        // 不在这里调用updateStats()，等所有组件初始化完成后再调用
         panel.add(statsLabel);
 
         // 添加按钮
@@ -132,11 +132,11 @@ public class ReadingApp extends JFrame {
 
         // 未读目录标签页
         JPanel unreadPanel = createUnreadDirectoryPanel();
-        pane.addTab("未读目录 (" + bookManager.getUnreadBooks().size() + ")", unreadPanel);
+        pane.addTab("未读目录", unreadPanel);
 
         // 已读目录标签页
         JPanel readPanel = createReadDirectoryPanel();
-        pane.addTab("已读目录 (" + bookManager.getReadBooks().size() + ")", readPanel);
+        pane.addTab("已读目录", readPanel);
 
         return pane;
     }
@@ -346,79 +346,97 @@ public class ReadingApp extends JFrame {
                 total, read, remaining, (read * 100.0 / total)
         ));
 
-        // 更新标签页标题
-        tabbedPane.setTitleAt(0, "未读目录 (" + remaining + ")");
-        tabbedPane.setTitleAt(1, "已读目录 (" + read + ")");
+        // 只有在tabbedPane已经初始化的情况下才更新标签页标题
+        if (tabbedPane != null && tabbedPane.getTabCount() >= 2) {
+            tabbedPane.setTitleAt(0, "未读目录 (" + remaining + ")");
+            tabbedPane.setTitleAt(1, "已读目录 (" + read + ")");
+        }
     }
 
     private void refreshBookLists() {
         // 刷新未读列表
-        unreadListModel.clear();
-        List<Book> unreadBooks = bookManager.searchUnreadBooks(unreadSearchField.getText());
-        for (Book book : unreadBooks) {
-            unreadListModel.addElement(book);
+        if (unreadListModel != null) {
+            unreadListModel.clear();
+            List<Book> unreadBooks = bookManager.searchUnreadBooks(
+                    unreadSearchField != null ? unreadSearchField.getText() : "");
+            for (Book book : unreadBooks) {
+                unreadListModel.addElement(book);
+            }
         }
 
         // 刷新已读列表
-        readListModel.clear();
-        List<Book> readBooks = bookManager.searchReadBooks(readSearchField.getText());
-        for (Book book : readBooks) {
-            readListModel.addElement(book);
+        if (readListModel != null) {
+            readListModel.clear();
+            List<Book> readBooks = bookManager.searchReadBooks(
+                    readSearchField != null ? readSearchField.getText() : "");
+            for (Book book : readBooks) {
+                readListModel.addElement(book);
+            }
         }
 
         updateStats();
     }
 
     private void filterUnreadBooks() {
-        unreadListModel.clear();
-        List<Book> filteredBooks = bookManager.searchUnreadBooks(unreadSearchField.getText());
-        for (Book book : filteredBooks) {
-            unreadListModel.addElement(book);
+        if (unreadListModel != null) {
+            unreadListModel.clear();
+            List<Book> filteredBooks = bookManager.searchUnreadBooks(
+                    unreadSearchField != null ? unreadSearchField.getText() : "");
+            for (Book book : filteredBooks) {
+                unreadListModel.addElement(book);
+            }
         }
     }
 
     private void filterReadBooks() {
-        readListModel.clear();
-        List<Book> filteredBooks = bookManager.searchReadBooks(readSearchField.getText());
-        for (Book book : filteredBooks) {
-            readListModel.addElement(book);
+        if (readListModel != null) {
+            readListModel.clear();
+            List<Book> filteredBooks = bookManager.searchReadBooks(
+                    readSearchField != null ? readSearchField.getText() : "");
+            for (Book book : filteredBooks) {
+                readListModel.addElement(book);
+            }
         }
     }
 
     private void setSelectedUnreadAsCurrent() {
-        Book selectedBook = unreadList.getSelectedValue();
-        if (selectedBook != null) {
-            if (bookManager.setCurrentBook(selectedBook)) {
-                displayBook(selectedBook);
+        if (unreadList != null) {
+            Book selectedBook = unreadList.getSelectedValue();
+            if (selectedBook != null) {
+                if (bookManager.setCurrentBook(selectedBook)) {
+                    displayBook(selectedBook);
+                    JOptionPane.showMessageDialog(this,
+                            "已设置《" + selectedBook.getTitle() + "》为当前阅读书籍",
+                            "设置成功",
+                            JOptionPane.INFORMATION_MESSAGE);
+                }
+            } else {
                 JOptionPane.showMessageDialog(this,
-                        "已设置《" + selectedBook.getTitle() + "》为当前阅读书籍",
-                        "设置成功",
-                        JOptionPane.INFORMATION_MESSAGE);
+                        "请先选择一本书籍！",
+                        "提示",
+                        JOptionPane.WARNING_MESSAGE);
             }
-        } else {
-            JOptionPane.showMessageDialog(this,
-                    "请先选择一本书籍！",
-                    "提示",
-                    JOptionPane.WARNING_MESSAGE);
         }
     }
 
     private void rereadSelectedBook() {
-        Book selectedBook = readList.getSelectedValue();
-        if (selectedBook != null) {
-            if (bookManager.rereadBook(selectedBook)) {
-                displayBook(selectedBook);
-                refreshBookLists(); // 刷新列表以更新阅读次数
+        if (readList != null) {
+            Book selectedBook = readList.getSelectedValue();
+            if (selectedBook != null) {
+                if (bookManager.rereadBook(selectedBook)) {
+                    displayBook(selectedBook);
+                    refreshBookLists(); // 刷新列表以更新阅读次数
+                    JOptionPane.showMessageDialog(this,
+                            "已重新开始阅读《" + selectedBook.getTitle() + "》，阅读次数: " + selectedBook.getReadCount(),
+                            "重新阅读",
+                            JOptionPane.INFORMATION_MESSAGE);
+                }
+            } else {
                 JOptionPane.showMessageDialog(this,
-                        "已重新开始阅读《" + selectedBook.getTitle() + "》，阅读次数: " + selectedBook.getReadCount(),
-                        "重新阅读",
-                        JOptionPane.INFORMATION_MESSAGE);
+                        "请先选择一本书籍！",
+                        "提示",
+                        JOptionPane.WARNING_MESSAGE);
             }
-        } else {
-            JOptionPane.showMessageDialog(this,
-                    "请先选择一本书籍！",
-                    "提示",
-                    JOptionPane.WARNING_MESSAGE);
         }
     }
 

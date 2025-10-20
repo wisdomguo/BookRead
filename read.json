@@ -1,1 +1,13 @@
-[]
+[ {
+  "title" : "第七天",
+  "author" : "余华",
+  "nation" : "中国",
+  "era" : "近现代",
+  "readCount" : 1
+}, {
+  "title" : "许三观卖血记",
+  "author" : "余华",
+  "nation" : "中国",
+  "era" : "近现代",
+  "readCount" : 3
+} ]
