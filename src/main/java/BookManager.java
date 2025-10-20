@@ -142,14 +142,11 @@ public class BookManager {
     }
 
     // 重新阅读已读书籍
+// 修改 rereadBook 方法，移除阅读次数增加的逻辑
     public boolean rereadBook(Book book) {
         if (setCurrentBook(book)) {
-            // 如果这本书已经在已读列表中，增加阅读次数
-            if (readBooks.contains(book)) {
-                int index = readBooks.indexOf(book);
-                readBooks.get(index).incrementReadCount();
-                saveReadBooks();
-            }
+            // 注意：这里不再增加阅读次数
+            // 阅读次数只在标记为已读时增加
             return true;
         }
         return false;
@@ -174,6 +171,7 @@ public class BookManager {
         return currentBook;
     }
 
+    // 确保 markAsRead 方法正确增加阅读次数
     public void markAsRead() {
         if (currentBook != null) {
             // 如果书籍已经在已读列表中，增加阅读次数
