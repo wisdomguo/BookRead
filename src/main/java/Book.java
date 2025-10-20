@@ -72,22 +72,31 @@ public class Book {
 
     @JsonIgnore
     public String getDisplayText() {
+        // 修复Bug3：正确显示已读次数和已读完次数
+        StringBuilder sb = new StringBuilder();
+        sb.append("《").append(title).append("》 - ").append(author)
+                .append(" (").append(nation).append(", ").append(era).append(")");
+
         if (finishedCount > 0) {
-            return String.format("《%s》 - %s (%s, %s) - 已读完%d次 - 摘抄%d条",
-                    title, author, nation, era, finishedCount, maximCount);
+            sb.append(" - 已读完").append(finishedCount).append("次");
+            if (readCount > finishedCount) {
+                sb.append(" - 已读").append(readCount).append("次");
+            }
         } else if (isRead) {
-            return String.format("《%s》 - %s (%s, %s) - 已读%d次 - 摘抄%d条",
-                    title, author, nation, era, readCount, maximCount);
-        } else {
-            return String.format("《%s》 - %s (%s, %s)",
-                    title, author, nation, era);
+            sb.append(" - 已读").append(readCount).append("次");
         }
+
+        if (maximCount > 0) {
+            sb.append(" - 摘抄").append(maximCount).append("条");
+        }
+
+        return sb.toString();
     }
 
     @JsonIgnore
     public String getStatusText() {
         if (finishedCount > 0) {
-            return "已读完 " + finishedCount + " 次";
+            return "已读完 " + finishedCount + " 次" + (readCount > finishedCount ? " - 已读 " + readCount + " 次" : "");
         } else if (isRead) {
             return "已读 " + readCount + " 次";
         } else {

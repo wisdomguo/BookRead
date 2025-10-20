@@ -39,8 +39,8 @@
   "author" : "墨子",
   "nation" : "中国",
   "era" : "战国时期",
-  "readCount" : 7,
-  "finishedCount" : 4,
+  "readCount" : 8,
+  "finishedCount" : 5,
   "maximCount" : 0,
   "read" : true
 }, {
@@ -51,5 +51,14 @@
   "readCount" : 0,
   "finishedCount" : 1,
   "maximCount" : 0,
+  "read" : true
+}, {
+  "title" : "荀子",
+  "author" : "荀子",
+  "nation" : "中国",
+  "era" : "战国时期",
+  "readCount" : 2,
+  "finishedCount" : 2,
+  "maximCount" : 1,
   "read" : true
 } ]

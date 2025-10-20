@@ -178,7 +178,7 @@ public class BookManager {
     // 标记为已读（不增加已读完次数，不清空当前书籍）
     public void markAsRead() {
         if (currentBook != null) {
-            // 增加阅读次数
+            // 增加阅读次数 - 修复Bug4：确保只增加一次
             currentBook.incrementReadCount();
 
             // 如果书籍不在已读列表中，添加到已读列表
@@ -187,7 +187,7 @@ public class BookManager {
             } else {
                 // 如果已经在已读列表中，更新阅读次数
                 int index = readBooks.indexOf(currentBook);
-                readBooks.get(index).incrementReadCount();
+                readBooks.get(index).setReadCount(currentBook.getReadCount());
             }
 
             saveReadBooks();
@@ -199,7 +199,7 @@ public class BookManager {
     // 标记为已读完（增加已读完次数，清空当前书籍）
     public void markAsFinished() {
         if (currentBook != null) {
-            // 增加已读完次数
+            // 增加已读完次数 - 修复Bug5：确保只增加一次
             currentBook.incrementFinishedCount();
 
             // 如果书籍不在已读列表中，添加到已读列表
@@ -208,7 +208,7 @@ public class BookManager {
             } else {
                 // 如果已经在已读列表中，更新已读完次数
                 int index = readBooks.indexOf(currentBook);
-                readBooks.get(index).incrementFinishedCount();
+                readBooks.get(index).setFinishedCount(currentBook.getFinishedCount());
             }
 
             saveReadBooks();
@@ -269,6 +269,20 @@ public class BookManager {
 
         String lowerKeyword = keyword.toLowerCase();
         return getReadBooks().stream()
+                .filter(book ->
+                        book.getTitle().toLowerCase().contains(lowerKeyword) ||
+                                book.getAuthor().toLowerCase().contains(lowerKeyword))
+                .collect(Collectors.toList());
+    }
+
+    // 搜索已读完书籍 - 修复Bug2
+    public List<Book> searchFinishedBooks(String keyword) {
+        if (keyword == null || keyword.trim().isEmpty()) {
+            return getFinishedBooks();
+        }
+
+        String lowerKeyword = keyword.toLowerCase();
+        return getFinishedBooks().stream()
                 .filter(book ->
                         book.getTitle().toLowerCase().contains(lowerKeyword) ||
                                 book.getAuthor().toLowerCase().contains(lowerKeyword))

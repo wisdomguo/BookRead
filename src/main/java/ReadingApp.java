@@ -37,6 +37,11 @@ public class ReadingApp extends JFrame {
     private JTextField readSearchField;
     private JButton rereadButton;
 
+    // 已读完目录组件 - 修复Bug1：添加成员变量
+    private JList<Book> finishedList;
+    private DefaultListModel<Book> finishedListModel;
+    private JTextField finishedSearchField; // 修复Bug2：添加搜索框
+
     public ReadingApp() {
         bookManager = new BookManager();
         initializeUI();
@@ -294,22 +299,26 @@ public class ReadingApp extends JFrame {
     private JPanel createFinishedDirectoryPanel() {
         JPanel panel = new JPanel(new BorderLayout(5, 5));
 
-        // 说明标签
-        JPanel infoPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        infoPanel.add(new JLabel("已读完的书籍列表（已读完次数 > 0）"));
-        panel.add(infoPanel, BorderLayout.NORTH);
+        // 搜索面板 - 修复Bug2：添加搜索功能
+        JPanel searchPanel = new JPanel(new BorderLayout(5, 5));
+        searchPanel.add(new JLabel("搜索书名/作者:"), BorderLayout.WEST);
+        finishedSearchField = new JTextField();
+        finishedSearchField.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) { filterFinishedBooks(); }
+            @Override
+            public void removeUpdate(DocumentEvent e) { filterFinishedBooks(); }
+            @Override
+            public void changedUpdate(DocumentEvent e) { filterFinishedBooks(); }
+        });
+        searchPanel.add(finishedSearchField, BorderLayout.CENTER);
+        panel.add(searchPanel, BorderLayout.NORTH);
 
         // 书籍列表
-        DefaultListModel<Book> finishedListModel = new DefaultListModel<>();
-        JList<Book> finishedList = new JList<>(finishedListModel);
+        finishedListModel = new DefaultListModel<>();
+        finishedList = new JList<>(finishedListModel);
         finishedList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         finishedList.setCellRenderer(new BookListCellRenderer());
-
-        // 加载已读完书籍
-        List<Book> finishedBooks = bookManager.getFinishedBooks();
-        for (Book book : finishedBooks) {
-            finishedListModel.addElement(book);
-        }
 
         // 双击已读完书籍重新阅读
         finishedList.addMouseListener(new MouseAdapter() {
@@ -498,6 +507,16 @@ public class ReadingApp extends JFrame {
             }
         }
 
+        // 修复Bug1：刷新已读完列表
+        if (finishedListModel != null) {
+            finishedListModel.clear();
+            List<Book> finishedBooks = bookManager.searchFinishedBooks(
+                    finishedSearchField != null ? finishedSearchField.getText() : "");
+            for (Book book : finishedBooks) {
+                finishedListModel.addElement(book);
+            }
+        }
+
         updateStats();
     }
 
@@ -519,6 +538,18 @@ public class ReadingApp extends JFrame {
                     readSearchField != null ? readSearchField.getText() : "");
             for (Book book : filteredBooks) {
                 readListModel.addElement(book);
+            }
+        }
+    }
+
+    // 修复Bug2：添加已读完列表搜索
+    private void filterFinishedBooks() {
+        if (finishedListModel != null) {
+            finishedListModel.clear();
+            List<Book> filteredBooks = bookManager.searchFinishedBooks(
+                    finishedSearchField != null ? finishedSearchField.getText() : "");
+            for (Book book : filteredBooks) {
+                finishedListModel.addElement(book);
             }
         }
     }
