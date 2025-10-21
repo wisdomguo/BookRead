@@ -62,12 +62,12 @@
   "maximCount" : 1,
   "read" : true
 }, {
-  "title" : "隋唐演义",
-  "author" : "褚人获",
+  "title" : "谷梁传",
+  "author" : "谷梁赤",
   "nation" : "中国",
-  "era" : "明末清初",
-  "readCount" : 0,
-  "finishedCount" : 0,
-  "maximCount" : 1,
+  "era" : "战国时期",
+  "readCount" : 1,
+  "finishedCount" : 1,
+  "maximCount" : 0,
   "read" : true
 } ]
