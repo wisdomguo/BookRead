@@ -43,9 +43,15 @@ public class BookTableModel extends AbstractTableModel {
 
         switch (columnIndex) {
             case 0: return book.getTitle();
-            case 1: return book.getAuthor();
-            case 2: return book.getNation();
-            case 3: return book.getEra();
+            case 1:
+                String author = book.getAuthor();
+                return (author == null || author.trim().isEmpty()) ? "佚名" : author;
+            case 2:
+                String nation = book.getNation();
+                return (nation == null || nation.trim().isEmpty()) ? "未知" : nation;
+            case 3:
+                String era = book.getEra();
+                return (era == null || era.trim().isEmpty()) ? "暂无" : era;
             case 4: return showReadInfo ? book.getReadCount() : null;
             case 5: return showReadInfo ? book.getFinishedCount() : null;
             case 6: return showReadInfo ? book.getMaximCount() : null;

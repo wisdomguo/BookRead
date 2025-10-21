@@ -1,6 +1,8 @@
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.JTableHeader;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -52,14 +54,18 @@ public class ReadingApp extends JFrame {
     }
 
     private void initializeUI() {
-        setTitle("随机书籍阅读器 - 表格版");
+        setTitle("随机书籍阅读器 - 美化版");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1000, 700);
+        setSize(1200, 800); // 增加窗口大小以适应美化后的表格
         setLocationRelativeTo(null);
+
+        // 设置应用程序图标（可选）
+        // setIconImage(Toolkit.getDefaultToolkit().getImage("icon.png"));
 
         // 创建主面板 - 使用BorderLayout
         JPanel mainPanel = new JPanel(new BorderLayout(10, 10));
-        mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
+        mainPanel.setBackground(new Color(245, 245, 245)); // 设置背景色
 
         // 顶部：当前阅读和统计信息
         JPanel topPanel = createTopPanel();
@@ -73,7 +79,9 @@ public class ReadingApp extends JFrame {
     }
 
     private JPanel createTopPanel() {
-        JPanel panel = new JPanel(new BorderLayout(10, 10));
+        JPanel panel = new JPanel(new BorderLayout(15, 15));
+        panel.setBorder(BorderFactory.createEmptyBorder(0, 0, 10, 0));
+        panel.setBackground(new Color(245, 245, 245));
 
         // 当前阅读书籍面板
         JPanel bookPanel = createBookPanel();
@@ -87,14 +95,23 @@ public class ReadingApp extends JFrame {
     }
 
     private JPanel createBookPanel() {
-        JPanel panel = new JPanel(new BorderLayout(5, 5));
-        panel.setBorder(BorderFactory.createTitledBorder("当前阅读书籍"));
+        JPanel panel = new JPanel(new BorderLayout(10, 10));
+        panel.setBorder(BorderFactory.createTitledBorder(
+                BorderFactory.createLineBorder(new Color(70, 130, 180), 2),
+                "当前阅读书籍",
+                javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,
+                javax.swing.border.TitledBorder.DEFAULT_POSITION,
+                new Font("微软雅黑", Font.BOLD, 14),
+                new Color(70, 130, 180)
+        ));
+        panel.setBackground(Color.WHITE);
 
         // 顶部按钮面板
         JPanel topButtonPanel = new JPanel(new BorderLayout());
+        topButtonPanel.setBackground(Color.WHITE);
 
         // 左上角：查看好词好句按钮
-        JButton viewMaximButton = new JButton("查看摘抄");
+        JButton viewMaximButton = createStyledButton("查看摘抄", new Color(46, 139, 87));
         viewMaximButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -104,7 +121,7 @@ public class ReadingApp extends JFrame {
         topButtonPanel.add(viewMaximButton, BorderLayout.WEST);
 
         // 右上角：添加好词好句按钮
-        JButton addMaximButton = new JButton("添加摘抄");
+        JButton addMaximButton = createStyledButton("添加摘抄", new Color(70, 130, 180));
         addMaximButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -116,12 +133,16 @@ public class ReadingApp extends JFrame {
         panel.add(topButtonPanel, BorderLayout.NORTH);
 
         // 书籍信息面板
-        JPanel infoPanel = new JPanel(new GridLayout(5, 1, 5, 5));
-        titleLabel = createStyledLabel("", Font.BOLD, 16);
-        authorLabel = createStyledLabel("", Font.PLAIN, 14);
-        nationLabel = createStyledLabel("", Font.PLAIN, 12);
-        eraLabel = createStyledLabel("", Font.PLAIN, 12);
-        statusLabel = createStyledLabel("", Font.ITALIC, 12);
+        JPanel infoPanel = new JPanel(new GridLayout(5, 1, 8, 8));
+        infoPanel.setBackground(Color.WHITE);
+        infoPanel.setBorder(BorderFactory.createEmptyBorder(15, 20, 15, 20));
+
+        titleLabel = createStyledLabel("", Font.BOLD, 18);
+        authorLabel = createStyledLabel("", Font.PLAIN, 16);
+        nationLabel = createStyledLabel("", Font.PLAIN, 14);
+        eraLabel = createStyledLabel("", Font.PLAIN, 14);
+        statusLabel = createStyledLabel("", Font.ITALIC, 14);
+        statusLabel.setForeground(new Color(169, 169, 169)); // 灰色状态文字
 
         infoPanel.add(titleLabel);
         infoPanel.add(authorLabel);
@@ -135,16 +156,22 @@ public class ReadingApp extends JFrame {
     }
 
     private JPanel createStatsPanel() {
-        JPanel panel = new JPanel(new FlowLayout());
+        JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
+        panel.setBackground(new Color(245, 245, 245));
+
         statsLabel = new JLabel();
+        statsLabel.setFont(new Font("微软雅黑", Font.BOLD, 14));
+        statsLabel.setForeground(new Color(70, 70, 70));
         updateStats();
         panel.add(statsLabel);
 
         // 添加按钮
-        JPanel buttonPanel = new JPanel(new FlowLayout());
-        readButton = new JButton("标记为已读");
-        finishedButton = new JButton("标记为已读完");
-        nextButton = new JButton("随机抽取下一本");
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 10, 5));
+        buttonPanel.setBackground(new Color(245, 245, 245));
+
+        readButton = createStyledButton("标记为已读", new Color(46, 139, 87));
+        finishedButton = createStyledButton("标记为已读完", new Color(70, 130, 180));
+        nextButton = createStyledButton("随机抽取下一本", new Color(220, 20, 60));
 
         readButton.addActionListener(new ActionListener() {
             @Override
@@ -178,6 +205,8 @@ public class ReadingApp extends JFrame {
 
     private JTabbedPane createDirectoryTabbedPane() {
         JTabbedPane pane = new JTabbedPane();
+        pane.setFont(new Font("微软雅黑", Font.BOLD, 14));
+        pane.setBackground(new Color(245, 245, 245));
 
         // 未读目录标签页
         JPanel unreadPanel = createUnreadDirectoryPanel();
@@ -195,12 +224,23 @@ public class ReadingApp extends JFrame {
     }
 
     private JPanel createUnreadDirectoryPanel() {
-        JPanel panel = new JPanel(new BorderLayout(5, 5));
+        JPanel panel = new JPanel(new BorderLayout(10, 10));
+        panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        panel.setBackground(new Color(245, 245, 245));
 
         // 搜索面板
-        JPanel searchPanel = new JPanel(new BorderLayout(5, 5));
-        searchPanel.add(new JLabel("搜索书名/作者:"), BorderLayout.WEST);
+        JPanel searchPanel = new JPanel(new BorderLayout(10, 10));
+        searchPanel.setBackground(new Color(245, 245, 245));
+        JLabel searchLabel = new JLabel("搜索书名/作者:");
+        searchLabel.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        searchPanel.add(searchLabel, BorderLayout.WEST);
+
         unreadSearchField = new JTextField();
+        unreadSearchField.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        unreadSearchField.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(new Color(200, 200, 200)),
+                BorderFactory.createEmptyBorder(5, 10, 5, 10)
+        ));
         unreadSearchField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) { filterUnreadBooks(); }
@@ -215,14 +255,15 @@ public class ReadingApp extends JFrame {
         // 书籍表格
         unreadTableModel = new BookTableModel(bookManager.getUnreadBooks(), false);
         unreadTable = new JTable(unreadTableModel);
+        setupTableAppearance(unreadTable, false);
         unreadSorter = new TableRowSorter<>(unreadTableModel);
         unreadTable.setRowSorter(unreadSorter);
 
         // 设置列宽
-        unreadTable.getColumnModel().getColumn(0).setPreferredWidth(200); // 书名
-        unreadTable.getColumnModel().getColumn(1).setPreferredWidth(150); // 作者
-        unreadTable.getColumnModel().getColumn(2).setPreferredWidth(80);  // 国籍
-        unreadTable.getColumnModel().getColumn(3).setPreferredWidth(80);  // 年代
+        unreadTable.getColumnModel().getColumn(0).setPreferredWidth(300); // 书名
+        unreadTable.getColumnModel().getColumn(1).setPreferredWidth(200); // 作者
+        unreadTable.getColumnModel().getColumn(2).setPreferredWidth(100); // 国籍
+        unreadTable.getColumnModel().getColumn(3).setPreferredWidth(100); // 年代
 
         // 双击未读书籍设置为当前阅读
         unreadTable.addMouseListener(new MouseAdapter() {
@@ -234,12 +275,13 @@ public class ReadingApp extends JFrame {
             }
         });
 
-        JScrollPane scrollPane = new JScrollPane(unreadTable);
+        JScrollPane scrollPane = createStyledScrollPane(unreadTable);
         panel.add(scrollPane, BorderLayout.CENTER);
 
         // 操作按钮面板
-        JPanel buttonPanel = new JPanel(new FlowLayout());
-        JButton setUnreadAsCurrentButton = new JButton("设为当前阅读");
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 10));
+        buttonPanel.setBackground(new Color(245, 245, 245));
+        JButton setUnreadAsCurrentButton = createStyledButton("设为当前阅读", new Color(70, 130, 180));
         setUnreadAsCurrentButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -253,12 +295,23 @@ public class ReadingApp extends JFrame {
     }
 
     private JPanel createReadDirectoryPanel() {
-        JPanel panel = new JPanel(new BorderLayout(5, 5));
+        JPanel panel = new JPanel(new BorderLayout(10, 10));
+        panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        panel.setBackground(new Color(245, 245, 245));
 
         // 搜索面板
-        JPanel searchPanel = new JPanel(new BorderLayout(5, 5));
-        searchPanel.add(new JLabel("搜索书名/作者:"), BorderLayout.WEST);
+        JPanel searchPanel = new JPanel(new BorderLayout(10, 10));
+        searchPanel.setBackground(new Color(245, 245, 245));
+        JLabel searchLabel = new JLabel("搜索书名/作者:");
+        searchLabel.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        searchPanel.add(searchLabel, BorderLayout.WEST);
+
         readSearchField = new JTextField();
+        readSearchField.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        readSearchField.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(new Color(200, 200, 200)),
+                BorderFactory.createEmptyBorder(5, 10, 5, 10)
+        ));
         readSearchField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) { filterReadBooks(); }
@@ -273,16 +326,17 @@ public class ReadingApp extends JFrame {
         // 书籍表格
         readTableModel = new BookTableModel(bookManager.getReadBooks(), true);
         readTable = new JTable(readTableModel);
+        setupTableAppearance(readTable, true);
         readSorter = new TableRowSorter<>(readTableModel);
         readTable.setRowSorter(readSorter);
 
         // 设置列宽
-        readTable.getColumnModel().getColumn(0).setPreferredWidth(200); // 书名
+        readTable.getColumnModel().getColumn(0).setPreferredWidth(250); // 书名
         readTable.getColumnModel().getColumn(1).setPreferredWidth(150); // 作者
         readTable.getColumnModel().getColumn(2).setPreferredWidth(80);  // 国籍
         readTable.getColumnModel().getColumn(3).setPreferredWidth(80);  // 年代
         readTable.getColumnModel().getColumn(4).setPreferredWidth(80);  // 已读次数
-        readTable.getColumnModel().getColumn(5).setPreferredWidth(80);  // 已读完次数
+        readTable.getColumnModel().getColumn(5).setPreferredWidth(90);  // 已读完次数
         readTable.getColumnModel().getColumn(6).setPreferredWidth(80);  // 摘抄数量
 
         // 双击已读书籍重新阅读
@@ -295,12 +349,13 @@ public class ReadingApp extends JFrame {
             }
         });
 
-        JScrollPane scrollPane = new JScrollPane(readTable);
+        JScrollPane scrollPane = createStyledScrollPane(readTable);
         panel.add(scrollPane, BorderLayout.CENTER);
 
         // 操作按钮面板
-        JPanel buttonPanel = new JPanel(new FlowLayout());
-        JButton rereadButton = new JButton("重新阅读");
+        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 10));
+        buttonPanel.setBackground(new Color(245, 245, 245));
+        JButton rereadButton = createStyledButton("重新阅读", new Color(70, 130, 180));
         rereadButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -314,12 +369,23 @@ public class ReadingApp extends JFrame {
     }
 
     private JPanel createFinishedDirectoryPanel() {
-        JPanel panel = new JPanel(new BorderLayout(5, 5));
+        JPanel panel = new JPanel(new BorderLayout(10, 10));
+        panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        panel.setBackground(new Color(245, 245, 245));
 
         // 搜索面板
-        JPanel searchPanel = new JPanel(new BorderLayout(5, 5));
-        searchPanel.add(new JLabel("搜索书名/作者:"), BorderLayout.WEST);
+        JPanel searchPanel = new JPanel(new BorderLayout(10, 10));
+        searchPanel.setBackground(new Color(245, 245, 245));
+        JLabel searchLabel = new JLabel("搜索书名/作者:");
+        searchLabel.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        searchPanel.add(searchLabel, BorderLayout.WEST);
+
         finishedSearchField = new JTextField();
+        finishedSearchField.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+        finishedSearchField.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createLineBorder(new Color(200, 200, 200)),
+                BorderFactory.createEmptyBorder(5, 10, 5, 10)
+        ));
         finishedSearchField.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) { filterFinishedBooks(); }
@@ -334,16 +400,17 @@ public class ReadingApp extends JFrame {
         // 书籍表格
         finishedTableModel = new BookTableModel(bookManager.getFinishedBooks(), true);
         finishedTable = new JTable(finishedTableModel);
+        setupTableAppearance(finishedTable, true);
         finishedSorter = new TableRowSorter<>(finishedTableModel);
         finishedTable.setRowSorter(finishedSorter);
 
         // 设置列宽
-        finishedTable.getColumnModel().getColumn(0).setPreferredWidth(200); // 书名
+        finishedTable.getColumnModel().getColumn(0).setPreferredWidth(250); // 书名
         finishedTable.getColumnModel().getColumn(1).setPreferredWidth(150); // 作者
         finishedTable.getColumnModel().getColumn(2).setPreferredWidth(80);  // 国籍
         finishedTable.getColumnModel().getColumn(3).setPreferredWidth(80);  // 年代
         finishedTable.getColumnModel().getColumn(4).setPreferredWidth(80);  // 已读次数
-        finishedTable.getColumnModel().getColumn(5).setPreferredWidth(80);  // 已读完次数
+        finishedTable.getColumnModel().getColumn(5).setPreferredWidth(90);  // 已读完次数
         finishedTable.getColumnModel().getColumn(6).setPreferredWidth(80);  // 摘抄数量
 
         // 双击已读完书籍重新阅读
@@ -366,12 +433,102 @@ public class ReadingApp extends JFrame {
             }
         });
 
-        JScrollPane scrollPane = new JScrollPane(finishedTable);
+        JScrollPane scrollPane = createStyledScrollPane(finishedTable);
         panel.add(scrollPane, BorderLayout.CENTER);
 
         return panel;
     }
 
+    // 设置表格外观的通用方法
+    private void setupTableAppearance(JTable table, boolean showReadInfo) {
+        // 设置行高（统一设置，不要在渲染器中设置）
+        table.setRowHeight(40);
+
+        // 设置字体
+        table.setFont(new Font("微软雅黑", Font.PLAIN, 14));
+
+        // 设置网格线
+        table.setShowGrid(true);
+        table.setGridColor(new Color(220, 220, 220));
+
+        // 设置选择模式
+        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        table.setSelectionBackground(new Color(173, 216, 230)); // 浅蓝色选中背景
+        table.setSelectionForeground(Color.BLACK);
+
+        // 设置表头（移到这里，不要在渲染器中设置）
+        JTableHeader header = table.getTableHeader();
+        header.setForeground(Color.black);
+        header.setFont(new Font("微软雅黑", Font.BOLD, 14));
+        header.setBackground(new Color(255, 255, 255)); // 钢蓝色
+        header.setPreferredSize(new Dimension(0, 45));
+//        header.setBorder(BorderFactory.createCompoundBorder(
+//                BorderFactory.createLineBorder(new Color(0, 0, 0)),
+//                BorderFactory.createEmptyBorder(-35, -35, 5, -35)
+//        ));
+
+//        // 设置表头渲染器
+//        header.setDefaultRenderer(new DefaultTableCellRenderer() {
+//            @Override
+//            public Component getTableCellRendererComponent(JTable table, Object value,
+//                                                           boolean isSelected, boolean hasFocus,
+//                                                           int row, int column) {
+//                super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+//                setForeground(Color.WHITE);
+//                setFont(new Font("微软雅黑", Font.BOLD, 14));
+//                setBackground(new Color(70, 130, 180));
+//                setHorizontalAlignment(JLabel.CENTER);
+//                setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+//                return this;
+//            }
+//        });
+
+        // 设置表格不可编辑
+        table.setEnabled(true);
+
+        // 设置渲染器
+        table.setDefaultRenderer(Object.class, new BookTableCellRenderer(showReadInfo));
+
+        // 设置表格背景
+        table.setBackground(Color.WHITE);
+        table.setFillsViewportHeight(true);
+    }
+
+    // 创建美化滚动面板
+    private JScrollPane createStyledScrollPane(JTable table) {
+        JScrollPane scrollPane = new JScrollPane(table);
+        scrollPane.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
+        scrollPane.getViewport().setBackground(Color.white);
+        return scrollPane;
+    }
+
+    // 创建美化按钮
+    private JButton createStyledButton(String text, Color color) {
+        JButton button = new JButton(text);
+        button.setFont(new Font("微软雅黑", Font.BOLD, 14));
+        button.setBackground(color);
+        button.setForeground(Color.black);
+        button.setFocusPainted(false);
+        button.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        button.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
+        // 添加鼠标悬停效果
+        button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                button.setBackground(color.darker());
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                button.setBackground(color);
+            }
+        });
+
+        return button;
+    }
+
+    // 创建美化标签
     private JLabel createStyledLabel(String text, int style, int size) {
         JLabel label = new JLabel(text, SwingConstants.CENTER);
         label.setFont(new Font("微软雅黑", style, size));
@@ -404,9 +561,16 @@ public class ReadingApp extends JFrame {
 
     private void displayBook(Book book) {
         titleLabel.setText("《" + book.getTitle() + "》");
-        authorLabel.setText("作者: " + book.getAuthor());
-        nationLabel.setText("国籍: " + book.getNation());
-        eraLabel.setText("年代: " + book.getEra());
+
+        String author = book.getAuthor();
+        authorLabel.setText("作者: " + ((author == null || author.trim().isEmpty()) ? "佚名" : author));
+
+        String nation = book.getNation();
+        nationLabel.setText("国籍: " + ((nation == null || nation.trim().isEmpty()) ? "未知" : nation));
+
+        String era = book.getEra();
+        eraLabel.setText("年代: " + ((era == null || era.trim().isEmpty()) ? "暂无" : era));
+
         statusLabel.setText("状态: " + book.getStatusText());
     }
 
@@ -632,7 +796,17 @@ public class ReadingApp extends JFrame {
             @Override
             public void run() {
                 try {
+                    // 设置系统外观
                     UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+
+                    // 设置全局字体
+                    UIManager.put("Button.font", new Font("微软雅黑", Font.PLAIN, 14));
+                    UIManager.put("Label.font", new Font("微软雅黑", Font.PLAIN, 14));
+                    UIManager.put("TextField.font", new Font("微软雅黑", Font.PLAIN, 14));
+                    UIManager.put("Table.font", new Font("微软雅黑", Font.PLAIN, 14));
+                    UIManager.put("TableHeader.font", new Font("微软雅黑", Font.BOLD, 14));
+                    UIManager.put("TabbedPane.font", new Font("微软雅黑", Font.BOLD, 14));
+
                 } catch (Exception e) {
                     e.printStackTrace();
                     try {
