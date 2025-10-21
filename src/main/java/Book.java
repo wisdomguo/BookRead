@@ -6,8 +6,8 @@ public class Book {
     private String nation;
     private String era;
     private int readCount;      // 阅读次数
-    private int finishedCount;  // 已读完次数
-    private boolean isRead;     // 是否已读（至少读过一次）
+    private int finishedCount;  // 新增：已读完次数
+    private boolean isRead;     // 新增：是否已读（至少读过一次）
     private int maximCount;     // 好词好句数量
 
     public Book() {
@@ -70,39 +70,24 @@ public class Book {
         this.maximCount++;
     }
 
-    // 获取完整的显示信息
     @JsonIgnore
-    public String getFullDisplayText() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(title).append(" - ").append(author)
-                .append(" (").append(nation).append(", ").append(era).append(")");
-
-        if (isRead) {
-            if (finishedCount > 0) {
-                sb.append(" - 已读").append(readCount).append("次")
-                        .append(" - 已读完").append(finishedCount).append("次");
-            } else {
-                sb.append(" - 已读").append(readCount).append("次");
-            }
+    public String getDisplayText() {
+        if (finishedCount > 0) {
+            return String.format("《%s》 - %s (%s, %s) - 已读完%d次 - 摘抄%d条",
+                    title, author, nation, era, finishedCount, maximCount);
+        } else if (isRead) {
+            return String.format("《%s》 - %s (%s, %s) - 已读%d次 - 摘抄%d条",
+                    title, author, nation, era, readCount, maximCount);
+        } else {
+            return String.format("《%s》 - %s (%s, %s)",
+                    title, author, nation, era);
         }
-
-        if (maximCount > 0) {
-            sb.append(" - 摘抄").append(maximCount).append("条");
-        }
-
-        return sb.toString();
-    }
-
-    // 获取简化的显示信息（用于未读列表）
-    @JsonIgnore
-    public String getSimpleDisplayText() {
-        return title + " - " + author + " (" + nation + ", " + era + ")";
     }
 
     @JsonIgnore
     public String getStatusText() {
         if (finishedCount > 0) {
-            return "已读完 " + finishedCount + " 次" + (readCount > finishedCount ? " - 已读 " + readCount + " 次" : "");
+            return "已读完 " + finishedCount + " 次";
         } else if (isRead) {
             return "已读 " + readCount + " 次";
         } else {
@@ -112,7 +97,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return getFullDisplayText();
+        return getDisplayText();
     }
 
     @Override
