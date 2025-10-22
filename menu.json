@@ -1,917 +1,5492 @@
 [
-  {"title":"四书", "author":"", "nation":"中国", "era":""},
-  {"title":"五经", "author":"", "nation":"中国", "era":""},
-  {"title":"墨子", "author":"墨子", "nation":"中国", "era":"战国时期"},
-  {"title":"庄子", "author":"庄子", "nation":"中国", "era":"战国时期"},
-  {"title":"楚辞", "author":"屈原", "nation":"中国", "era":"战国时期"},
-  {"title":"荀子", "author":"荀子", "nation":"中国", "era":"战国时期"},
-  {"title":"列子", "author":"列御寇", "nation":"中国", "era":"战国时期"},
-  {"title":"谷梁传", "author":"谷梁赤", "nation":"中国", "era":"战国时期"},
-  {"title":"公羊传", "author":"公羊高", "nation":"中国", "era":"战国时期"},
-  {"title":"吕氏春秋", "author":"吕不韦", "nation":"中国", "era":"战国时期"},
-  {"title":"鬼谷子", "author":"鬼谷子", "nation":"中国", "era":"战国时期"},
-  {"title":"尔雅", "author":"作者不详", "nation":"中国", "era":"战国时期"},
-  {"title":"老子", "author":"老子", "nation":"中国", "era":"春秋时期"},
-  {"title":"孙子兵法", "author":"孙武", "nation":"中国", "era":"春秋时期"},
-  {"title":"左传", "author":"左丘明", "nation":"中国", "era":"春秋时期"},
-  {"title":"史记", "author":"司马迁", "nation":"中国", "era":"西汉"},
-  {"title":"淮南子", "author":"刘安", "nation":"中国", "era":"西汉"},
-  {"title":"战国策", "author":"刘向", "nation":"中国", "era":"西汉"},
-  {"title":"烈女传", "author":"刘向", "nation":"中国", "era":"西汉"},
-  {"title":"汉书", "author":"班固", "nation":"中国", "era":"东汉"},
-  {"title":"后汉书", "author":"范晔", "nation":"中国", "era":"南朝·宋"},
-  {"title":"文心雕龙", "author":"刘勰", "nation":"中国", "era":"南朝·齐"},
-  {"title":"梦溪笔谈", "author":"沈括", "nation":"中国", "era":"北宋"},
-  {"title":"乐府诗集", "author":"郭茂倩", "nation":"中国", "era":"北宋"},
-  {"title":"资治通鉴", "author":"司马光", "nation":"中国", "era":"北宋"},
-  {"title":"太平广记", "author":"李昉", "nation":"中国", "era":"北宋"},
-  {"title":"西厢记", "author":"王实甫", "nation":"中国", "era":"元代"},
-  {"title":"窦娥冤", "author":"关汉卿", "nation":"中国", "era":"元代"},
-  {"title":"三国演义", "author":"罗贯中", "nation":"中国", "era":"元末明初"},
-  {"title":"水浒传", "author":"施耐庵", "nation":"中国", "era":"元末明初"},
-  {"title":"金瓶梅", "author":"兰陵笑笑生", "nation":"中国", "era":"明代"},
-  {"title":"封神演义", "author":"许仲琳", "nation":"中国", "era":"明代"},
-  {"title":"西游记", "author":"吴承恩", "nation":"中国", "era":"明代"},
-  {"title":"徐霞客游记", "author":"徐霞客", "nation":"中国", "era":"明代"},
-  {"title":"喻世明言", "author":"冯梦龙", "nation":"中国", "era":"明代"},
-  {"title":"警世通言", "author":"冯梦龙", "nation":"中国", "era":"明代"},
-  {"title":"醒世恒言", "author":"冯梦龙", "nation":"中国", "era":"明代"},
-  {"title":"东周列国志", "author":"冯梦龙", "nation":"中国", "era":"明代"},
-  {"title":"牡丹亭", "author":"汤显祖", "nation":"中国", "era":"明代"},
-  {"title":"天工开物", "author":"宋应星", "nation":"中国", "era":"明代"},
-  {"title":"本草纲目", "author":"李时珍", "nation":"中国", "era":"明代"},
-  {"title":"杨家将演义", "author":"熊大木", "nation":"中国", "era":"明代"},
-  {"title":"初刻拍案惊奇", "author":"凌濛初", "nation":"中国", "era":"明代"},
-  {"title":"二刻拍案惊奇", "author":"凌濛初", "nation":"中国", "era":"明代"},
-  {"title":"菜根谭", "author":"洪应明", "nation":"中国", "era":"明代"},
-  {"title":"隋唐演义", "author":"褚人获", "nation":"中国", "era":"明末清初"},
-  {"title":"红楼梦", "author":"曹雪芹", "nation":"中国", "era":"清代"},
-  {"title":"镜花缘", "author":"李汝珍", "nation":"中国", "era":"清代"},
-  {"title":"老残游记", "author":"刘鹗", "nation":"中国", "era":"清代"},
-  {"title":"孽海花", "author":"金松岑、曾朴", "nation":"中国", "era":"清代"},
-  {"title":"官场现形记", "author":"李伯元", "nation":"中国", "era":"清代"},
-  {"title":"儒林外史", "author":"吴敬梓", "nation":"中国", "era":"清代"},
-  {"title":"聊斋志异", "author":"蒲松龄", "nation":"中国", "era":"清代"},
-  {"title":"浮生六记", "author":"沈复", "nation":"中国", "era":"清代"},
-  {"title":"绿野仙踪", "author":"李百川", "nation":"中国", "era":"清代"},
-  {"title":"说岳全传", "author":"钱彩", "nation":"中国", "era":"清代"},
-  {"title":"古文观止", "author":"吴楚材、吴调侯", "nation":"中国", "era":"清代"},
-  {"title":"儿女英雄传", "author":"文康", "nation":"中国", "era":"清代"},
-  {"title":"三侠五义", "author":"石玉昆", "nation":"中国", "era":"清代"},
-  {"title":"施公案", "author":"佚名", "nation":"中国", "era":"清代"},
-  {"title":"狂人日记", "author":"鲁迅", "nation":"中国", "era":"近现代"},
-  {"title":"呐喊", "author":"鲁迅", "nation":"中国", "era":"近现代"},
-  {"title":"彷徨", "author":"鲁迅", "nation":"中国", "era":"近现代"},
-  {"title":"朝花夕拾", "author":"鲁迅", "nation":"中国", "era":"近现代"},
-  {"title":"繁星·春水", "author":"冰心", "nation":"中国", "era":"近现代"},
-  {"title":"商市街", "author":"萧红", "nation":"中国", "era":"近现代"},
-  {"title":"马伯乐", "author":"萧红", "nation":"中国", "era":"近现代"},
-  {"title":"生死场", "author":"萧红", "nation":"中国", "era":"近现代"},
-  {"title":"呼兰河传", "author":"萧红", "nation":"中国", "era":"近现代"},
-  {"title":"家", "author":"巴金", "nation":"中国", "era":"近现代"},
-  {"title":"春", "author":"巴金", "nation":"中国", "era":"近现代"},
-  {"title":"秋", "author":"巴金", "nation":"中国", "era":"近现代"},
-  {"title":"雾", "author":"巴金", "nation":"中国", "era":"近现代"},
-  {"title":"雨", "author":"巴金", "nation":"中国", "era":"近现代"},
-  {"title":"电", "author":"巴金", "nation":"中国", "era":"近现代"},
-  {"title":"灭亡", "author":"巴金", "nation":"中国", "era":"近现代"},
-  {"title":"寒夜", "author":"巴金", "nation":"中国", "era":"近现代"},
-  {"title":"红玫瑰与白玫瑰", "author":"张爱玲", "nation":"中国", "era":"近现代"},
-  {"title":"金锁记", "author":"张爱玲", "nation":"中国", "era":"近现代"},
-  {"title":"倾城之恋", "author":"张爱玲", "nation":"中国", "era":"近现代"},
-  {"title":"怨女", "author":"张爱玲", "nation":"中国", "era":"近现代"},
-  {"title":"小团圆", "author":"张爱玲", "nation":"中国", "era":"近现代"},
-  {"title":"半生缘", "author":"张爱玲", "nation":"中国", "era":"近现代"},
-  {"title":"青春之歌", "author":"杨沫", "nation":"中国", "era":"近现代"},
-  {"title":"红岩", "author":"罗广斌、杨益言", "nation":"中国", "era":"近现代"},
-  {"title":"白鹿原", "author":"陈忠实", "nation":"中国", "era":"近现代"},
-  {"title":"林海雪原", "author":"曲波", "nation":"中国", "era":"近现代"},
-  {"title":"白洋淀纪事", "author":"孙犁", "nation":"中国", "era":"近现代"},
-  {"title":"湘行散记", "author":"孙犁", "nation":"中国", "era":"近现代"},
-  {"title":"大淖记事", "author":"汪曾祺", "nation":"中国", "era":"近现代"},
-  {"title":"受戒", "author":"汪曾祺", "nation":"中国", "era":"近现代"},
-  {"title":"城南旧事", "author":"林海音", "nation":"中国", "era":"近现代"},
-  {"title":"边城", "author":"沈从文", "nation":"中国", "era":"近现代"},
-  {"title":"长河", "author":"沈从文", "nation":"中国", "era":"近现代"},
-  {"title":"四世同堂", "author":"老舍", "nation":"中国", "era":"近现代"},
-  {"title":"骆驼祥子", "author":"老舍", "nation":"中国", "era":"近现代"},
-  {"title":"茶馆", "author":"老舍", "nation":"中国", "era":"近现代"},
-  {"title":"猫城记", "author":"老舍", "nation":"中国", "era":"近现代"},
-  {"title":"围城", "author":"钱钟书", "nation":"中国", "era":"近现代"},
-  {"title":"平凡的世界", "author":"路遥", "nation":"中国", "era":"近现代"},
-  {"title":"人生", "author":"路遥", "nation":"中国", "era":"近现代"},
-  {"title":"雷雨", "author":"曹禺", "nation":"中国", "era":"近现代"},
-  {"title":"日出", "author":"曹禺", "nation":"中国", "era":"近现代"},
-  {"title":"子夜", "author":"茅盾", "nation":"中国", "era":"近现代"},
-  {"title":"林家铺子", "author":"茅盾", "nation":"中国", "era":"近现代"},
-  {"title":"幻灭", "author":"茅盾", "nation":"中国", "era":"近现代"},
-  {"title":"虹", "author":"茅盾", "nation":"中国", "era":"近现代"},
-  {"title":"雷锋日记", "author":"雷锋", "nation":"中国", "era":"近现代"},
-  {"title":"傅雷家书", "author":"傅雷、朱梅馥、傅聪", "nation":"中国", "era":"近现代"},
-  {"title":"星星离我们有多远", "author":"卞毓麟", "nation":"中国", "era":"近现代"},
-  {"title":"飞向太空港", "author":"李鸣生", "nation":"中国", "era":"近现代"},
-  {"title":"创业史", "author":"柳青", "nation":"中国", "era":"近现代"},
-  {"title":"红日", "author":"吴强", "nation":"中国", "era":"近现代"},
-  {"title":"额尔古纳河右岸", "author":"迟子建", "nation":"中国", "era":"近现代"},
-  {"title":"蛙", "author":"莫言", "nation":"中国", "era":"近现代"},
-  {"title":"丰乳肥臀", "author":"莫言", "nation":"中国", "era":"近现代"},
-  {"title":"红高粱", "author":"莫言", "nation":"中国", "era":"近现代"},
-  {"title":"生死疲劳", "author":"莫言", "nation":"中国", "era":"近现代"},
-  {"title":"酒国", "author":"莫言", "nation":"中国", "era":"近现代"},
-  {"title":"檀香刑", "author":"莫言", "nation":"中国", "era":"近现代"},
-  {"title":"女神", "author":"郭沫若", "nation":"中国", "era":"近现代"},
-  {"title":"沉沦", "author":"郁达夫", "nation":"中国", "era":"近现代"},
-  {"title":"台北人", "author":"白先勇", "nation":"中国", "era":"近现代"},
-  {"title":"死水微澜", "author":"李劼人", "nation":"中国", "era":"近现代"},
-  {"title":"倪焕之", "author":"叶圣陶", "nation":"中国", "era":"近现代"},
-  {"title":"穆斯林的葬礼", "author":"霍达", "nation":"中国", "era":"近现代"},
-  {"title":"啼笑因缘", "author":"张恨水", "nation":"中国", "era":"近现代"},
-  {"title":"金粉世家", "author":"张恨水", "nation":"中国", "era":"近现代"},
-  {"title":"京华烟云", "author":"林语堂", "nation":"中国", "era":"近现代"},
-  {"title":"苏东坡传", "author":"林语堂", "nation":"中国", "era":"近现代"},
-  {"title":"经典常谈", "author":"朱自清", "nation":"中国", "era":"近现代"},
-  {"title":"长征", "author":"王树增", "nation":"中国", "era":"近现代"},
-  {"title":"给青年的十二封信", "author":"朱光潜", "nation":"中国", "era":"近现代"},
-  {"title":"尘埃落定", "author":"阿来", "nation":"中国", "era":"近现代"},
-  {"title":"乡土中国", "author":"费孝通", "nation":"中国", "era":"近现代"},
-  {"title":"张居正", "author":"熊召政", "nation":"中国", "era":"近现代"},
-  {"title":"莎菲女士的日记", "author":"丁玲", "nation":"中国", "era":"近现代"},
-  {"title":"太阳照在桑干河上", "author":"丁玲", "nation":"中国", "era":"近现代"},
-  {"title":"暴风骤雨", "author":"周立波", "nation":"中国", "era":"近现代"},
-  {"title":"山乡巨变", "author":"周立波", "nation":"中国", "era":"近现代"},
-  {"title":"沉重的翅膀", "author":"张洁", "nation":"中国", "era":"近现代"},
-  {"title":"无字", "author":"张洁", "nation":"中国", "era":"近现代"},
-  {"title":"黄金时代", "author":"王小波", "nation":"中国", "era":"近现代"},
-  {"title":"白银时代", "author":"王小波", "nation":"中国", "era":"近现代"},
-  {"title":"青铜时代", "author":"王小波", "nation":"中国", "era":"近现代"},
-  {"title":"装台", "author":"陈彦", "nation":"中国", "era":"近现代"},
-  {"title":"黄雀记", "author":"苏童", "nation":"中国", "era":"近现代"},
-  {"title":"妻妾成群", "author":"苏童", "nation":"中国", "era":"近现代"},
-  {"title":"大浴女", "author":"铁凝", "nation":"中国", "era":"近现代"},
-  {"title":"玫瑰门", "author":"铁凝", "nation":"中国", "era":"近现代"},
-  {"title":"笨花", "author":"铁凝", "nation":"中国", "era":"近现代"},
-  {"title":"哦，香雪", "author":"铁凝", "nation":"中国", "era":"近现代"},
-  {"title":"长恨歌", "author":"王安忆", "nation":"中国", "era":"近现代"},
-  {"title":"骚动之秋", "author":"刘玉民", "nation":"中国", "era":"近现代"},
-  {"title":"繁花", "author":"金宇澄", "nation":"中国", "era":"近现代"},
-  {"title":"芙蓉镇", "author":"古华", "nation":"中国", "era":"近现代"},
-  {"title":"白门柳", "author":"刘斯奋", "nation":"中国", "era":"近现代"},
-  {"title":"东藏记", "author":"宗璞", "nation":"中国", "era":"近现代"},
-  {"title":"一句顶一万句", "author":"刘震云", "nation":"中国", "era":"近现代"},
-  {"title":"钟鼓楼", "author":"刘心武", "nation":"中国", "era":"近现代"},
-  {"title":"财主底儿女们", "author":"路翎", "nation":"中国", "era":"近现代"},
-  {"title":"组织部新来的年轻人", "author":"王蒙", "nation":"中国", "era":"近现代"},
-  {"title":"我们仨", "author":"杨绛", "nation":"中国", "era":"近现代"},
-  {"title":"干校六记", "author":"杨绛", "nation":"中国", "era":"近现代"},
-  {"title":"秦腔", "author":"贾平凹", "nation":"中国", "era":"近现代"},
-  {"title":"废都", "author":"贾平凹", "nation":"中国", "era":"近现代"},
-  {"title":"哥德巴赫猜想", "author":"徐迟", "nation":"中国", "era":"近现代"},
-  {"title":"小二黑结婚", "author":"赵树理", "nation":"中国", "era":"近现代"},
-  {"title":"李家庄的变迁", "author":"赵树理", "nation":"中国", "era":"近现代"},
-  {"title":"我的丁一之旅", "author":"史铁生", "nation":"中国", "era":"近现代"},
-  {"title":"务虚笔记", "author":"史铁生", "nation":"中国", "era":"近现代"},
-  {"title":"我与地坛", "author":"史铁生", "nation":"中国", "era":"近现代"},
-  {"title":"推拿", "author":"毕飞宇", "nation":"中国", "era":"近现代"},
-  {"title":"俗世奇人", "author":"冯骥才", "nation":"中国", "era":"近现代"},
-  {"title":"三体", "author":"刘慈欣", "nation":"中国", "era":"近现代"},
-  {"title":"黄河东流去", "author":"李凖", "nation":"中国", "era":"近现代"},
-  {"title":"许茂和他的女儿们", "author":"周克芹", "nation":"中国", "era":"近现代"},
-  {"title":"将军吟", "author":"莫应丰", "nation":"中国", "era":"近现代"},
-  {"title":"本巴", "author":"刘亮程", "nation":"中国", "era":"近现代"},
-  {"title":"牵风记", "author":"徐怀中", "nation":"中国", "era":"近现代"},
-  {"title":"蒲柳人家", "author":"刘绍棠", "nation":"中国", "era":"近现代"},
-  {"title":"遍地风流", "author":"阿城", "nation":"中国", "era":"近现代"},
-  {"title":"棋王", "author":"阿城", "nation":"中国", "era":"近现代"},
-  {"title":"生命册", "author":"李佩甫", "nation":"中国", "era":"近现代"},
-  {"title":"暗算", "author":"麦家", "nation":"中国", "era":"近现代"},
-  {"title":"湖光山色", "author":"周大新", "nation":"中国", "era":"近现代"},
-  {"title":"三里湾", "author":"赵树理", "nation":"中国", "era":"近现代"},
-  {"title":"李自成", "author":"姚雪垠", "nation":"中国", "era":"近现代"},
-  {"title":"东方", "author":"魏巍", "nation":"中国", "era":"近现代"},
-  {"title":"人世间", "author":"梁晓声", "nation":"中国", "era":"近现代"},
-  {"title":"抉择", "author":"张平", "nation":"中国", "era":"近现代"},
-  {"title":"在细雨中呼喊", "author":"余华", "nation":"中国", "era":"近现代"},
-  {"title":"许三观卖血记", "author":"余华", "nation":"中国", "era":"近现代"},
-  {"title":"我胆小如鼠", "author":"余华", "nation":"中国", "era":"近现代"},
-  {"title":"第七天", "author":"余华", "nation":"中国", "era":"近现代"},
-  {"title":"活着", "author":"余华", "nation":"中国", "era":"近现代"},
-  {"title":"文城", "author":"余华", "nation":"中国", "era":"近现代"},
-  {"title":"雨季不再来", "author":"三毛", "nation":"中国", "era":"近现代"},
-  {"title":"撒哈拉的故事", "author":"三毛", "nation":"中国", "era":"近现代"},
-  {"title":"梦里花落知多少", "author":"三毛", "nation":"中国", "era":"近现代"},
-  {"title":"冬天里的春天", "author":"李国文", "nation":"中国", "era":"近现代"},
-  {"title":"都市风流", "author":"孙力、余小慧", "nation":"中国", "era":"近现代"},
-  {"title":"少年天子", "author":"凌力", "nation":"中国", "era":"近现代"},
-  {"title":"苍老的浮云", "author":"残雪", "nation":"中国", "era":"近现代"},
-  {"title":"突围表演", "author":"残雪", "nation":"中国", "era":"近现代"},
-  {"title":"黄泥街", "author":"残雪", "nation":"中国", "era":"近现代"},
-  {"title":"鲁滨逊漂流记", "author":"丹尼尔·笛福", "nation":"英国", "era":""},
-  {"title":"傲慢与偏见", "author":"简·奥斯汀", "nation":"英国", "era":""},
-  {"title":"理智与情感", "author":"简·奥斯汀", "nation":"英国", "era":""},
-  {"title":"曼斯菲尔德庄园", "author":"简·奥斯汀", "nation":"英国", "era":""},
-  {"title":"爱玛", "author":"简·奥斯汀", "nation":"英国", "era":""},
-  {"title":"劝导", "author":"简·奥斯汀", "nation":"英国", "era":""},
-  {"title":"诺桑觉寺", "author":"简·奥斯汀", "nation":"英国", "era":""},
-  {"title":"简·爱", "author":"夏洛蒂·勃朗特", "nation":"英国", "era":""},
-  {"title":"谢利", "author":"夏洛蒂·勃朗特", "nation":"英国", "era":""},
-  {"title":"维莱特", "author":"夏洛蒂·勃朗特", "nation":"英国", "era":""},
-  {"title":"教师", "author":"夏洛蒂·勃朗特", "nation":"英国", "era":""},
-  {"title":"呼啸山庄", "author":"艾米莉·勃朗特", "nation":"英国", "era":""},
-  {"title":"女房客", "author":"安妮·勃朗特", "nation":"英国", "era":""},
-  {"title":"艾格妮斯·格雷", "author":"安妮·勃朗特", "nation":"英国", "era":""},
-  {"title":"雾都孤儿", "author":"查尔斯·狄更斯", "nation":"英国", "era":""},
-  {"title":"匹克威克先生外传", "author":"查尔斯·狄更斯", "nation":"英国", "era":""},
-  {"title":"双城记", "author":"查尔斯·狄更斯", "nation":"英国", "era":""},
-  {"title":"大卫·科波菲尔", "author":"查尔斯·狄更斯", "nation":"英国", "era":""},
-  {"title":"远大前程", "author":"查尔斯·狄更斯", "nation":"英国", "era":""},
-  {"title":"艰难时世", "author":"查尔斯·狄更斯", "nation":"英国", "era":""},
-  {"title":"老古玩店", "author":"查尔斯·狄更斯", "nation":"英国", "era":""},
-  {"title":"圣诞故事集", "author":"查尔斯·狄更斯", "nation":"英国", "era":""},
-  {"title":"荒凉山庄", "author":"查尔斯·狄更斯", "nation":"英国", "era":""},
-  {"title":"罗密欧与朱丽叶", "author":"莎士比亚", "nation":"英国", "era":""},
-  {"title":"哈姆雷特", "author":"莎士比亚", "nation":"英国", "era":""},
-  {"title":"威尼斯商人", "author":"莎士比亚", "nation":"英国", "era":""},
-  {"title":"月亮与六便士", "author":"毛姆", "nation":"英国", "era":""},
-  {"title":"刀锋", "author":"毛姆", "nation":"英国", "era":""},
-  {"title":"人性的枷锁", "author":"毛姆", "nation":"英国", "era":""},
-  {"title":"寻欢作乐", "author":"毛姆", "nation":"英国", "era":""},
-  {"title":"面纱", "author":"毛姆", "nation":"英国", "era":""},
-  {"title":"美丽新世界", "author":"赫胥黎", "nation":"英国", "era":""},
-  {"title":"格列佛游记", "author":"乔纳森·斯威夫特", "nation":"英国", "era":""},
-  {"title":"爱丽丝镜中奇遇", "author":"刘易斯·卡罗尔", "nation":"英国", "era":""},
-  {"title":"爱丽丝梦游仙境", "author":"刘易斯·卡罗尔", "nation":"英国", "era":""},
-  {"title":"一九八四", "author":"乔治·奥威尔", "nation":"英国", "era":""},
-  {"title":"动物庄园", "author":"乔治·奥威尔", "nation":"英国", "era":""},
-  {"title":"缅甸岁月", "author":"乔治·奥威尔", "nation":"英国", "era":""},
-  {"title":"培根随笔", "author":"培根", "nation":"英国", "era":""},
-  {"title":"福尔摩斯探案集", "author":"阿瑟·柯南·道尔", "nation":"英国", "era":""},
-  {"title":"天路历程", "author":"约翰·班扬", "nation":"英国", "era":""},
-  {"title":"弗洛斯河上的磨坊", "author":"乔治·艾略特", "nation":"英国", "era":""},
-  {"title":"米德尔马契", "author":"乔治·艾略特", "nation":"英国", "era":""},
-  {"title":"亚当·比德", "author":"乔治·艾略特", "nation":"英国", "era":""},
-  {"title":"儿子与情人", "author":"D·H·劳伦斯", "nation":"英国", "era":""},
-  {"title":"虹", "author":"D·H·劳伦斯", "nation":"英国", "era":""},
-  {"title":"查泰莱夫人的情人", "author":"D·H·劳伦斯", "nation":"英国", "era":""},
-  {"title":"恋爱中的女人", "author":"D·H·劳伦斯", "nation":"英国", "era":""},
-  {"title":"哈利·波特与魔法石", "author":"J.K.罗琳", "nation":"英国", "era":""},
-  {"title":"哈利·波特与密室", "author":"J.K.罗琳", "nation":"英国", "era":""},
-  {"title":"哈利·波特与阿兹卡班的囚徒", "author":"J.K.罗琳", "nation":"英国", "era":""},
-  {"title":"哈利·波特与火焰杯", "author":"J.K.罗琳", "nation":"英国", "era":""},
-  {"title":"哈利·波特与凤凰社", "author":"J.K.罗琳", "nation":"英国", "era":""},
-  {"title":"哈利·波特与混血王子", "author":"J.K.罗琳", "nation":"英国", "era":""},
-  {"title":"哈利·波特与死亡圣器", "author":"J.K.罗琳", "nation":"英国", "era":""},
-  {"title":"德伯家的苔丝", "author":"哈代", "nation":"英国", "era":""},
-  {"title":"无名的裘德", "author":"哈代", "nation":"英国", "era":""},
-  {"title":"远离尘嚣", "author":"哈代", "nation":"英国", "era":""},
-  {"title":"还乡", "author":"哈代", "nation":"英国", "era":""},
-  {"title":"卡斯特桥市长", "author":"哈代", "nation":"英国", "era":""},
-  {"title":"蝴蝶梦", "author":"达芙妮·杜穆里埃", "nation":"英国", "era":""},
-  {"title":"金银岛", "author":"罗伯特·路易斯·史蒂文森", "nation":"英国", "era":""},
-  {"title":"化身博士", "author":"罗伯特·路易斯·史蒂文森", "nation":"英国", "era":""},
-  {"title":"东方快车谋杀案", "author":"阿加莎·克里斯蒂", "nation":"英国", "era":""},
-  {"title":"罗杰疑案", "author":"阿加莎·克里斯蒂", "nation":"英国", "era":""},
-  {"title":"无人生还", "author":"阿加莎·克里斯蒂", "nation":"英国", "era":""},
-  {"title":"尼罗河上的惨案", "author":"阿加莎·克里斯蒂", "nation":"英国", "era":""},
-  {"title":"ABC谋杀案", "author":"阿加莎·克里斯蒂", "nation":"英国", "era":""},
-  {"title":"到灯塔去", "author":"弗吉尼亚·伍尔夫", "nation":"英国", "era":""},
-  {"title":"达洛维夫人", "author":"弗吉尼亚·伍尔夫", "nation":"英国", "era":""},
-  {"title":"奥兰多", "author":"弗吉尼亚·伍尔夫", "nation":"英国", "era":""},
-  {"title":"一间自己的房间", "author":"弗吉尼亚·伍尔夫", "nation":"英国", "era":""},
-  {"title":"雅各的房间", "author":"弗吉尼亚·伍尔夫", "nation":"英国", "era":""},
-  {"title":"海浪", "author":"弗吉尼亚·伍尔夫", "nation":"英国", "era":""},
-  {"title":"魔戒", "author":"罗纳德·托尔金", "nation":"英国", "era":""},
-  {"title":"霍比特人", "author":"罗纳德·托尔金", "nation":"英国", "era":""},
-  {"title":"精灵宝钻", "author":"罗纳德·托尔金", "nation":"英国", "era":""},
-  {"title":"彼得·潘", "author":"詹姆斯·马修·巴里", "nation":"英国", "era":""},
-  {"title":"柳林风声", "author":"肯尼斯·格雷厄姆", "nation":"英国", "era":""},
-  {"title":"月亮宝石", "author":"威尔基·柯林斯", "nation":"英国", "era":""},
-  {"title":"丛林历险记", "author":"鲁德亚德·吉卜林", "nation":"英国", "era":""},
-  {"title":"坎特伯雷故事集", "author":"杰弗雷·乔叟", "nation":"英国", "era":""},
-  {"title":"汤姆·琼斯", "author":"亨利·菲尔丁", "nation":"英国", "era":""},
-  {"title":"蝇王", "author":"威廉·戈尔丁", "nation":"英国", "era":""},
-  {"title":"名利场", "author":"萨克雷", "nation":"英国", "era":""},
-  {"title":"艾凡赫", "author":"沃尔特·司各特", "nation":"英国", "era":""},
-  {"title":"黑暗的心", "author":"约瑟夫·康拉德", "nation":"英国", "era":""},
-  {"title":"吉姆爷", "author":"约瑟夫·康拉德", "nation":"英国", "era":""},
-  {"title":"在西方目光下", "author":"约瑟夫·康拉德", "nation":"英国", "era":""},
-  {"title":"“水仙号”的黑水手", "author":"约瑟夫·康拉德", "nation":"英国", "era":""},
-  {"title":"福尔赛世家", "author":"高尔斯华绥", "nation":"英国", "era":""},
-  {"title":"弗兰肯斯坦", "author":"玛丽·雪莱", "nation":"英国", "era":""},
-  {"title":"克兰福镇", "author":"伊丽莎白·盖斯凯尔", "nation":"英国", "era":""},
-  {"title":"夜莺与玫瑰", "author":"王尔德", "nation":"英国", "era":""},
-  {"title":"道林·格雷的画像", "author":"王尔德", "nation":"英国", "era":""},
-  {"title":"快乐王子", "author":"王尔德", "nation":"英国", "era":""},
-  {"title":"大河湾", "author":"V·S·奈保尔", "nation":"英国", "era":""},
-  {"title":"米格尔大街", "author":"V·S·奈保尔", "nation":"英国", "era":""},
-  {"title":"项狄传", "author":"劳伦斯·斯特恩", "nation":"英国", "era":""},
-  {"title":"橘子不是唯一的水果", "author":"珍妮特·温特森", "nation":"英国", "era":""},
-  {"title":"守望灯塔", "author":"珍妮特·温特森", "nation":"英国", "era":""},
-  {"title":"激情", "author":"珍妮特·温特森", "nation":"英国", "era":""},
-  {"title":"给樱桃以性别", "author":"珍妮特·温特森", "nation":"英国", "era":""},
-  {"title":"长日将尽", "author":"石黑一雄", "nation":"英国", "era":""},
-  {"title":"无可慰藉", "author":"石黑一雄", "nation":"英国", "era":""},
-  {"title":"浮世画家", "author":"石黑一雄", "nation":"英国", "era":""},
-  {"title":"上海孤儿", "author":"石黑一雄", "nation":"英国", "era":""},
-  {"title":"克拉拉与太阳", "author":"石黑一雄", "nation":"英国", "era":""},
-  {"title":"被掩埋的巨人", "author":"石黑一雄", "nation":"英国", "era":""},
-  {"title":"金枝", "author":"詹姆斯·乔治·弗雷泽", "nation":"英国", "era":""},
-  {"title":"亚瑟王之死", "author":"托马斯·马洛礼", "nation":"英国", "era":""},
-  {"title":"时间机器", "author":"赫伯特·乔治·威尔斯", "nation":"英国", "era":""},
-  {"title":"星际战争", "author":"赫伯特·乔治·威尔斯", "nation":"英国", "era":""},
-  {"title":"隐身人", "author":"赫伯特·乔治·威尔斯", "nation":"英国", "era":""},
-  {"title":"莫罗博士的岛", "author":"赫伯特·乔治·威尔斯", "nation":"英国", "era":""},
-  {"title":"查理和巧克力工厂", "author":"罗尔德·达尔", "nation":"英国", "era":""},
-  {"title":"午夜之子", "author":"萨尔曼·鲁西迪", "nation":"英国", "era":""},
-  {"title":"胜利之城", "author":"萨尔曼·鲁西迪", "nation":"英国", "era":""},
-  {"title":"赎罪", "author":"伊恩·麦克尤恩", "nation":"英国", "era":""},
-  {"title":"霍华德庄园", "author":"E·M·福斯特", "nation":"英国", "era":""},
-  {"title":"看得见风景的房间", "author":"E·M·福斯特", "nation":"英国", "era":""},
-  {"title":"天使不敢涉足的地方", "author":"E·M·福斯特", "nation":"英国", "era":""},
-  {"title":"教区纪事", "author":"约翰·高尔特", "nation":"英国", "era":""},
-  {"title":"悲惨世界", "author":"雨果", "nation":"法国", "era":""},
-  {"title":"巴黎圣母院", "author":"雨果", "nation":"法国", "era":""},
-  {"title":"九三年", "author":"雨果", "nation":"法国", "era":""},
-  {"title":"海上劳工", "author":"雨果", "nation":"法国", "era":""},
-  {"title":"欧也妮·葛朗台", "author":"巴尔扎克", "nation":"法国", "era":""},
-  {"title":"邦斯舅舅", "author":"巴尔扎克", "nation":"法国", "era":""},
-  {"title":"高老头", "author":"巴尔扎克", "nation":"法国", "era":""},
-  {"title":"幻灭", "author":"巴尔扎克", "nation":"法国", "era":""},
-  {"title":"红与黑", "author":"司汤达", "nation":"法国", "era":""},
-  {"title":"茶花女", "author":"小仲马", "nation":"法国", "era":""},
-  {"title":"基督山伯爵", "author":"大仲马", "nation":"法国", "era":""},
-  {"title":"三剑客", "author":"大仲马", "nation":"法国", "era":""},
-  {"title":"小王子", "author":"圣埃克苏佩里", "nation":"法国", "era":""},
-  {"title":"鼠疫", "author":"加缪", "nation":"法国", "era":""},
-  {"title":"局外人", "author":"加缪", "nation":"法国", "era":""},
-  {"title":"西西弗的神话", "author":"加缪", "nation":"法国", "era":""},
-  {"title":"追忆似水年华", "author":"马塞尔·普鲁斯特", "nation":"法国", "era":""},
-  {"title":"羊脂球", "author":"莫泊桑", "nation":"法国", "era":""},
-  {"title":"项链", "author":"莫泊桑", "nation":"法国", "era":""},
-  {"title":"一生", "author":"莫泊桑", "nation":"法国", "era":""},
-  {"title":"漂亮朋友", "author":"莫泊桑", "nation":"法国", "era":""},
-  {"title":"名人传", "author":"罗曼·罗兰", "nation":"法国", "era":""},
-  {"title":"约翰·克利斯朵夫", "author":"罗曼·罗兰", "nation":"法国", "era":""},
-  {"title":"巨人传", "author":"拉伯雷", "nation":"法国", "era":""},
-  {"title":"蒙田随笔", "author":"蒙田", "nation":"法国", "era":""},
-  {"title":"情感教育", "author":"福楼拜", "nation":"法国", "era":""},
-  {"title":"包法利夫人", "author":"福楼拜", "nation":"法国", "era":""},
-  {"title":"圣安东尼的诱惑", "author":"福楼拜", "nation":"法国", "era":""},
-  {"title":"海底两万里", "author":"儒勒·凡尔纳", "nation":"法国", "era":""},
-  {"title":"神秘岛", "author":"儒勒·凡尔纳", "nation":"法国", "era":""},
-  {"title":"地心游记", "author":"儒勒·凡尔纳", "nation":"法国", "era":""},
-  {"title":"格兰特船长的儿女", "author":"儒勒·凡尔纳", "nation":"法国", "era":""},
-  {"title":"忏悔录", "author":"卢梭", "nation":"法国", "era":""},
-  {"title":"新爱洛伊丝", "author":"卢梭", "nation":"法国", "era":""},
-  {"title":"爱弥儿", "author":"卢梭", "nation":"法国", "era":""},
-  {"title":"昆虫记", "author":"法布尔", "nation":"法国", "era":""},
-  {"title":"苦儿流浪记", "author":"埃克多·马洛", "nation":"法国", "era":""},
-  {"title":"窄门", "author":"安德烈·纪德", "nation":"法国", "era":""},
-  {"title":"田园交响曲", "author":"安德烈·纪德", "nation":"法国", "era":""},
-  {"title":"背德者", "author":"安德烈·纪德", "nation":"法国", "era":""},
-  {"title":"如果种子不死", "author":"安德烈·纪德", "nation":"法国", "era":""},
-  {"title":"伪币制造者", "author":"安德烈·纪德", "nation":"法国", "era":""},
-  {"title":"梵蒂冈地窖", "author":"安德烈·纪德", "nation":"法国", "era":""},
-  {"title":"最后一课", "author":"阿尔丰斯·都德", "nation":"法国", "era":""},
-  {"title":"柏林之围", "author":"阿尔丰斯·都德", "nation":"法国", "era":""},
-  {"title":"小酒店", "author":"左拉", "nation":"法国", "era":""},
-  {"title":"萌芽", "author":"左拉", "nation":"法国", "era":""},
-  {"title":"娜娜", "author":"左拉", "nation":"法国", "era":""},
-  {"title":"金钱", "author":"左拉", "nation":"法国", "era":""},
-  {"title":"老实人", "author":"伏尔泰", "nation":"法国", "era":""},
-  {"title":"情人", "author":"玛格丽特·杜拉斯", "nation":"法国", "era":""},
-  {"title":"文字生涯", "author":"让-保罗·萨特", "nation":"法国", "era":""},
-  {"title":"恶心", "author":"让-保罗·萨特", "nation":"法国", "era":""},
-  {"title":"波斯人信札", "author":"孟德斯鸠", "nation":"法国", "era":""},
-  {"title":"卡门", "author":"普罗斯佩·梅里美", "nation":"法国", "era":""},
-  {"title":"蛇结", "author":"弗朗索瓦·莫里亚克", "nation":"法国", "era":""},
-  {"title":"女宾", "author":"波伏娃", "nation":"法国", "era":""},
-  {"title":"人都是要死的", "author":"波伏娃", "nation":"法国", "era":""},
-  {"title":"名士风流", "author":"波伏娃", "nation":"法国", "era":""},
-  {"title":"木工小史", "author":"乔治·桑", "nation":"法国", "era":""},
-  {"title":"你好，忧愁", "author":"弗朗索瓦丝·萨冈", "nation":"法国", "era":""},
-  {"title":"青春咖啡馆", "author":"帕特里克·莫迪亚诺", "nation":"法国", "era":""},
-  {"title":"暗店街", "author":"帕特里克·莫迪亚诺", "nation":"法国", "era":""},
-  {"title":"企鹅岛", "author":"阿纳托尔·法朗士", "nation":"法国", "era":""},
-  {"title":"诉讼笔录", "author":"勒·克莱齐奥", "nation":"法国", "era":""},
-  {"title":"流浪的星星", "author":"勒·克莱齐奥", "nation":"法国", "era":""},
-  {"title":"饥饿间奏曲", "author":"勒·克莱齐奥", "nation":"法国", "era":""},
-  {"title":"特利斯当与伊瑟", "author":"贝迪耶", "nation":"法国", "era":""},
-  {"title":"蒂博一家", "author":"罗歇·马丁·杜·加尔", "nation":"法国", "era":""},
-  {"title":"第七个十字架", "author":"安娜·西格斯", "nation":"法国", "era":""},
-  {"title":"悠悠岁月", "author":"安妮·埃尔诺", "nation":"法国", "era":""},
-  {"title":"我们中的一个", "author":"奥斯娜·塞厄斯塔", "nation":"法国", "era":""},
-  {"title":"喀布尔书商", "author":"奥斯娜·塞厄斯塔", "nation":"法国", "era":""},
-  {"title":"童年的许诺", "author":"罗曼·加里", "nation":"法国", "era":""},
-  {"title":"木偶奇遇记", "author":"卡洛·科洛迪", "nation":"意大利", "era":""},
-  {"title":"神曲", "author":"但丁", "nation":"意大利", "era":""},
-  {"title":"十日谈", "author":"薄伽丘", "nation":"意大利", "era":""},
-  {"title":"爱的教育", "author":"亚米契斯", "nation":"意大利", "era":""},
-  {"title":"歌集", "author":"彼特拉克", "nation":"意大利", "era":""},
-  {"title":"我们的祖先", "author":"伊塔洛·卡尔维诺", "nation":"意大利", "era":""},
-  {"title":"看不见的城市", "author":"伊塔洛·卡尔维诺", "nation":"意大利", "era":""},
-  {"title":"分成两半的子爵", "author":"伊塔洛·卡尔维诺", "nation":"意大利", "era":""},
-  {"title":"树上的男爵", "author":"伊塔洛·卡尔维诺", "nation":"意大利", "era":""},
-  {"title":"不存在的骑士", "author":"伊塔洛·卡尔维诺", "nation":"意大利", "era":""},
-  {"title":"如果在冬夜，一个旅人", "author":"伊塔洛·卡尔维诺", "nation":"意大利", "era":""},
-  {"title":"邪恶之路", "author":"格拉齐亚·黛莱达", "nation":"意大利", "era":""},
-  {"title":"君主论", "author":"尼可罗·马基亚维利", "nation":"意大利", "era":""},
-  {"title":"马可·波罗游记", "author":"马可·波罗", "nation":"意大利", "era":""},
-  {"title":"鞑靼人沙漠", "author":"迪诺·布扎蒂", "nation":"意大利", "era":""},
-  {"title":"那不勒斯四部曲", "author":"埃莱娜·费兰特", "nation":"意大利", "era":""},
-  {"title":"失踪的孩子", "author":"埃莱娜·费兰特", "nation":"意大利", "era":""},
-  {"title":"离开的，留下的", "author":"埃莱娜·费兰特", "nation":"意大利", "era":""},
-  {"title":"新名字的故事", "author":"埃莱娜·费兰特", "nation":"意大利", "era":""},
-  {"title":"我的天才女友", "author":"埃莱娜·费兰特", "nation":"意大利", "era":""},
-  {"title":"马拉沃利亚一家", "author":"乔万尼·维尔加", "nation":"意大利", "era":""},
-  {"title":"约婚夫妇", "author":"亚历山德罗·曼佐尼", "nation":"意大利", "era":""},
-  {"title":"斯巴达克斯", "author":"乔万尼奥里", "nation":"意大利", "era":""},
-  {"title":"维吉尔之死", "author":"赫尔曼·布洛赫", "nation":"意大利", "era":""},
-  {"title":"洋葱头历险记", "author":"贾尼·罗大里", "nation":"意大利", "era":""},
-  {"title":"微型世界", "author":"克劳迪奥·马格利斯", "nation":"意大利", "era":""},
-  {"title":"另一片海", "author":"克劳迪奥·马格利斯", "nation":"意大利", "era":""},
-  {"title":"沉思录", "author":"马可·奥勒留", "nation":"古罗马", "era":""},
-  {"title":"埃涅阿斯纪", "author":"维吉尔", "nation":"古罗马", "era":""},
-  {"title":"物性论", "author":"卢克莱修", "nation":"古罗马", "era":""},
-  {"title":"高卢战记", "author":"恺撒", "nation":"古罗马", "era":""},
-  {"title":"内战记", "author":"恺撒", "nation":"古罗马", "era":""},
-  {"title":"罗马十二帝王传", "author":"苏维托尼乌斯", "nation":"古罗马", "era":""},
-  {"title":"金驴记", "author":"阿普列乌斯", "nation":"古罗马", "era":""},
-  {"title":"忏悔录", "author":"奥古斯丁", "nation":"古罗马", "era":""},
-  {"title":"浮士德", "author":"歌德", "nation":"德国", "era":""},
-  {"title":"少年维特的烦恼", "author":"歌德", "nation":"德国", "era":""},
-  {"title":"威廉·麦斯特的学习时代", "author":"歌德", "nation":"德国", "era":""},
-  {"title":"西线无战事", "author":"雷马克", "nation":"德国", "era":""},
-  {"title":"黑色方尖碑", "author":"雷马克", "nation":"德国", "era":""},
-  {"title":"凯旋门", "author":"雷马克", "nation":"德国", "era":""},
-  {"title":"格林童话", "author":"格林兄弟", "nation":"德国", "era":""},
-  {"title":"共产党宣言", "author":"恩格斯", "nation":"德国", "era":""},
-  {"title":"共产党宣言", "author":"马克思", "nation":"德国", "era":""},
-  {"title":"资本论", "author":"马克思", "nation":"德国", "era":""},
-  {"title":"安妮日记", "author":"安妮·弗兰克", "nation":"德国", "era":""},
-  {"title":"魔山", "author":"托马斯·曼", "nation":"德国", "era":""},
-  {"title":"布登勃洛克一家", "author":"托马斯·曼", "nation":"德国", "era":""},
-  {"title":"死于威尼斯", "author":"托马斯·曼", "nation":"德国", "era":""},
-  {"title":"德米安", "author":"赫尔曼·黑塞", "nation":"德国", "era":""},
-  {"title":"悉达多", "author":"赫尔曼·黑塞", "nation":"德国", "era":""},
-  {"title":"荒原狼", "author":"赫尔曼·黑塞", "nation":"德国", "era":""},
-  {"title":"玻璃球游戏", "author":"赫尔曼·黑塞", "nation":"德国", "era":""},
-  {"title":"在轮下", "author":"赫尔曼·黑塞", "nation":"德国", "era":""},
-  {"title":"克林索尔的最后夏天", "author":"赫尔曼·黑塞", "nation":"德国", "era":""},
-  {"title":"查拉图斯特拉如是说", "author":"尼采", "nation":"德国", "era":""},
-  {"title":"战争论", "author":"克劳塞维茨", "nation":"德国", "era":""},
-  {"title":"铁皮鼓", "author":"君特·格拉斯", "nation":"德国", "era":""},
-  {"title":"吹牛大王历险记", "author":"戈·毕尔格、埃·拉斯伯", "nation":"德国", "era":""},
-  {"title":"艾菲·布里斯特", "author":"台奥多尔·冯塔纳", "nation":"德国", "era":""},
-  {"title":"香水", "author":"帕特里克·聚斯金德", "nation":"德国", "era":""},
-  {"title":"安娜·卡列尼娜", "author":"托尔斯泰", "nation":"俄罗斯", "era":""},
-  {"title":"战争与和平", "author":"托尔斯泰", "nation":"俄罗斯", "era":""},
-  {"title":"复活", "author":"托尔斯泰", "nation":"俄罗斯", "era":""},
-  {"title":"樱桃园", "author":"契诃夫", "nation":"俄罗斯", "era":""},
-  {"title":"这里的黎明静悄悄", "author":"瓦西里耶夫", "nation":"俄罗斯", "era":""},
-  {"title":"驿站长", "author":"普希金", "nation":"俄罗斯", "era":""},
-  {"title":"上尉的女儿", "author":"普希金", "nation":"俄罗斯", "era":""},
-  {"title":"叶甫盖尼·奥涅金", "author":"普希金", "nation":"俄罗斯", "era":""},
-  {"title":"死魂灵", "author":"果戈理", "nation":"俄罗斯", "era":""},
-  {"title":"钦差大臣", "author":"果戈理", "nation":"俄罗斯", "era":""},
-  {"title":"木木", "author":"屠格涅夫", "nation":"俄罗斯", "era":""},
-  {"title":"罗亭", "author":"屠格涅夫", "nation":"俄罗斯", "era":""},
-  {"title":"前夜", "author":"屠格涅夫", "nation":"俄罗斯", "era":""},
-  {"title":"处女地", "author":"屠格涅夫", "nation":"俄罗斯", "era":""},
-  {"title":"父与子", "author":"屠格涅夫", "nation":"俄罗斯", "era":""},
-  {"title":"猎人笔记", "author":"屠格涅夫", "nation":"俄罗斯", "era":""},
-  {"title":"贵族之家", "author":"屠格涅夫", "nation":"俄罗斯", "era":""},
-  {"title":"群魔", "author":"陀思妥耶夫斯基", "nation":"俄罗斯", "era":""},
-  {"title":"白痴", "author":"陀思妥耶夫斯基", "nation":"俄罗斯", "era":""},
-  {"title":"白夜", "author":"陀思妥耶夫斯基", "nation":"俄罗斯", "era":""},
-  {"title":"罪与罚", "author":"陀思妥耶夫斯基", "nation":"俄罗斯", "era":""},
-  {"title":"死屋手记", "author":"陀思妥耶夫斯基", "nation":"俄罗斯", "era":""},
-  {"title":"涅朵奇卡", "author":"陀思妥耶夫斯基", "nation":"俄罗斯", "era":""},
-  {"title":"地下室手记", "author":"陀思妥耶夫斯基", "nation":"俄罗斯", "era":""},
-  {"title":"卡拉马佐夫兄弟", "author":"陀思妥耶夫斯基", "nation":"俄罗斯", "era":""},
-  {"title":"被侮辱与被损害的人", "author":"陀思妥耶夫斯基", "nation":"俄罗斯", "era":""},
-  {"title":"大雷雨", "author":"亚·奥斯特洛夫斯基", "nation":"俄罗斯", "era":""},
-  {"title":"奥勃洛莫夫", "author":"冈察洛夫", "nation":"俄罗斯", "era":""},
-  {"title":"当代英雄", "author":"莱蒙托夫", "nation":"俄罗斯", "era":""},
-  {"title":"彼得堡", "author":"安德烈·别雷", "nation":"俄罗斯", "era":""},
-  {"title":"从彼得堡到莫斯科旅行记", "author":"拉吉舍夫", "nation":"俄罗斯", "era":""},
-  {"title":"怎么办？", "author":"车尔尼雪夫斯基", "nation":"俄罗斯", "era":""},
-  {"title":"往事与随想", "author":"赫尔岑", "nation":"俄罗斯", "era":""},
-  {"title":"外省散记", "author":"萨尔蒂科夫·谢德林", "nation":"俄罗斯", "era":""},
-  {"title":"一个城市的历史", "author":"萨尔蒂科夫·谢德林", "nation":"俄罗斯", "era":""},
-  {"title":"戈洛夫廖夫老爷们", "author":"萨尔蒂科夫·谢德林", "nation":"俄罗斯", "era":""},
-  {"title":"我们", "author":"尤金·扎米亚京", "nation":"俄罗斯", "era":""},
-  {"title":"米佳的爱情", "author":"布宁", "nation":"俄罗斯", "era":""},
-  {"title":"先驱者", "author":"弗拉基米尔·马卡宁", "nation":"俄罗斯", "era":""},
-  {"title":"萨宁", "author":"阿尔志跋绥夫", "nation":"俄罗斯", "era":""},
-  {"title":"蓝色脂肪", "author":"弗拉基米尔·索罗金", "nation":"俄罗斯", "era":""},
-  {"title":"碲钉国", "author":"弗拉基米尔·索罗金", "nation":"俄罗斯", "era":""},
-  {"title":"钢铁是怎样炼成的", "author":"尼·奥斯特洛夫斯基", "nation":"苏联", "era":""},
-  {"title":"暴风雨所诞生的", "author":"尼·奥斯特洛夫斯基", "nation":"苏联", "era":""},
-  {"title":"苦难的历程", "author":"阿·托尔斯泰", "nation":"苏联", "era":""},
-  {"title":"毁灭", "author":"法捷耶夫", "nation":"苏联", "era":""},
-  {"title":"青年近卫军", "author":"法捷耶夫", "nation":"苏联", "era":""},
-  {"title":"森林报", "author":"比安基", "nation":"苏联", "era":""},
-  {"title":"童年", "author":"高尔基", "nation":"苏联", "era":""},
-  {"title":"在人间", "author":"高尔基", "nation":"苏联", "era":""},
-  {"title":"我的大学", "author":"高尔基", "nation":"苏联", "era":""},
-  {"title":"母亲", "author":"高尔基", "nation":"苏联", "era":""},
-  {"title":"静静的顿河", "author":"肖洛霍夫", "nation":"苏联", "era":""},
-  {"title":"一个人的遭遇", "author":"肖洛霍夫", "nation":"苏联", "era":""},
-  {"title":"癌症楼", "author":"索尔仁尼琴", "nation":"苏联", "era":""},
-  {"title":"古拉格群岛", "author":"索尔仁尼琴", "nation":"苏联", "era":""},
-  {"title":"伊万·杰尼索维奇的一天", "author":"索尔仁尼琴", "nation":"苏联", "era":""},
-  {"title":"日瓦戈医生", "author":"鲍·帕斯捷尔纳克", "nation":"苏联", "era":""},
-  {"title":"恰巴耶夫", "author":"富尔曼诺夫", "nation":"苏联", "era":""},
-  {"title":"铁流", "author":"绥拉菲靡维奇", "nation":"苏联", "era":""},
-  {"title":"第四十一", "author":"拉夫列尼约夫", "nation":"苏联", "era":""},
-  {"title":"狗心", "author":"布尔加科夫", "nation":"苏联", "era":""},
-  {"title":"不详的蛋", "author":"布尔加科夫", "nation":"苏联", "era":""},
-  {"title":"大师和玛格丽特", "author":"布尔加科夫", "nation":"苏联", "era":""},
-  {"title":"骑兵军", "author":"伊萨克·巴别尔", "nation":"苏联", "era":""},
-  {"title":"金蔷薇", "author":"康·帕乌斯托夫斯基", "nation":"苏联", "era":""},
-  {"title":"镀金时代", "author":"马克·吐温", "nation":"美国", "era":""},
-  {"title":"百万英镑", "author":"马克·吐温", "nation":"美国", "era":""},
-  {"title":"亚当夏娃日记", "author":"马克·吐温", "nation":"美国", "era":""},
-  {"title":"汤姆·索亚历险记", "author":"马克·吐温", "nation":"美国", "era":""},
-  {"title":"哈克贝利·费恩历险记", "author":"马克·吐温", "nation":"美国", "era":""},
-  {"title":"飘", "author":"玛格丽特·米切尔", "nation":"美国", "era":""},
-  {"title":"假如给我三天光明", "author":"海伦·凯勒", "nation":"美国", "era":""},
-  {"title":"嘉莉妹妹", "author":"西奥多·德莱塞", "nation":"美国", "era":""},
-  {"title":"珍妮姑娘", "author":"西奥多·德莱塞", "nation":"美国", "era":""},
-  {"title":"美国的悲剧", "author":"西奥多·德莱塞", "nation":"美国", "era":""},
-  {"title":"麦田里的守望者", "author":"塞林格", "nation":"美国", "era":""},
-  {"title":"白鲸", "author":"赫尔曼·梅尔维尔", "nation":"美国", "era":""},
-  {"title":"秘密花园", "author":"伯内特", "nation":"美国", "era":""},
-  {"title":"杀死一只知更鸟", "author":"哈珀·里", "nation":"美国", "era":""},
-  {"title":"小妇人", "author":"路易莎·梅·奥尔科特", "nation":"美国", "era":""},
-  {"title":"瓦尔登湖", "author":"亨利·戴维·梭罗", "nation":"美国", "era":""},
-  {"title":"寂静的春天", "author":"蕾切尔·卡逊", "nation":"美国", "era":""},
-  {"title":"绿野仙踪", "author":"弗兰克·鲍姆", "nation":"美国", "era":""},
-  {"title":"基地", "author":"阿西莫夫", "nation":"美国", "era":""},
-  {"title":"银河帝国", "author":"阿西莫夫", "nation":"美国", "era":""},
-  {"title":"教父", "author":"马里奥·普佐", "nation":"美国", "era":""},
-  {"title":"红字", "author":"霍桑", "nation":"美国", "era":""},
-  {"title":"了不起的盖茨比", "author":"菲茨杰拉德", "nation":"美国", "era":""},
-  {"title":"老人与海", "author":"海明威", "nation":"美国", "era":""},
-  {"title":"太阳照常升起", "author":"海明威", "nation":"美国", "era":""},
-  {"title":"永别了，武器", "author":"海明威", "nation":"美国", "era":""},
-  {"title":"丧钟为谁而鸣", "author":"海明威", "nation":"美国", "era":""},
-  {"title":"乞力马扎罗的雪", "author":"海明威", "nation":"美国", "era":""},
-  {"title":"野性的呼唤", "author":"杰克·伦敦", "nation":"美国", "era":""},
-  {"title":"热爱生命", "author":"杰克·伦敦", "nation":"美国", "era":""},
-  {"title":"海狼", "author":"杰克·伦敦", "nation":"美国", "era":""},
-  {"title":"马丁·伊登", "author":"杰克·伦敦", "nation":"美国", "era":""},
-  {"title":"汤姆叔叔的小屋", "author":"哈里特·比彻·斯托", "nation":"美国", "era":""},
-  {"title":"喧哗与骚动", "author":"威廉·福克纳", "nation":"美国", "era":""},
-  {"title":"八月之光", "author":"威廉·福克纳", "nation":"美国", "era":""},
-  {"title":"我弥留之际", "author":"威廉·福克纳", "nation":"美国", "era":""},
-  {"title":"献给爱米丽的一朵玫瑰花", "author":"威廉·福克纳", "nation":"美国", "era":""},
-  {"title":"押沙龙，押沙龙！", "author":"威廉·福克纳", "nation":"美国", "era":""},
-  {"title":"最后的莫希干人", "author":"库柏", "nation":"美国", "era":""},
-  {"title":"肖申克的救赎", "author":"斯蒂芬·金", "nation":"美国", "era":""},
-  {"title":"愤怒的葡萄", "author":"约翰·斯坦贝克", "nation":"美国", "era":""},
-  {"title":"伊甸之东", "author":"约翰·斯坦贝克", "nation":"美国", "era":""},
-  {"title":"人鼠之间", "author":"约翰·斯坦贝克", "nation":"美国", "era":""},
-  {"title":"草叶集", "author":"惠特曼", "nation":"美国", "era":""},
-  {"title":"五号屠场", "author":"库尔特·冯内古特", "nation":"美国", "era":""},
-  {"title":"第二十二条军规", "author":"约瑟夫·海勒", "nation":"美国", "era":""},
-  {"title":"沙乡年鉴", "author":"奥尔多·利奥波德", "nation":"美国", "era":""},
-  {"title":"夏洛的网", "author":"E・B・怀特", "nation":"美国", "era":""},
-  {"title":"你当像鸟飞往你的山", "author":"塔拉·韦斯特弗", "nation":"美国", "era":""},
-  {"title":"微暗的火", "author":"弗拉基米尔·纳博科夫", "nation":"美国", "era":""},
-  {"title":"洛丽塔", "author":"弗拉基米尔·纳博科夫", "nation":"美国", "era":""},
-  {"title":"看不见的人", "author":"拉尔夫·艾里森", "nation":"美国", "era":""},
-  {"title":"宠儿", "author":"托妮·莫里森", "nation":"美国", "era":""},
-  {"title":"宽容", "author":"房龙", "nation":"美国", "era":""},
-  {"title":"菊与刀", "author":"鲁思·本尼迪克特", "nation":"美国", "era":""},
-  {"title":"大地", "author":"赛珍珠", "nation":"美国", "era":""},
-  {"title":"紫颜色", "author":"艾丽斯·沃克", "nation":"美国", "era":""},
-  {"title":"在路上", "author":"杰克·凯鲁亚克", "nation":"美国", "era":""},
-  {"title":"红星照耀中国", "author":"埃德加·斯诺", "nation":"美国", "era":""},
-  {"title":"一位女士的画像", "author":"亨利·詹姆斯", "nation":"美国", "era":""},
-  {"title":"追风筝的人", "author":"卡勒德·胡赛尼", "nation":"美国", "era":""},
-  {"title":"灿烂千阳", "author":"卡勒德·胡赛尼", "nation":"美国", "era":""},
-  {"title":"群山回唱", "author":"卡勒德·胡赛尼", "nation":"美国", "era":""},
-  {"title":"万有引力之虹", "author":"托马斯·品钦", "nation":"美国", "era":""},
-  {"title":"布鲁克林有棵树", "author":"贝蒂·史密斯", "nation":"美国", "era":""},
-  {"title":"天使，望故乡", "author":"托马斯·沃尔夫", "nation":"美国", "era":""},
-  {"title":"小城畸人", "author":"舍伍德·安德森", "nation":"美国", "era":""},
-  {"title":"钟形罩", "author":"西尔维娅·普拉斯", "nation":"美国", "era":""},
-  {"title":"岛上书店", "author":"加布瑞埃拉·泽文", "nation":"美国", "era":""},
-  {"title":"纯真年代", "author":"伊迪丝·华顿", "nation":"美国", "era":""},
-  {"title":"大街", "author":"辛克莱·刘易斯", "nation":"美国", "era":""},
-  {"title":"心是孤独的猎手", "author":"卡森·麦卡勒斯", "nation":"美国", "era":""},
-  {"title":"伤心咖啡馆之歌", "author":"卡森·麦卡勒斯", "nation":"美国", "era":""},
-  {"title":"美国牧歌", "author":"菲利普·罗斯", "nation":"美国", "era":""},
-  {"title":"再见吧，哥伦布", "author":"菲利普·罗斯", "nation":"美国", "era":""},
-  {"title":"洪堡的礼物", "author":"索尔·贝娄", "nation":"美国", "era":""},
-  {"title":"屠场", "author":"厄普顿·辛克莱", "nation":"美国", "era":""},
-  {"title":"宾虚", "author":"路易斯·华莱士", "nation":"美国", "era":""},
-  {"title":"留住一片情", "author":"尼古拉斯·斯帕克斯", "nation":"美国", "era":""},
-  {"title":"忠实信徒", "author":"尼古拉斯·斯帕克斯", "nation":"美国", "era":""},
-  {"title":"疾病的隐喻", "author":"苏珊·桑塔格", "nation":"美国", "era":""},
-  {"title":"十一种孤独", "author":"理查德·耶茨", "nation":"美国", "era":""},
-  {"title":"复活节游行", "author":"理查德·耶茨", "nation":"美国", "era":""},
-  {"title":"革命之路", "author":"理查德·耶茨", "nation":"美国", "era":""},
-  {"title":"所罗门之歌", "author":"托妮·莫里森", "nation":"美国", "era":""},
-  {"title":"绿山墙的安妮", "author":"露西·莫德·蒙哥马利", "nation":"加拿大", "era":""},
-  {"title":"盲刺客", "author":"玛格丽特·阿特伍德", "nation":"加拿大", "era":""},
-  {"title":"使女的故事", "author":"玛格丽特·阿特伍德", "nation":"加拿大", "era":""},
-  {"title":"可以吃的女人", "author":"玛格丽特·阿特伍德", "nation":"加拿大", "era":""},
-  {"title":"逃离", "author":"艾丽丝·门罗", "nation":"加拿大", "era":""},
-  {"title":"传家之物", "author":"艾丽丝·门罗", "nation":"加拿大", "era":""},
-  {"title":"快乐影子之舞", "author":"艾丽丝·门罗", "nation":"加拿大", "era":""},
-  {"title":"少年Pi的奇幻漂流", "author":"扬·马特尔", "nation":"加拿大", "era":""},
-  {"title":"廉价的幸福", "author":"加布里埃尔·鲁瓦", "nation":"加拿大", "era":""},
-  {"title":"石头天使", "author":"玛格丽特·劳伦斯", "nation":"加拿大", "era":""},
-  {"title":"小镇艳阳录", "author":"里柯克", "nation":"加拿大", "era":""},
-  {"title":"文学上的失误", "author":"里柯克", "nation":"加拿大", "era":""},
-  {"title":"太阳神骑士团游湖记", "author":"里柯克", "nation":"加拿大", "era":""},
-  {"title":"与狼共度", "author":"法利·莫厄特", "nation":"加拿大", "era":""},
-  {"title":"鹿之民", "author":"法利·莫厄特", "nation":"加拿大", "era":""},
-  {"title":"鲸之殇", "author":"法利·莫厄特", "nation":"加拿大", "era":""},
-  {"title":"屠海", "author":"法利·莫厄特", "nation":"加拿大", "era":""},
-  {"title":"堂吉诃德", "author":"塞万提斯·萨维德拉", "nation":"西班牙", "era":""},
-  {"title":"迷情", "author":"哈维尔·马里亚斯", "nation":"西班牙", "era":""},
-  {"title":"春之死", "author":"梅尔塞·罗多雷达", "nation":"西班牙", "era":""},
-  {"title":"钻石广场", "author":"梅尔塞·罗多雷达", "nation":"西班牙", "era":""},
-  {"title":"碎镜", "author":"梅尔塞·罗多雷达", "nation":"西班牙", "era":""},
-  {"title":"奇迹之城", "author":"爱德华多·门多萨", "nation":"西班牙", "era":""},
-  {"title":"伪装成独白的爱情", "author":"马洛伊·山多尔", "nation":"匈牙利", "era":""},
-  {"title":"金人", "author":"约卡伊·莫伊", "nation":"匈牙利", "era":""},
-  {"title":"鹿", "author":"萨博·玛格达", "nation":"匈牙利", "era":""},
-  {"title":"壁画", "author":"萨博·玛格达", "nation":"匈牙利", "era":""},
-  {"title":"奇婚记", "author":"卡·米克沙特", "nation":"匈牙利", "era":""},
-  {"title":"反抗的忧郁", "author":"拉斯洛·卡撒兹纳霍凯", "nation":"匈牙利", "era":""},
-  {"title":"撒旦探戈", "author":"拉斯洛·卡撒兹纳霍凯", "nation":"匈牙利", "era":""},
-  {"title":"太阳花", "author":"克鲁迪·玖洛", "nation":"匈牙利", "era":""},
-  {"title":"英国旗", "author":"凯尔泰斯·伊姆雷", "nation":"匈牙利", "era":""},
-  {"title":"无形的命运", "author":"凯尔泰斯·伊姆雷", "nation":"匈牙利", "era":""},
-  {"title":"修道院纪事", "author":"若泽·萨拉马戈", "nation":"葡萄牙", "era":""},
-  {"title":"失明症漫记", "author":"若泽·萨拉马戈", "nation":"葡萄牙", "era":""},
-  {"title":"复明症漫记", "author":"若泽·萨拉马戈", "nation":"葡萄牙", "era":""},
-  {"title":"阿马罗神父的罪恶", "author":"埃萨·德·克罗兹", "nation":"葡萄牙", "era":""},
-  {"title":"马亚一家", "author":"埃萨·德·克罗兹", "nation":"葡萄牙", "era":""},
-  {"title":"小约翰", "author":"弗雷德里克·凡·伊登", "nation":"荷兰", "era":""},
-  {"title":"西班牙星光之路", "author":"塞斯·诺特博姆", "nation":"荷兰", "era":""},
-  {"title":"众灵日", "author":"塞斯·诺特博姆", "nation":"荷兰", "era":""},
-  {"title":"万灵节", "author":"塞斯·诺特博姆", "nation":"荷兰", "era":""},
-  {"title":"仪式", "author":"塞斯·诺特博姆", "nation":"荷兰", "era":""},
-  {"title":"大唐狄公案", "author":"高罗佩", "nation":"荷兰", "era":""},
-  {"title":"绿衣亨利", "author":"高特弗利特·凯勒", "nation":"瑞士", "era":""},
-  {"title":"海蒂", "author":"约翰娜·斯比丽", "nation":"瑞士", "era":""},
-  {"title":"莱芒湖畔的少女", "author":"夏尔·费迪南·拉缪", "nation":"瑞士", "era":""},
-  {"title":"四十朵玫瑰", "author":"托马斯·霍利曼", "nation":"瑞士", "era":""},
-  {"title":"游泳回家", "author":"罗尔夫·拉佩特", "nation":"瑞士", "era":""},
-  {"title":"好兵帅克历险记", "author":"哈谢克", "nation":"捷克", "era":""},
-  {"title":"玩笑", "author":"米兰·昆德拉", "nation":"捷克", "era":""},
-  {"title":"不能承受的生命之轻", "author":"米兰·昆德拉", "nation":"捷克", "era":""},
-  {"title":"外祖母", "author":"鲍日娜·聂姆佐娃", "nation":"捷克", "era":""},
-  {"title":"鲵鱼之乱", "author":"卡雷尔·恰佩克", "nation":"捷克", "era":""},
-  {"title":"绞刑架下的报告", "author":"尤利乌斯·伏契克", "nation":"捷克", "era":""},
-  {"title":"过于喧嚣的孤独", "author":"博胡米尔·赫拉巴尔", "nation":"捷克", "era":""},
-  {"title":"我曾侍候过英国国王", "author":"博胡米尔·赫拉巴尔", "nation":"捷克", "era":""},
-  {"title":"一日情人", "author":"伊凡·克里玛", "nation":"捷克", "era":""},
-  {"title":"没有圣人，没有天使", "author":"伊凡·克里玛", "nation":"捷克", "era":""},
-  {"title":"尤利西斯", "author":"詹姆斯·乔伊斯", "nation":"爱尔兰", "era":""},
-  {"title":"芬尼根的守灵夜", "author":"詹姆斯·乔伊斯", "nation":"爱尔兰", "era":""},
-  {"title":"都柏林人", "author":"詹姆斯·乔伊斯", "nation":"爱尔兰", "era":""},
-  {"title":"梦的解析", "author":"西格蒙德·弗洛伊德", "nation":"爱尔兰", "era":""},
-  {"title":"等待戈多", "author":"塞缪尔·贝克特", "nation":"爱尔兰", "era":""},
-  {"title":"马龙之死", "author":"塞缪尔·贝克特", "nation":"爱尔兰", "era":""},
-  {"title":"牛虻", "author":"艾捷尔·丽莲·伏尼契", "nation":"爱尔兰", "era":""},
-  {"title":"德古拉", "author":"布莱姆·斯托克", "nation":"爱尔兰", "era":""},
-  {"title":"布鲁克林", "author":"科尔姆·托宾", "nation":"爱尔兰", "era":""},
-  {"title":"变形记", "author":"弗兰兹·卡夫卡", "nation":"奥地利", "era":""},
-  {"title":"城堡", "author":"弗兰兹·卡夫卡", "nation":"奥地利", "era":""},
-  {"title":"审判", "author":"弗兰兹·卡夫卡", "nation":"奥地利", "era":""},
-  {"title":"人类的群星闪耀时", "author":"斯蒂芬·茨威格", "nation":"奥地利", "era":""},
-  {"title":"一个陌生女人的来信", "author":"斯蒂芬·茨威格", "nation":"奥地利", "era":""},
-  {"title":"昨日的世界：一个欧洲人的回忆", "author":"斯蒂芬·茨威格", "nation":"奥地利", "era":""},
-  {"title":"无欲的悲歌", "author":"彼得·汉德克", "nation":"奥地利", "era":""},
-  {"title":"钢琴教师", "author":"埃尔弗里德·耶利内克", "nation":"奥地利", "era":""},
-  {"title":"没有个性的人", "author":"罗伯特·穆齐尔", "nation":"奥地利", "era":""},
-  {"title":"拉德茨基进行曲", "author":"约瑟夫·罗特", "nation":"奥地利", "era":""},
-  {"title":"沉默的先知", "author":"约瑟夫·罗特", "nation":"奥地利", "era":""},
-  {"title":"大雪将至", "author":"罗伯特·泽塔勒", "nation":"奥地利", "era":""},
-  {"title":"马尔特手记", "author":"里尔克", "nation":"奥地利", "era":""},
-  {"title":"荆棘鸟", "author":"考琳·麦卡洛", "nation":"澳大利亚", "era":""},
-  {"title":"辛德勒名单", "author":"托马斯·基尼利", "nation":"澳大利亚", "era":""},
-  {"title":"人树", "author":"帕特里克·怀特", "nation":"澳大利亚", "era":""},
-  {"title":"风暴眼", "author":"帕特里克·怀特", "nation":"澳大利亚", "era":""},
-  {"title":"偷书贼", "author":"马克斯·苏萨克", "nation":"澳大利亚", "era":""},
-  {"title":"百年孤独", "author":"加西亚·马尔克斯", "nation":"哥伦比亚", "era":""},
-  {"title":"霍乱时期的爱情", "author":"加西亚·马尔克斯", "nation":"哥伦比亚", "era":""},
-  {"title":"苦妓回忆录", "author":"加西亚·马尔克斯", "nation":"哥伦比亚", "era":""},
-  {"title":"一桩事先张扬的凶杀案", "author":"加西亚·马尔克斯", "nation":"哥伦比亚", "era":""},
-  {"title":"没有人给他写信的上校", "author":"加西亚·马尔克斯", "nation":"哥伦比亚", "era":""},
-  {"title":"枯枝败叶", "author":"加西亚·马尔克斯", "nation":"哥伦比亚", "era":""},
-  {"title":"迷宫中的将军", "author":"加西亚·马尔克斯", "nation":"哥伦比亚", "era":""},
-  {"title":"族长的秋天", "author":"加西亚·马尔克斯", "nation":"哥伦比亚", "era":""},
-  {"title":"恶时辰", "author":"加西亚·马尔克斯", "nation":"哥伦比亚", "era":""},
-  {"title":"安徒生童话", "author":"安徒生", "nation":"丹麦", "era":""},
-  {"title":"致死的疾病", "author":"索伦·克尔凯郭尔", "nation":"丹麦", "era":""},
-  {"title":"漫长的旅行", "author":"约翰内斯·威廉·扬森", "nation":"丹麦", "era":""},
-  {"title":"走出非洲", "author":"伊萨克·迪内森", "nation":"丹麦", "era":""},
-  {"title":"人类重启", "author":"亚历山大·温斯坦", "nation":"丹麦", "era":""},
-  {"title":"活着的姑娘", "author":"马丁·尼克索", "nation":"丹麦", "era":""},
-  {"title":"征服者贝莱", "author":"马丁·尼克索", "nation":"丹麦", "era":""},
-  {"title":"遇见野兔的那一年", "author":"亚托·帕西里纳", "nation":"芬兰", "era":""},
-  {"title":"无名战士", "author":"瓦依诺·林纳", "nation":"芬兰", "era":""},
-  {"title":"清洗", "author":"索菲·奥克萨宁", "nation":"芬兰", "era":""},
-  {"title":"少女西丽亚", "author":"弗兰斯·埃米尔·西兰帕", "nation":"芬兰", "era":""},
-  {"title":"神圣的贫困", "author":"弗兰斯·埃米尔·西兰帕", "nation":"芬兰", "era":""},
-  {"title":"骑鹅旅行记", "author":"塞尔玛·拉格洛夫", "nation":"瑞典", "era":""},
-  {"title":"红房间", "author":"奥古斯特·斯特林堡", "nation":"瑞典", "era":""},
-  {"title":"龙文身的女孩", "author":"斯蒂格·拉森", "nation":"瑞典", "era":""},
-  {"title":"万物静默如谜", "author":"维斯拉瓦·辛波斯卡", "nation":"波兰", "era":""},
-  {"title":"太古和其他时间", "author":"奥尔加·托卡尔丘克", "nation":"波兰", "era":""},
-  {"title":"书中人物旅行记", "author":"奥尔加·托卡尔丘克", "nation":"波兰", "era":""},
-  {"title":"白天的房子，夜晚的房子", "author":"奥尔加·托卡尔丘克", "nation":"波兰", "era":""},
-  {"title":"雅各布之书", "author":"奥尔加·托卡尔丘克", "nation":"波兰", "era":""},
-  {"title":"玩偶", "author":"普鲁斯", "nation":"波兰", "era":""},
-  {"title":"你往何处去", "author":"亨利克·显克维奇", "nation":"波兰", "era":""},
-  {"title":"十字军骑士", "author":"亨利克·显克维奇", "nation":"波兰", "era":""},
-  {"title":"费尔迪杜凯", "author":"维托尔德·贡布罗维奇", "nation":"波兰", "era":""},
-  {"title":"巴卡卡伊大街", "author":"维托尔德·贡布罗维奇", "nation":"波兰", "era":""},
-  {"title":"农民", "author":"弗拉迪斯拉夫·莱蒙特", "nation":"波兰", "era":""},
-  {"title":"福地", "author":"弗拉迪斯拉夫·莱蒙特", "nation":"波兰", "era":""},
-  {"title":"惨败", "author":"史坦尼斯劳·莱姆", "nation":"波兰", "era":""},
-  {"title":"索拉里斯星", "author":"史坦尼斯劳·莱姆", "nation":"波兰", "era":""},
-  {"title":"未来学大会", "author":"史坦尼斯劳·莱姆", "nation":"波兰", "era":""},
-  {"title":"肉桂色铺子", "author":"布鲁诺·舒尔茨", "nation":"波兰", "era":""},
-  {"title":"沙漏做招牌的疗养院", "author":"布鲁诺·舒尔茨", "nation":"波兰", "era":""},
-  {"title":"奥斯维辛集中营的志愿者", "author":"维托尔德·皮莱茨基", "nation":"波兰", "era":""},
-  {"title":"苏菲的世界", "author":"乔斯坦·贾德", "nation":"挪威", "era":""},
-  {"title":"玩偶之家", "author":"易卜生", "nation":"挪威", "era":""},
-  {"title":"孤筏重洋", "author":"托尔·海雅达尔", "nation":"挪威", "era":""},
-  {"title":"大地的成长", "author":"克努特·汉姆生", "nation":"挪威", "era":""},
-  {"title":"安德森教授的夜晚", "author":"达格·索尔斯塔", "nation":"挪威", "era":""},
-  {"title":"外出偷马", "author":"佩尔·帕特森", "nation":"挪威", "era":""},
-  {"title":"去往西伯利亚", "author":"佩尔·帕特森", "nation":"挪威", "era":""},
-  {"title":"阿尔特米奥·克罗斯之死", "author":"卡洛斯·富恩特斯", "nation":"墨西哥", "era":""},
-  {"title":"佩德罗·帕拉莫", "author":"胡安·鲁尔弗", "nation":"墨西哥", "era":""},
-  {"title":"在底层的人们", "author":"马里亚诺·阿苏埃拉", "nation":"墨西哥", "era":""},
-  {"title":"伊索寓言", "author":"伊索", "nation":"古希腊", "era":""},
-  {"title":"伊利亚特", "author":"荷马", "nation":"古希腊", "era":""},
-  {"title":"奥德赛", "author":"荷马", "nation":"古希腊", "era":""},
-  {"title":"理想国", "author":"柏拉图", "nation":"古希腊", "era":""},
-  {"title":"俄狄浦斯王", "author":"索福克勒斯", "nation":"古希腊", "era":""},
-  {"title":"被缚的普罗米修斯", "author":"埃斯库罗斯", "nation":"古希腊", "era":""},
-  {"title":"尼各马可伦理学", "author":"亚里士多德", "nation":"古希腊", "era":""},
-  {"title":"达夫尼斯和赫洛亚", "author":"朗格斯", "nation":"古希腊", "era":""},
-  {"title":"远征记", "author":"色诺芬", "nation":"古希腊", "era":""},
-  {"title":"戈拉", "author":"泰戈尔", "nation":"印度", "era":""},
-  {"title":"沉船", "author":"泰戈尔", "nation":"印度", "era":""},
-  {"title":"吉檀迦利", "author":"泰戈尔", "nation":"印度", "era":""},
-  {"title":"飞鸟集", "author":"泰戈尔", "nation":"印度", "era":""},
-  {"title":"园丁集", "author":"泰戈尔", "nation":"印度", "era":""},
-  {"title":"新月集", "author":"泰戈尔", "nation":"印度", "era":""},
-  {"title":"罗摩衍那", "author":"蚁垤", "nation":"印度", "era":""},
-  {"title":"摩诃婆罗多", "author":"毗耶娑", "nation":"印度", "era":""},
-  {"title":"戈丹", "author":"普列姆昌德", "nation":"印度", "era":""},
-  {"title":"微物之神", "author":"阿兰达蒂·洛伊", "nation":"印度", "era":""},
-  {"title":"迦丹波利", "author":"波那", "nation":"印度", "era":""},
-  {"title":"戒日王传", "author":"波那", "nation":"印度", "era":""},
-  {"title":"十王子传", "author":"檀丁", "nation":"印度", "era":""},
-  {"title":"心灯", "author":"巴努·穆斯塔克", "nation":"印度", "era":""},
-  {"title":"一千零一夜", "author":"佚名", "nation":"阿拉伯地区", "era":""},
-  {"title":"卡里来和笛木乃", "author":"伊本·穆加发", "nation":"阿拉伯地区", "era":""},
-  {"title":"罗生门", "author":"芥川龙之介", "nation":"日本", "era":""},
-  {"title":"地狱变", "author":"芥川龙之介", "nation":"日本", "era":""},
-  {"title":"竹林中", "author":"芥川龙之介", "nation":"日本", "era":""},
-  {"title":"人间失格", "author":"太宰治", "nation":"日本", "era":""},
-  {"title":"斜阳", "author":"太宰治", "nation":"日本", "era":""},
-  {"title":"舞姬", "author":"森鸥外", "nation":"日本", "era":""},
-  {"title":"雪国", "author":"川端康成", "nation":"日本", "era":""},
-  {"title":"伊豆的舞女", "author":"川端康成", "nation":"日本", "era":""},
-  {"title":"古都", "author":"川端康成", "nation":"日本", "era":""},
-  {"title":"千只鹤", "author":"川端康成", "nation":"日本", "era":""},
-  {"title":"源氏物语", "author":"紫式部", "nation":"日本", "era":""},
-  {"title":"细雪", "author":"谷崎润一郎", "nation":"日本", "era":""},
-  {"title":"春琴抄", "author":"谷崎润一郎", "nation":"日本", "era":""},
-  {"title":"心", "author":"夏目漱石", "nation":"日本", "era":""},
-  {"title":"三四郎", "author":"夏目漱石", "nation":"日本", "era":""},
-  {"title":"我是猫", "author":"夏目漱石", "nation":"日本", "era":""},
-  {"title":"白夜行", "author":"东野圭吾", "nation":"日本", "era":""},
-  {"title":"恶意", "author":"东野圭吾", "nation":"日本", "era":""},
-  {"title":"棉被", "author":"田山花袋", "nation":"日本", "era":""},
-  {"title":"且听风吟", "author":"村上春树", "nation":"日本", "era":""},
-  {"title":"挪威的森林", "author":"村上春树", "nation":"日本", "era":""},
-  {"title":"海边的卡夫卡", "author":"村上春树", "nation":"日本", "era":""},
-  {"title":"1973年的弹子球", "author":"村上春树", "nation":"日本", "era":""},
-  {"title":"世界尽头与冷酷仙境", "author":"村上春树", "nation":"日本", "era":""},
-  {"title":"奇鸟行状录", "author":"村上春树", "nation":"日本", "era":""},
-  {"title":"丰饶之海", "author":"三岛由纪夫", "nation":"日本", "era":""},
-  {"title":"金阁寺", "author":"三岛由纪夫", "nation":"日本", "era":""},
-  {"title":"潮骚", "author":"三岛由纪夫", "nation":"日本", "era":""},
-  {"title":"假面的告白", "author":"三岛由纪夫", "nation":"日本", "era":""},
-  {"title":"窗边的小豆豆", "author":"黑柳彻子", "nation":"日本", "era":""},
-  {"title":"山月记", "author":"中岛敦", "nation":"日本", "era":""},
-  {"title":"枕草子", "author":"清少纳言", "nation":"日本", "era":""},
-  {"title":"强风吹拂", "author":"三浦紫苑", "nation":"日本", "era":""},
-  {"title":"白色巨塔", "author":"山崎丰子", "nation":"日本", "era":""},
-  {"title":"金色夜叉", "author":"尾崎红叶", "nation":"日本", "era":""},
-  {"title":"点与线", "author":"松本清张", "nation":"日本", "era":""},
-  {"title":"平家物语", "author":"信浓前司行长", "nation":"日本", "era":""},
-  {"title":"破戒", "author":"岛崎藤村", "nation":"日本", "era":""},
-  {"title":"没有太阳的街", "author":"德永直", "nation":"日本", "era":""},
-  {"title":"方丈记", "author":"鸭长明", "nation":"日本", "era":""},
-  {"title":"厨房", "author":"吉本芭娜娜", "nation":"日本", "era":""},
-  {"title":"哀愁的预感", "author":"吉本芭娜娜", "nation":"日本", "era":""},
-  {"title":"徒然草", "author":"吉田兼好", "nation":"日本", "era":""},
-  {"title":"好色一代女", "author":"井原西鹤", "nation":"日本", "era":""},
-  {"title":"播州平野", "author":"宫本百合子", "nation":"日本", "era":""},
-  {"title":"古事记", "author":"太安万侣", "nation":"日本", "era":""},
-  {"title":"伊势物语", "author":"佚名", "nation":"日本", "era":""},
-  {"title":"万叶集", "author":"佚名", "nation":"日本", "era":""},
-  {"title":"深河", "author":"远藤周作", "nation":"日本", "era":""},
-  {"title":"浮云", "author":"二叶亭四迷", "nation":"日本", "era":""},
-  {"title":"面影", "author":"二叶亭四迷", "nation":"日本", "era":""},
-  {"title":"平凡", "author":"二叶亭四迷", "nation":"日本", "era":""},
-  {"title":"情书", "author":"岩井俊二", "nation":"日本", "era":""},
-  {"title":"伊斯坦布尔", "author":"奥尔罕·帕慕克", "nation":"土耳其", "era":""},
-  {"title":"雪", "author":"奥尔罕·帕慕克", "nation":"土耳其", "era":""},
-  {"title":"白色城堡", "author":"奥尔罕·帕慕克", "nation":"土耳其", "era":""},
-  {"title":"寂静的房子", "author":"奥尔罕·帕慕克", "nation":"土耳其", "era":""},
-  {"title":"我的名字叫红", "author":"奥尔罕·帕慕克", "nation":"土耳其", "era":""},
-  {"title":"游荡者", "author":"尤瑟夫·阿提冈", "nation":"土耳其", "era":""},
-  {"title":"暗房", "author":"哈坎·比恰克奇", "nation":"土耳其", "era":""},
-  {"title":"旧日的保加利亚人", "author":"柳宾·卡拉维洛夫", "nation":"保加利亚", "era":""},
-  {"title":"轭下", "author":"伊·伐佐夫", "nation":"保加利亚", "era":""},
-  {"title":"耻", "author":"库切", "nation":"南非", "era":""},
-  {"title":"福", "author":"库切", "nation":"南非", "era":""},
-  {"title":"彼得堡的大师", "author":"库切", "nation":"南非", "era":""},
-  {"title":"铁器时代", "author":"库切", "nation":"南非", "era":""},
-  {"title":"幽暗之地", "author":"库切", "nation":"南非", "era":""},
-  {"title":"内陆深处", "author":"库切", "nation":"南非", "era":""},
-  {"title":"等待野蛮人", "author":"库切", "nation":"南非", "era":""},
-  {"title":"诺言", "author":"戴蒙·加尔古特", "nation":"南非", "era":""},
-  {"title":"牧羊少年奇幻之旅", "author":"保罗·科埃略", "nation":"巴西", "era":""},
-  {"title":"女奴", "author":"贝尔纳多·吉马良斯", "nation":"巴西", "era":""},
-  {"title":"金卡斯的两次死亡", "author":"若热·亚马多", "nation":"巴西", "era":""},
-  {"title":"沉默先生", "author":"马查多·德·阿西斯", "nation":"巴西", "era":""},
-  {"title":"2666", "author":"罗贝托·波拉尼奥", "nation":"智利", "era":""},
-  {"title":"幽灵之家", "author":"伊莎贝尔·阿连德", "nation":"智利", "era":""},
-  {"title":"回家的路", "author":"亚历杭德罗·桑布拉", "nation":"智利", "era":""},
-  {"title":"蔷薇园", "author":"萨迪", "nation":"波斯", "era":""},
-  {"title":"素食者", "author":"韩江", "nation":"韩国", "era":""},
-  {"title":"失语者", "author":"韩江", "nation":"韩国", "era":""},
-  {"title":"无情", "author":"李光洙", "nation":"韩国", "era":""},
-  {"title":"王道", "author":"崔仁浩", "nation":"韩国", "era":""},
-  {"title":"韩氏年代记", "author":"黄晳暎", "nation":"韩国", "era":""},
-  {"title":"我叫金三顺", "author":"池秀贤", "nation":"韩国", "era":""},
-  {"title":"你们的天国", "author":"李清俊", "nation":"韩国", "era":""},
-  {"title":"七朵水仙花", "author":"金河仁", "nation":"韩国", "era":""},
-  {"title":"像少女一样", "author":"金河仁", "nation":"韩国", "era":""},
-  {"title":"早安", "author":"金河仁", "nation":"韩国", "era":""},
-  {"title":"菊花香", "author":"金河仁", "nation":"韩国", "era":""},
-  {"title":"金药局家的女儿们", "author":"朴景利", "nation":"韩国", "era":""},
-  {"title":"不信时代", "author":"朴景利", "nation":"韩国", "era":""},
-  {"title":"自由或死亡", "author":"卡赞扎基斯", "nation":"希腊", "era":""},
-  {"title":"玉米人", "author":"阿斯图里亚斯", "nation":"危地马拉", "era":""},
-  {"title":"总统先生", "author":"阿斯图里亚斯", "nation":"危地马拉", "era":""},
-  {"title":"人间王国", "author":"阿莱霍·卡彭铁尔", "nation":"古巴", "era":""},
-  {"title":"三只忧伤的老虎", "author":"卡夫雷拉·因凡特", "nation":"古巴", "era":""},
-  {"title":"塞西丽娅·巴尔德斯", "author":"西里洛·维亚贝尔德", "nation":"古巴", "era":""},
-  {"title":"瓦解", "author":"钦努阿·阿切贝", "nation":"尼日利亚", "era":""},
-  {"title":"人民公仆", "author":"钦努阿·阿切贝", "nation":"尼日利亚", "era":""},
-  {"title":"星之书", "author":"乌文·阿克潘", "nation":"尼日利亚", "era":""},
-  {"title":"饥饿的路", "author":"乌文·阿克潘", "nation":"尼日利亚", "era":""},
-  {"title":"迷魂之歌", "author":"乌文·阿克潘", "nation":"尼日利亚", "era":""},
-  {"title":"绕颈之物", "author":"奇玛曼达·恩戈齐·阿迪奇埃", "nation":"尼日利亚", "era":""},
-  {"title":"半轮黄日", "author":"奇玛曼达·恩戈齐·阿迪奇埃", "nation":"尼日利亚", "era":""},
-  {"title":"紫木槿", "author":"奇玛曼达·恩戈齐·阿迪奇埃", "nation":"尼日利亚", "era":""},
-  {"title":"美国佬", "author":"奇玛曼达·恩戈齐·阿迪奇埃", "nation":"尼日利亚", "era":""},
-  {"title":"绿房子", "author":"略萨", "nation":"秘鲁", "era":""},
-  {"title":"酒吧长谈", "author":"略萨", "nation":"秘鲁", "era":""},
-  {"title":"城市与狗", "author":"略萨", "nation":"秘鲁", "era":""},
-  {"title":"世界末日之战", "author":"略萨", "nation":"秘鲁", "era":""},
-  {"title":"广漠的世界", "author":"西罗·阿莱格里亚", "nation":"秘鲁", "era":""},
-  {"title":"我的米海尔", "author":"阿摩司·奥兹", "nation":"以色列", "era":""},
-  {"title":"咏叹生死", "author":"阿摩司·奥兹", "nation":"以色列", "era":""},
-  {"title":"沙海无澜", "author":"阿摩司·奥兹", "nation":"以色列", "era":""},
-  {"title":"到大地尽头", "author":"大卫·格罗斯曼", "nation":"以色列", "era":""},
-  {"title":"神圣的夜晚", "author":"塔哈尔·本·杰伦", "nation":"摩洛哥", "era":""},
-  {"title":"错误之夜", "author":"塔哈尔·本·杰伦", "nation":"摩洛哥", "era":""},
-  {"title":"那耀眼的黑暗", "author":"塔哈尔·本·杰伦", "nation":"摩洛哥", "era":""},
-  {"title":"天堂", "author":"阿卜杜勒-拉扎克·古尔纳", "nation":"坦桑尼亚", "era":""},
-  {"title":"沙漠", "author":"阿卜杜勒-拉扎克·古尔纳", "nation":"坦桑尼亚", "era":""},
-  {"title":"海边", "author":"阿卜杜勒-拉扎克·古尔纳", "nation":"坦桑尼亚", "era":""},
-  {"title":"遗弃", "author":"阿卜杜勒-拉扎克·古尔纳", "nation":"坦桑尼亚", "era":""},
-  {"title":"平民史诗", "author":"纳吉布·马哈福兹", "nation":"埃及", "era":""},
-  {"title":"我们街区的孩子们", "author":"纳吉布·马哈福兹", "nation":"埃及", "era":""},
-  {"title":"梅达格胡同", "author":"纳吉布·马哈福兹", "nation":"埃及", "era":""},
-  {"title":"萨巫颂", "author":"西敏·达内希瓦尔", "nation":"伊朗", "era":""},
-  {"title":"瞎猫头鹰", "author":"萨迪克·赫达亚特", "nation":"伊朗", "era":""},
-  {"title":"沙之书", "author":"博尔赫斯", "nation":"阿根廷", "era":""},
-  {"title":"小径分岔的花园", "author":"博尔赫斯", "nation":"阿根廷", "era":""},
-  {"title":"布罗迪报告", "author":"博尔赫斯", "nation":"阿根廷", "era":""},
-  {"title":"巴别图书馆", "author":"博尔赫斯", "nation":"阿根廷", "era":""},
-  {"title":"环形废墟", "author":"博尔赫斯", "nation":"阿根廷", "era":""},
-  {"title":"动物寓言集", "author":"胡里奥·科塔萨尔", "nation":"阿根廷", "era":""},
-  {"title":"被占的宅子", "author":"胡里奥·科塔萨尔", "nation":"阿根廷", "era":""},
-  {"title":"跳房子", "author":"胡里奥·科塔萨尔", "nation":"阿根廷", "era":""},
-  {"title":"万火归一", "author":"胡里奥·科塔萨尔", "nation":"阿根廷", "era":""},
-  {"title":"蜘蛛女之吻", "author":"曼努埃尔·普伊格", "nation":"阿根廷", "era":""}
+  {
+    "title": "四书",
+    "author": "",
+    "nation": "中国",
+    "era": ""
+  },
+  {
+    "title": "五经",
+    "author": "",
+    "nation": "中国",
+    "era": ""
+  },
+  {
+    "title": "墨子",
+    "author": "墨子",
+    "nation": "中国",
+    "era": "战国时期"
+  },
+  {
+    "title": "庄子",
+    "author": "庄子",
+    "nation": "中国",
+    "era": "战国时期"
+  },
+  {
+    "title": "楚辞",
+    "author": "屈原",
+    "nation": "中国",
+    "era": "战国时期"
+  },
+  {
+    "title": "荀子",
+    "author": "荀子",
+    "nation": "中国",
+    "era": "战国时期"
+  },
+  {
+    "title": "列子",
+    "author": "列御寇",
+    "nation": "中国",
+    "era": "战国时期"
+  },
+  {
+    "title": "谷梁传",
+    "author": "谷梁赤",
+    "nation": "中国",
+    "era": "战国时期"
+  },
+  {
+    "title": "公羊传",
+    "author": "公羊高",
+    "nation": "中国",
+    "era": "战国时期"
+  },
+  {
+    "title": "吕氏春秋",
+    "author": "吕不韦",
+    "nation": "中国",
+    "era": "战国时期"
+  },
+  {
+    "title": "鬼谷子",
+    "author": "鬼谷子",
+    "nation": "中国",
+    "era": "战国时期"
+  },
+  {
+    "title": "尔雅",
+    "author": "作者不详",
+    "nation": "中国",
+    "era": "战国时期"
+  },
+  {
+    "title": "老子",
+    "author": "老子",
+    "nation": "中国",
+    "era": "春秋时期"
+  },
+  {
+    "title": "孙子兵法",
+    "author": "孙武",
+    "nation": "中国",
+    "era": "春秋时期"
+  },
+  {
+    "title": "左传",
+    "author": "左丘明",
+    "nation": "中国",
+    "era": "春秋时期"
+  },
+  {
+    "title": "史记",
+    "author": "司马迁",
+    "nation": "中国",
+    "era": "西汉"
+  },
+  {
+    "title": "淮南子",
+    "author": "刘安",
+    "nation": "中国",
+    "era": "西汉"
+  },
+  {
+    "title": "战国策",
+    "author": "刘向",
+    "nation": "中国",
+    "era": "西汉"
+  },
+  {
+    "title": "烈女传",
+    "author": "刘向",
+    "nation": "中国",
+    "era": "西汉"
+  },
+  {
+    "title": "汉书",
+    "author": "班固",
+    "nation": "中国",
+    "era": "东汉"
+  },
+  {
+    "title": "后汉书",
+    "author": "范晔",
+    "nation": "中国",
+    "era": "南朝·宋"
+  },
+  {
+    "title": "文心雕龙",
+    "author": "刘勰",
+    "nation": "中国",
+    "era": "南朝·齐"
+  },
+  {
+    "title": "梦溪笔谈",
+    "author": "沈括",
+    "nation": "中国",
+    "era": "北宋"
+  },
+  {
+    "title": "乐府诗集",
+    "author": "郭茂倩",
+    "nation": "中国",
+    "era": "北宋"
+  },
+  {
+    "title": "资治通鉴",
+    "author": "司马光",
+    "nation": "中国",
+    "era": "北宋"
+  },
+  {
+    "title": "太平广记",
+    "author": "李昉",
+    "nation": "中国",
+    "era": "北宋"
+  },
+  {
+    "title": "西厢记",
+    "author": "王实甫",
+    "nation": "中国",
+    "era": "元代"
+  },
+  {
+    "title": "窦娥冤",
+    "author": "关汉卿",
+    "nation": "中国",
+    "era": "元代"
+  },
+  {
+    "title": "三国演义",
+    "author": "罗贯中",
+    "nation": "中国",
+    "era": "元末明初"
+  },
+  {
+    "title": "水浒传",
+    "author": "施耐庵",
+    "nation": "中国",
+    "era": "元末明初"
+  },
+  {
+    "title": "金瓶梅",
+    "author": "兰陵笑笑生",
+    "nation": "中国",
+    "era": "明代"
+  },
+  {
+    "title": "封神演义",
+    "author": "许仲琳",
+    "nation": "中国",
+    "era": "明代"
+  },
+  {
+    "title": "西游记",
+    "author": "吴承恩",
+    "nation": "中国",
+    "era": "明代"
+  },
+  {
+    "title": "徐霞客游记",
+    "author": "徐霞客",
+    "nation": "中国",
+    "era": "明代"
+  },
+  {
+    "title": "喻世明言",
+    "author": "冯梦龙",
+    "nation": "中国",
+    "era": "明代"
+  },
+  {
+    "title": "警世通言",
+    "author": "冯梦龙",
+    "nation": "中国",
+    "era": "明代"
+  },
+  {
+    "title": "醒世恒言",
+    "author": "冯梦龙",
+    "nation": "中国",
+    "era": "明代"
+  },
+  {
+    "title": "东周列国志",
+    "author": "冯梦龙",
+    "nation": "中国",
+    "era": "明代"
+  },
+  {
+    "title": "牡丹亭",
+    "author": "汤显祖",
+    "nation": "中国",
+    "era": "明代"
+  },
+  {
+    "title": "天工开物",
+    "author": "宋应星",
+    "nation": "中国",
+    "era": "明代"
+  },
+  {
+    "title": "本草纲目",
+    "author": "李时珍",
+    "nation": "中国",
+    "era": "明代"
+  },
+  {
+    "title": "杨家将演义",
+    "author": "熊大木",
+    "nation": "中国",
+    "era": "明代"
+  },
+  {
+    "title": "初刻拍案惊奇",
+    "author": "凌濛初",
+    "nation": "中国",
+    "era": "明代"
+  },
+  {
+    "title": "二刻拍案惊奇",
+    "author": "凌濛初",
+    "nation": "中国",
+    "era": "明代"
+  },
+  {
+    "title": "菜根谭",
+    "author": "洪应明",
+    "nation": "中国",
+    "era": "明代"
+  },
+  {
+    "title": "隋唐演义",
+    "author": "褚人获",
+    "nation": "中国",
+    "era": "明末清初"
+  },
+  {
+    "title": "红楼梦",
+    "author": "曹雪芹",
+    "nation": "中国",
+    "era": "清代"
+  },
+  {
+    "title": "镜花缘",
+    "author": "李汝珍",
+    "nation": "中国",
+    "era": "清代"
+  },
+  {
+    "title": "老残游记",
+    "author": "刘鹗",
+    "nation": "中国",
+    "era": "清代"
+  },
+  {
+    "title": "孽海花",
+    "author": "金松岑、曾朴",
+    "nation": "中国",
+    "era": "清代"
+  },
+  {
+    "title": "官场现形记",
+    "author": "李伯元",
+    "nation": "中国",
+    "era": "清代"
+  },
+  {
+    "title": "儒林外史",
+    "author": "吴敬梓",
+    "nation": "中国",
+    "era": "清代"
+  },
+  {
+    "title": "聊斋志异",
+    "author": "蒲松龄",
+    "nation": "中国",
+    "era": "清代"
+  },
+  {
+    "title": "浮生六记",
+    "author": "沈复",
+    "nation": "中国",
+    "era": "清代"
+  },
+  {
+    "title": "绿野仙踪",
+    "author": "李百川",
+    "nation": "中国",
+    "era": "清代"
+  },
+  {
+    "title": "说岳全传",
+    "author": "钱彩",
+    "nation": "中国",
+    "era": "清代"
+  },
+  {
+    "title": "古文观止",
+    "author": "吴楚材、吴调侯",
+    "nation": "中国",
+    "era": "清代"
+  },
+  {
+    "title": "儿女英雄传",
+    "author": "文康",
+    "nation": "中国",
+    "era": "清代"
+  },
+  {
+    "title": "三侠五义",
+    "author": "石玉昆",
+    "nation": "中国",
+    "era": "清代"
+  },
+  {
+    "title": "施公案",
+    "author": "佚名",
+    "nation": "中国",
+    "era": "清代"
+  },
+  {
+    "title": "狂人日记",
+    "author": "鲁迅",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "呐喊",
+    "author": "鲁迅",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "彷徨",
+    "author": "鲁迅",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "朝花夕拾",
+    "author": "鲁迅",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "繁星·春水",
+    "author": "冰心",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "商市街",
+    "author": "萧红",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "马伯乐",
+    "author": "萧红",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "生死场",
+    "author": "萧红",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "呼兰河传",
+    "author": "萧红",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "家",
+    "author": "巴金",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "春",
+    "author": "巴金",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "秋",
+    "author": "巴金",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "雾",
+    "author": "巴金",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "雨",
+    "author": "巴金",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "电",
+    "author": "巴金",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "灭亡",
+    "author": "巴金",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "寒夜",
+    "author": "巴金",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "红玫瑰与白玫瑰",
+    "author": "张爱玲",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "金锁记",
+    "author": "张爱玲",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "倾城之恋",
+    "author": "张爱玲",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "怨女",
+    "author": "张爱玲",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "小团圆",
+    "author": "张爱玲",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "半生缘",
+    "author": "张爱玲",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "青春之歌",
+    "author": "杨沫",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "红岩",
+    "author": "罗广斌、杨益言",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "白鹿原",
+    "author": "陈忠实",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "林海雪原",
+    "author": "曲波",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "白洋淀纪事",
+    "author": "孙犁",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "湘行散记",
+    "author": "孙犁",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "大淖记事",
+    "author": "汪曾祺",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "受戒",
+    "author": "汪曾祺",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "城南旧事",
+    "author": "林海音",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "边城",
+    "author": "沈从文",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "长河",
+    "author": "沈从文",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "四世同堂",
+    "author": "老舍",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "骆驼祥子",
+    "author": "老舍",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "茶馆",
+    "author": "老舍",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "猫城记",
+    "author": "老舍",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "围城",
+    "author": "钱钟书",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "平凡的世界",
+    "author": "路遥",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "人生",
+    "author": "路遥",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "雷雨",
+    "author": "曹禺",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "日出",
+    "author": "曹禺",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "子夜",
+    "author": "茅盾",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "林家铺子",
+    "author": "茅盾",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "幻灭",
+    "author": "茅盾",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "虹",
+    "author": "茅盾",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "雷锋日记",
+    "author": "雷锋",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "傅雷家书",
+    "author": "傅雷、朱梅馥、傅聪",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "星星离我们有多远",
+    "author": "卞毓麟",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "飞向太空港",
+    "author": "李鸣生",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "创业史",
+    "author": "柳青",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "红日",
+    "author": "吴强",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "额尔古纳河右岸",
+    "author": "迟子建",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "蛙",
+    "author": "莫言",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "丰乳肥臀",
+    "author": "莫言",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "红高粱",
+    "author": "莫言",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "生死疲劳",
+    "author": "莫言",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "酒国",
+    "author": "莫言",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "檀香刑",
+    "author": "莫言",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "女神",
+    "author": "郭沫若",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "沉沦",
+    "author": "郁达夫",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "台北人",
+    "author": "白先勇",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "死水微澜",
+    "author": "李劼人",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "倪焕之",
+    "author": "叶圣陶",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "穆斯林的葬礼",
+    "author": "霍达",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "啼笑因缘",
+    "author": "张恨水",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "金粉世家",
+    "author": "张恨水",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "京华烟云",
+    "author": "林语堂",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "苏东坡传",
+    "author": "林语堂",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "经典常谈",
+    "author": "朱自清",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "长征",
+    "author": "王树增",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "给青年的十二封信",
+    "author": "朱光潜",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "尘埃落定",
+    "author": "阿来",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "乡土中国",
+    "author": "费孝通",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "张居正",
+    "author": "熊召政",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "莎菲女士的日记",
+    "author": "丁玲",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "太阳照在桑干河上",
+    "author": "丁玲",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "暴风骤雨",
+    "author": "周立波",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "山乡巨变",
+    "author": "周立波",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "沉重的翅膀",
+    "author": "张洁",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "无字",
+    "author": "张洁",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "黄金时代",
+    "author": "王小波",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "白银时代",
+    "author": "王小波",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "青铜时代",
+    "author": "王小波",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "装台",
+    "author": "陈彦",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "黄雀记",
+    "author": "苏童",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "妻妾成群",
+    "author": "苏童",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "大浴女",
+    "author": "铁凝",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "玫瑰门",
+    "author": "铁凝",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "笨花",
+    "author": "铁凝",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "哦，香雪",
+    "author": "铁凝",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "长恨歌",
+    "author": "王安忆",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "骚动之秋",
+    "author": "刘玉民",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "繁花",
+    "author": "金宇澄",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "芙蓉镇",
+    "author": "古华",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "白门柳",
+    "author": "刘斯奋",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "东藏记",
+    "author": "宗璞",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "一句顶一万句",
+    "author": "刘震云",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "钟鼓楼",
+    "author": "刘心武",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "财主底儿女们",
+    "author": "路翎",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "组织部新来的年轻人",
+    "author": "王蒙",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "我们仨",
+    "author": "杨绛",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "干校六记",
+    "author": "杨绛",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "秦腔",
+    "author": "贾平凹",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "废都",
+    "author": "贾平凹",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "哥德巴赫猜想",
+    "author": "徐迟",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "小二黑结婚",
+    "author": "赵树理",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "李家庄的变迁",
+    "author": "赵树理",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "我的丁一之旅",
+    "author": "史铁生",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "务虚笔记",
+    "author": "史铁生",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "我与地坛",
+    "author": "史铁生",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "推拿",
+    "author": "毕飞宇",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "俗世奇人",
+    "author": "冯骥才",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "三体",
+    "author": "刘慈欣",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "黄河东流去",
+    "author": "李凖",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "许茂和他的女儿们",
+    "author": "周克芹",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "将军吟",
+    "author": "莫应丰",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "本巴",
+    "author": "刘亮程",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "牵风记",
+    "author": "徐怀中",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "蒲柳人家",
+    "author": "刘绍棠",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "遍地风流",
+    "author": "阿城",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "棋王",
+    "author": "阿城",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "生命册",
+    "author": "李佩甫",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "暗算",
+    "author": "麦家",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "湖光山色",
+    "author": "周大新",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "三里湾",
+    "author": "赵树理",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "李自成",
+    "author": "姚雪垠",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "东方",
+    "author": "魏巍",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "人世间",
+    "author": "梁晓声",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "抉择",
+    "author": "张平",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "在细雨中呼喊",
+    "author": "余华",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "许三观卖血记",
+    "author": "余华",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "我胆小如鼠",
+    "author": "余华",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "第七天",
+    "author": "余华",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "活着",
+    "author": "余华",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "文城",
+    "author": "余华",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "雨季不再来",
+    "author": "三毛",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "撒哈拉的故事",
+    "author": "三毛",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "梦里花落知多少",
+    "author": "三毛",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "冬天里的春天",
+    "author": "李国文",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "都市风流",
+    "author": "孙力、余小慧",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "少年天子",
+    "author": "凌力",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "苍老的浮云",
+    "author": "残雪",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "突围表演",
+    "author": "残雪",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "黄泥街",
+    "author": "残雪",
+    "nation": "中国",
+    "era": "近现代"
+  },
+  {
+    "title": "鲁滨逊漂流记",
+    "author": "丹尼尔·笛福",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "傲慢与偏见",
+    "author": "简·奥斯汀",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "理智与情感",
+    "author": "简·奥斯汀",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "曼斯菲尔德庄园",
+    "author": "简·奥斯汀",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "爱玛",
+    "author": "简·奥斯汀",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "劝导",
+    "author": "简·奥斯汀",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "诺桑觉寺",
+    "author": "简·奥斯汀",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "简·爱",
+    "author": "夏洛蒂·勃朗特",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "谢利",
+    "author": "夏洛蒂·勃朗特",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "维莱特",
+    "author": "夏洛蒂·勃朗特",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "教师",
+    "author": "夏洛蒂·勃朗特",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "呼啸山庄",
+    "author": "艾米莉·勃朗特",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "女房客",
+    "author": "安妮·勃朗特",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "艾格妮斯·格雷",
+    "author": "安妮·勃朗特",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "雾都孤儿",
+    "author": "查尔斯·狄更斯",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "匹克威克先生外传",
+    "author": "查尔斯·狄更斯",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "双城记",
+    "author": "查尔斯·狄更斯",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "大卫·科波菲尔",
+    "author": "查尔斯·狄更斯",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "远大前程",
+    "author": "查尔斯·狄更斯",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "艰难时世",
+    "author": "查尔斯·狄更斯",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "老古玩店",
+    "author": "查尔斯·狄更斯",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "圣诞故事集",
+    "author": "查尔斯·狄更斯",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "荒凉山庄",
+    "author": "查尔斯·狄更斯",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "罗密欧与朱丽叶",
+    "author": "莎士比亚",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "哈姆雷特",
+    "author": "莎士比亚",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "威尼斯商人",
+    "author": "莎士比亚",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "月亮与六便士",
+    "author": "毛姆",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "刀锋",
+    "author": "毛姆",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "人性的枷锁",
+    "author": "毛姆",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "寻欢作乐",
+    "author": "毛姆",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "面纱",
+    "author": "毛姆",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "美丽新世界",
+    "author": "赫胥黎",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "格列佛游记",
+    "author": "乔纳森·斯威夫特",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "爱丽丝镜中奇遇",
+    "author": "刘易斯·卡罗尔",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "爱丽丝梦游仙境",
+    "author": "刘易斯·卡罗尔",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "一九八四",
+    "author": "乔治·奥威尔",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "动物庄园",
+    "author": "乔治·奥威尔",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "缅甸岁月",
+    "author": "乔治·奥威尔",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "培根随笔",
+    "author": "培根",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "福尔摩斯探案集",
+    "author": "阿瑟·柯南·道尔",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "天路历程",
+    "author": "约翰·班扬",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "弗洛斯河上的磨坊",
+    "author": "乔治·艾略特",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "米德尔马契",
+    "author": "乔治·艾略特",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "亚当·比德",
+    "author": "乔治·艾略特",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "儿子与情人",
+    "author": "D·H·劳伦斯",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "虹",
+    "author": "D·H·劳伦斯",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "查泰莱夫人的情人",
+    "author": "D·H·劳伦斯",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "恋爱中的女人",
+    "author": "D·H·劳伦斯",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "哈利·波特与魔法石",
+    "author": "J.K.罗琳",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "哈利·波特与密室",
+    "author": "J.K.罗琳",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "哈利·波特与阿兹卡班的囚徒",
+    "author": "J.K.罗琳",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "哈利·波特与火焰杯",
+    "author": "J.K.罗琳",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "哈利·波特与凤凰社",
+    "author": "J.K.罗琳",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "哈利·波特与混血王子",
+    "author": "J.K.罗琳",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "哈利·波特与死亡圣器",
+    "author": "J.K.罗琳",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "德伯家的苔丝",
+    "author": "哈代",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "无名的裘德",
+    "author": "哈代",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "远离尘嚣",
+    "author": "哈代",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "还乡",
+    "author": "哈代",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "卡斯特桥市长",
+    "author": "哈代",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "蝴蝶梦",
+    "author": "达芙妮·杜穆里埃",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "金银岛",
+    "author": "罗伯特·路易斯·史蒂文森",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "化身博士",
+    "author": "罗伯特·路易斯·史蒂文森",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "东方快车谋杀案",
+    "author": "阿加莎·克里斯蒂",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "罗杰疑案",
+    "author": "阿加莎·克里斯蒂",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "无人生还",
+    "author": "阿加莎·克里斯蒂",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "尼罗河上的惨案",
+    "author": "阿加莎·克里斯蒂",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "ABC谋杀案",
+    "author": "阿加莎·克里斯蒂",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "到灯塔去",
+    "author": "弗吉尼亚·伍尔夫",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "达洛维夫人",
+    "author": "弗吉尼亚·伍尔夫",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "奥兰多",
+    "author": "弗吉尼亚·伍尔夫",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "一间自己的房间",
+    "author": "弗吉尼亚·伍尔夫",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "雅各的房间",
+    "author": "弗吉尼亚·伍尔夫",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "海浪",
+    "author": "弗吉尼亚·伍尔夫",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "魔戒",
+    "author": "罗纳德·托尔金",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "霍比特人",
+    "author": "罗纳德·托尔金",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "精灵宝钻",
+    "author": "罗纳德·托尔金",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "彼得·潘",
+    "author": "詹姆斯·马修·巴里",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "柳林风声",
+    "author": "肯尼斯·格雷厄姆",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "月亮宝石",
+    "author": "威尔基·柯林斯",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "丛林历险记",
+    "author": "鲁德亚德·吉卜林",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "坎特伯雷故事集",
+    "author": "杰弗雷·乔叟",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "汤姆·琼斯",
+    "author": "亨利·菲尔丁",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "蝇王",
+    "author": "威廉·戈尔丁",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "名利场",
+    "author": "萨克雷",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "艾凡赫",
+    "author": "沃尔特·司各特",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "黑暗的心",
+    "author": "约瑟夫·康拉德",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "吉姆爷",
+    "author": "约瑟夫·康拉德",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "在西方目光下",
+    "author": "约瑟夫·康拉德",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "“水仙号”的黑水手",
+    "author": "约瑟夫·康拉德",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "福尔赛世家",
+    "author": "高尔斯华绥",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "弗兰肯斯坦",
+    "author": "玛丽·雪莱",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "克兰福镇",
+    "author": "伊丽莎白·盖斯凯尔",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "夜莺与玫瑰",
+    "author": "王尔德",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "道林·格雷的画像",
+    "author": "王尔德",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "快乐王子",
+    "author": "王尔德",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "大河湾",
+    "author": "V·S·奈保尔",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "米格尔大街",
+    "author": "V·S·奈保尔",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "项狄传",
+    "author": "劳伦斯·斯特恩",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "橘子不是唯一的水果",
+    "author": "珍妮特·温特森",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "守望灯塔",
+    "author": "珍妮特·温特森",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "激情",
+    "author": "珍妮特·温特森",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "给樱桃以性别",
+    "author": "珍妮特·温特森",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "长日将尽",
+    "author": "石黑一雄",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "无可慰藉",
+    "author": "石黑一雄",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "浮世画家",
+    "author": "石黑一雄",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "上海孤儿",
+    "author": "石黑一雄",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "克拉拉与太阳",
+    "author": "石黑一雄",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "被掩埋的巨人",
+    "author": "石黑一雄",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "金枝",
+    "author": "詹姆斯·乔治·弗雷泽",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "亚瑟王之死",
+    "author": "托马斯·马洛礼",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "时间机器",
+    "author": "赫伯特·乔治·威尔斯",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "星际战争",
+    "author": "赫伯特·乔治·威尔斯",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "隐身人",
+    "author": "赫伯特·乔治·威尔斯",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "莫罗博士的岛",
+    "author": "赫伯特·乔治·威尔斯",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "查理和巧克力工厂",
+    "author": "罗尔德·达尔",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "午夜之子",
+    "author": "萨尔曼·鲁西迪",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "胜利之城",
+    "author": "萨尔曼·鲁西迪",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "赎罪",
+    "author": "伊恩·麦克尤恩",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "霍华德庄园",
+    "author": "E·M·福斯特",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "看得见风景的房间",
+    "author": "E·M·福斯特",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "天使不敢涉足的地方",
+    "author": "E·M·福斯特",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "教区纪事",
+    "author": "约翰·高尔特",
+    "nation": "英国",
+    "era": ""
+  },
+  {
+    "title": "悲惨世界",
+    "author": "雨果",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "巴黎圣母院",
+    "author": "雨果",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "九三年",
+    "author": "雨果",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "海上劳工",
+    "author": "雨果",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "欧也妮·葛朗台",
+    "author": "巴尔扎克",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "邦斯舅舅",
+    "author": "巴尔扎克",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "高老头",
+    "author": "巴尔扎克",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "幻灭",
+    "author": "巴尔扎克",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "红与黑",
+    "author": "司汤达",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "茶花女",
+    "author": "小仲马",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "基督山伯爵",
+    "author": "大仲马",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "三剑客",
+    "author": "大仲马",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "小王子",
+    "author": "圣埃克苏佩里",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "鼠疫",
+    "author": "加缪",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "局外人",
+    "author": "加缪",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "西西弗的神话",
+    "author": "加缪",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "追忆似水年华",
+    "author": "马塞尔·普鲁斯特",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "羊脂球",
+    "author": "莫泊桑",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "项链",
+    "author": "莫泊桑",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "一生",
+    "author": "莫泊桑",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "漂亮朋友",
+    "author": "莫泊桑",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "名人传",
+    "author": "罗曼·罗兰",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "约翰·克利斯朵夫",
+    "author": "罗曼·罗兰",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "巨人传",
+    "author": "拉伯雷",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "蒙田随笔",
+    "author": "蒙田",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "情感教育",
+    "author": "福楼拜",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "包法利夫人",
+    "author": "福楼拜",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "圣安东尼的诱惑",
+    "author": "福楼拜",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "海底两万里",
+    "author": "儒勒·凡尔纳",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "神秘岛",
+    "author": "儒勒·凡尔纳",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "地心游记",
+    "author": "儒勒·凡尔纳",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "格兰特船长的儿女",
+    "author": "儒勒·凡尔纳",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "忏悔录",
+    "author": "卢梭",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "新爱洛伊丝",
+    "author": "卢梭",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "爱弥儿",
+    "author": "卢梭",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "昆虫记",
+    "author": "法布尔",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "苦儿流浪记",
+    "author": "埃克多·马洛",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "窄门",
+    "author": "安德烈·纪德",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "田园交响曲",
+    "author": "安德烈·纪德",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "背德者",
+    "author": "安德烈·纪德",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "如果种子不死",
+    "author": "安德烈·纪德",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "伪币制造者",
+    "author": "安德烈·纪德",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "梵蒂冈地窖",
+    "author": "安德烈·纪德",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "最后一课",
+    "author": "阿尔丰斯·都德",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "柏林之围",
+    "author": "阿尔丰斯·都德",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "小酒店",
+    "author": "左拉",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "萌芽",
+    "author": "左拉",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "娜娜",
+    "author": "左拉",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "金钱",
+    "author": "左拉",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "老实人",
+    "author": "伏尔泰",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "情人",
+    "author": "玛格丽特·杜拉斯",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "文字生涯",
+    "author": "让-保罗·萨特",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "恶心",
+    "author": "让-保罗·萨特",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "波斯人信札",
+    "author": "孟德斯鸠",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "卡门",
+    "author": "普罗斯佩·梅里美",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "蛇结",
+    "author": "弗朗索瓦·莫里亚克",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "女宾",
+    "author": "波伏娃",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "人都是要死的",
+    "author": "波伏娃",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "名士风流",
+    "author": "波伏娃",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "木工小史",
+    "author": "乔治·桑",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "你好，忧愁",
+    "author": "弗朗索瓦丝·萨冈",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "青春咖啡馆",
+    "author": "帕特里克·莫迪亚诺",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "暗店街",
+    "author": "帕特里克·莫迪亚诺",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "企鹅岛",
+    "author": "阿纳托尔·法朗士",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "诉讼笔录",
+    "author": "勒·克莱齐奥",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "流浪的星星",
+    "author": "勒·克莱齐奥",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "饥饿间奏曲",
+    "author": "勒·克莱齐奥",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "特利斯当与伊瑟",
+    "author": "贝迪耶",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "蒂博一家",
+    "author": "罗歇·马丁·杜·加尔",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "第七个十字架",
+    "author": "安娜·西格斯",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "悠悠岁月",
+    "author": "安妮·埃尔诺",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "我们中的一个",
+    "author": "奥斯娜·塞厄斯塔",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "喀布尔书商",
+    "author": "奥斯娜·塞厄斯塔",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "童年的许诺",
+    "author": "罗曼·加里",
+    "nation": "法国",
+    "era": ""
+  },
+  {
+    "title": "木偶奇遇记",
+    "author": "卡洛·科洛迪",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "神曲",
+    "author": "但丁",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "十日谈",
+    "author": "薄伽丘",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "爱的教育",
+    "author": "亚米契斯",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "歌集",
+    "author": "彼特拉克",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "我们的祖先",
+    "author": "伊塔洛·卡尔维诺",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "看不见的城市",
+    "author": "伊塔洛·卡尔维诺",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "分成两半的子爵",
+    "author": "伊塔洛·卡尔维诺",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "树上的男爵",
+    "author": "伊塔洛·卡尔维诺",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "不存在的骑士",
+    "author": "伊塔洛·卡尔维诺",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "如果在冬夜，一个旅人",
+    "author": "伊塔洛·卡尔维诺",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "邪恶之路",
+    "author": "格拉齐亚·黛莱达",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "君主论",
+    "author": "尼可罗·马基亚维利",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "马可·波罗游记",
+    "author": "马可·波罗",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "鞑靼人沙漠",
+    "author": "迪诺·布扎蒂",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "那不勒斯四部曲",
+    "author": "埃莱娜·费兰特",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "失踪的孩子",
+    "author": "埃莱娜·费兰特",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "离开的，留下的",
+    "author": "埃莱娜·费兰特",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "新名字的故事",
+    "author": "埃莱娜·费兰特",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "我的天才女友",
+    "author": "埃莱娜·费兰特",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "马拉沃利亚一家",
+    "author": "乔万尼·维尔加",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "约婚夫妇",
+    "author": "亚历山德罗·曼佐尼",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "斯巴达克斯",
+    "author": "乔万尼奥里",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "维吉尔之死",
+    "author": "赫尔曼·布洛赫",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "洋葱头历险记",
+    "author": "贾尼·罗大里",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "微型世界",
+    "author": "克劳迪奥·马格利斯",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "另一片海",
+    "author": "克劳迪奥·马格利斯",
+    "nation": "意大利",
+    "era": ""
+  },
+  {
+    "title": "沉思录",
+    "author": "马可·奥勒留",
+    "nation": "古罗马",
+    "era": ""
+  },
+  {
+    "title": "埃涅阿斯纪",
+    "author": "维吉尔",
+    "nation": "古罗马",
+    "era": ""
+  },
+  {
+    "title": "物性论",
+    "author": "卢克莱修",
+    "nation": "古罗马",
+    "era": ""
+  },
+  {
+    "title": "高卢战记",
+    "author": "恺撒",
+    "nation": "古罗马",
+    "era": ""
+  },
+  {
+    "title": "内战记",
+    "author": "恺撒",
+    "nation": "古罗马",
+    "era": ""
+  },
+  {
+    "title": "罗马十二帝王传",
+    "author": "苏维托尼乌斯",
+    "nation": "古罗马",
+    "era": ""
+  },
+  {
+    "title": "金驴记",
+    "author": "阿普列乌斯",
+    "nation": "古罗马",
+    "era": ""
+  },
+  {
+    "title": "忏悔录",
+    "author": "奥古斯丁",
+    "nation": "古罗马",
+    "era": ""
+  },
+  {
+    "title": "浮士德",
+    "author": "歌德",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "少年维特的烦恼",
+    "author": "歌德",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "威廉·麦斯特的学习时代",
+    "author": "歌德",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "西线无战事",
+    "author": "雷马克",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "黑色方尖碑",
+    "author": "雷马克",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "凯旋门",
+    "author": "雷马克",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "格林童话",
+    "author": "格林兄弟",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "共产党宣言",
+    "author": "恩格斯",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "共产党宣言",
+    "author": "马克思",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "资本论",
+    "author": "马克思",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "安妮日记",
+    "author": "安妮·弗兰克",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "魔山",
+    "author": "托马斯·曼",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "布登勃洛克一家",
+    "author": "托马斯·曼",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "死于威尼斯",
+    "author": "托马斯·曼",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "德米安",
+    "author": "赫尔曼·黑塞",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "悉达多",
+    "author": "赫尔曼·黑塞",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "荒原狼",
+    "author": "赫尔曼·黑塞",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "玻璃球游戏",
+    "author": "赫尔曼·黑塞",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "在轮下",
+    "author": "赫尔曼·黑塞",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "克林索尔的最后夏天",
+    "author": "赫尔曼·黑塞",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "查拉图斯特拉如是说",
+    "author": "尼采",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "战争论",
+    "author": "克劳塞维茨",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "铁皮鼓",
+    "author": "君特·格拉斯",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "吹牛大王历险记",
+    "author": "戈·毕尔格、埃·拉斯伯",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "艾菲·布里斯特",
+    "author": "台奥多尔·冯塔纳",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "香水",
+    "author": "帕特里克·聚斯金德",
+    "nation": "德国",
+    "era": ""
+  },
+  {
+    "title": "安娜·卡列尼娜",
+    "author": "托尔斯泰",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "战争与和平",
+    "author": "托尔斯泰",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "复活",
+    "author": "托尔斯泰",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "樱桃园",
+    "author": "契诃夫",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "这里的黎明静悄悄",
+    "author": "瓦西里耶夫",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "驿站长",
+    "author": "普希金",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "上尉的女儿",
+    "author": "普希金",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "叶甫盖尼·奥涅金",
+    "author": "普希金",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "死魂灵",
+    "author": "果戈理",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "钦差大臣",
+    "author": "果戈理",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "木木",
+    "author": "屠格涅夫",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "罗亭",
+    "author": "屠格涅夫",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "前夜",
+    "author": "屠格涅夫",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "处女地",
+    "author": "屠格涅夫",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "父与子",
+    "author": "屠格涅夫",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "猎人笔记",
+    "author": "屠格涅夫",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "贵族之家",
+    "author": "屠格涅夫",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "群魔",
+    "author": "陀思妥耶夫斯基",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "白痴",
+    "author": "陀思妥耶夫斯基",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "白夜",
+    "author": "陀思妥耶夫斯基",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "罪与罚",
+    "author": "陀思妥耶夫斯基",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "死屋手记",
+    "author": "陀思妥耶夫斯基",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "涅朵奇卡",
+    "author": "陀思妥耶夫斯基",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "地下室手记",
+    "author": "陀思妥耶夫斯基",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "卡拉马佐夫兄弟",
+    "author": "陀思妥耶夫斯基",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "被侮辱与被损害的人",
+    "author": "陀思妥耶夫斯基",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "大雷雨",
+    "author": "亚·奥斯特洛夫斯基",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "奥勃洛莫夫",
+    "author": "冈察洛夫",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "当代英雄",
+    "author": "莱蒙托夫",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "彼得堡",
+    "author": "安德烈·别雷",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "从彼得堡到莫斯科旅行记",
+    "author": "拉吉舍夫",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "怎么办？",
+    "author": "车尔尼雪夫斯基",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "往事与随想",
+    "author": "赫尔岑",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "外省散记",
+    "author": "萨尔蒂科夫·谢德林",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "一个城市的历史",
+    "author": "萨尔蒂科夫·谢德林",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "戈洛夫廖夫老爷们",
+    "author": "萨尔蒂科夫·谢德林",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "我们",
+    "author": "尤金·扎米亚京",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "米佳的爱情",
+    "author": "布宁",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "先驱者",
+    "author": "弗拉基米尔·马卡宁",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "萨宁",
+    "author": "阿尔志跋绥夫",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "蓝色脂肪",
+    "author": "弗拉基米尔·索罗金",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "碲钉国",
+    "author": "弗拉基米尔·索罗金",
+    "nation": "俄罗斯",
+    "era": ""
+  },
+  {
+    "title": "钢铁是怎样炼成的",
+    "author": "尼·奥斯特洛夫斯基",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "暴风雨所诞生的",
+    "author": "尼·奥斯特洛夫斯基",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "苦难的历程",
+    "author": "阿·托尔斯泰",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "毁灭",
+    "author": "法捷耶夫",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "青年近卫军",
+    "author": "法捷耶夫",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "森林报",
+    "author": "比安基",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "童年",
+    "author": "高尔基",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "在人间",
+    "author": "高尔基",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "我的大学",
+    "author": "高尔基",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "母亲",
+    "author": "高尔基",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "静静的顿河",
+    "author": "肖洛霍夫",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "一个人的遭遇",
+    "author": "肖洛霍夫",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "癌症楼",
+    "author": "索尔仁尼琴",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "古拉格群岛",
+    "author": "索尔仁尼琴",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "伊万·杰尼索维奇的一天",
+    "author": "索尔仁尼琴",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "日瓦戈医生",
+    "author": "鲍·帕斯捷尔纳克",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "恰巴耶夫",
+    "author": "富尔曼诺夫",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "铁流",
+    "author": "绥拉菲靡维奇",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "第四十一",
+    "author": "拉夫列尼约夫",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "狗心",
+    "author": "布尔加科夫",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "不详的蛋",
+    "author": "布尔加科夫",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "大师和玛格丽特",
+    "author": "布尔加科夫",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "骑兵军",
+    "author": "伊萨克·巴别尔",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "金蔷薇",
+    "author": "康·帕乌斯托夫斯基",
+    "nation": "苏联",
+    "era": ""
+  },
+  {
+    "title": "镀金时代",
+    "author": "马克·吐温",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "百万英镑",
+    "author": "马克·吐温",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "亚当夏娃日记",
+    "author": "马克·吐温",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "汤姆·索亚历险记",
+    "author": "马克·吐温",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "哈克贝利·费恩历险记",
+    "author": "马克·吐温",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "飘",
+    "author": "玛格丽特·米切尔",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "假如给我三天光明",
+    "author": "海伦·凯勒",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "嘉莉妹妹",
+    "author": "西奥多·德莱塞",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "珍妮姑娘",
+    "author": "西奥多·德莱塞",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "美国的悲剧",
+    "author": "西奥多·德莱塞",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "麦田里的守望者",
+    "author": "塞林格",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "白鲸",
+    "author": "赫尔曼·梅尔维尔",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "秘密花园",
+    "author": "伯内特",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "杀死一只知更鸟",
+    "author": "哈珀·里",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "小妇人",
+    "author": "路易莎·梅·奥尔科特",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "瓦尔登湖",
+    "author": "亨利·戴维·梭罗",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "寂静的春天",
+    "author": "蕾切尔·卡逊",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "绿野仙踪",
+    "author": "弗兰克·鲍姆",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "基地",
+    "author": "阿西莫夫",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "银河帝国",
+    "author": "阿西莫夫",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "教父",
+    "author": "马里奥·普佐",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "红字",
+    "author": "霍桑",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "了不起的盖茨比",
+    "author": "菲茨杰拉德",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "老人与海",
+    "author": "海明威",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "太阳照常升起",
+    "author": "海明威",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "永别了，武器",
+    "author": "海明威",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "丧钟为谁而鸣",
+    "author": "海明威",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "乞力马扎罗的雪",
+    "author": "海明威",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "野性的呼唤",
+    "author": "杰克·伦敦",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "热爱生命",
+    "author": "杰克·伦敦",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "海狼",
+    "author": "杰克·伦敦",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "马丁·伊登",
+    "author": "杰克·伦敦",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "汤姆叔叔的小屋",
+    "author": "哈里特·比彻·斯托",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "喧哗与骚动",
+    "author": "威廉·福克纳",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "八月之光",
+    "author": "威廉·福克纳",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "我弥留之际",
+    "author": "威廉·福克纳",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "献给爱米丽的一朵玫瑰花",
+    "author": "威廉·福克纳",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "押沙龙，押沙龙！",
+    "author": "威廉·福克纳",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "最后的莫希干人",
+    "author": "库柏",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "肖申克的救赎",
+    "author": "斯蒂芬·金",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "愤怒的葡萄",
+    "author": "约翰·斯坦贝克",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "伊甸之东",
+    "author": "约翰·斯坦贝克",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "人鼠之间",
+    "author": "约翰·斯坦贝克",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "草叶集",
+    "author": "惠特曼",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "五号屠场",
+    "author": "库尔特·冯内古特",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "第二十二条军规",
+    "author": "约瑟夫·海勒",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "沙乡年鉴",
+    "author": "奥尔多·利奥波德",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "夏洛的网",
+    "author": "E・B・怀特",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "你当像鸟飞往你的山",
+    "author": "塔拉·韦斯特弗",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "微暗的火",
+    "author": "弗拉基米尔·纳博科夫",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "洛丽塔",
+    "author": "弗拉基米尔·纳博科夫",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "看不见的人",
+    "author": "拉尔夫·艾里森",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "宠儿",
+    "author": "托妮·莫里森",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "宽容",
+    "author": "房龙",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "菊与刀",
+    "author": "鲁思·本尼迪克特",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "大地",
+    "author": "赛珍珠",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "紫颜色",
+    "author": "艾丽斯·沃克",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "在路上",
+    "author": "杰克·凯鲁亚克",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "红星照耀中国",
+    "author": "埃德加·斯诺",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "一位女士的画像",
+    "author": "亨利·詹姆斯",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "追风筝的人",
+    "author": "卡勒德·胡赛尼",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "灿烂千阳",
+    "author": "卡勒德·胡赛尼",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "群山回唱",
+    "author": "卡勒德·胡赛尼",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "万有引力之虹",
+    "author": "托马斯·品钦",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "布鲁克林有棵树",
+    "author": "贝蒂·史密斯",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "天使，望故乡",
+    "author": "托马斯·沃尔夫",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "小城畸人",
+    "author": "舍伍德·安德森",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "钟形罩",
+    "author": "西尔维娅·普拉斯",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "岛上书店",
+    "author": "加布瑞埃拉·泽文",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "纯真年代",
+    "author": "伊迪丝·华顿",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "大街",
+    "author": "辛克莱·刘易斯",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "心是孤独的猎手",
+    "author": "卡森·麦卡勒斯",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "伤心咖啡馆之歌",
+    "author": "卡森·麦卡勒斯",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "美国牧歌",
+    "author": "菲利普·罗斯",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "再见吧，哥伦布",
+    "author": "菲利普·罗斯",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "洪堡的礼物",
+    "author": "索尔·贝娄",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "屠场",
+    "author": "厄普顿·辛克莱",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "宾虚",
+    "author": "路易斯·华莱士",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "留住一片情",
+    "author": "尼古拉斯·斯帕克斯",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "忠实信徒",
+    "author": "尼古拉斯·斯帕克斯",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "疾病的隐喻",
+    "author": "苏珊·桑塔格",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "十一种孤独",
+    "author": "理查德·耶茨",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "复活节游行",
+    "author": "理查德·耶茨",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "革命之路",
+    "author": "理查德·耶茨",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "所罗门之歌",
+    "author": "托妮·莫里森",
+    "nation": "美国",
+    "era": ""
+  },
+  {
+    "title": "绿山墙的安妮",
+    "author": "露西·莫德·蒙哥马利",
+    "nation": "加拿大",
+    "era": ""
+  },
+  {
+    "title": "盲刺客",
+    "author": "玛格丽特·阿特伍德",
+    "nation": "加拿大",
+    "era": ""
+  },
+  {
+    "title": "使女的故事",
+    "author": "玛格丽特·阿特伍德",
+    "nation": "加拿大",
+    "era": ""
+  },
+  {
+    "title": "可以吃的女人",
+    "author": "玛格丽特·阿特伍德",
+    "nation": "加拿大",
+    "era": ""
+  },
+  {
+    "title": "逃离",
+    "author": "艾丽丝·门罗",
+    "nation": "加拿大",
+    "era": ""
+  },
+  {
+    "title": "传家之物",
+    "author": "艾丽丝·门罗",
+    "nation": "加拿大",
+    "era": ""
+  },
+  {
+    "title": "快乐影子之舞",
+    "author": "艾丽丝·门罗",
+    "nation": "加拿大",
+    "era": ""
+  },
+  {
+    "title": "少年Pi的奇幻漂流",
+    "author": "扬·马特尔",
+    "nation": "加拿大",
+    "era": ""
+  },
+  {
+    "title": "廉价的幸福",
+    "author": "加布里埃尔·鲁瓦",
+    "nation": "加拿大",
+    "era": ""
+  },
+  {
+    "title": "石头天使",
+    "author": "玛格丽特·劳伦斯",
+    "nation": "加拿大",
+    "era": ""
+  },
+  {
+    "title": "小镇艳阳录",
+    "author": "里柯克",
+    "nation": "加拿大",
+    "era": ""
+  },
+  {
+    "title": "文学上的失误",
+    "author": "里柯克",
+    "nation": "加拿大",
+    "era": ""
+  },
+  {
+    "title": "太阳神骑士团游湖记",
+    "author": "里柯克",
+    "nation": "加拿大",
+    "era": ""
+  },
+  {
+    "title": "与狼共度",
+    "author": "法利·莫厄特",
+    "nation": "加拿大",
+    "era": ""
+  },
+  {
+    "title": "鹿之民",
+    "author": "法利·莫厄特",
+    "nation": "加拿大",
+    "era": ""
+  },
+  {
+    "title": "鲸之殇",
+    "author": "法利·莫厄特",
+    "nation": "加拿大",
+    "era": ""
+  },
+  {
+    "title": "屠海",
+    "author": "法利·莫厄特",
+    "nation": "加拿大",
+    "era": ""
+  },
+  {
+    "title": "堂吉诃德",
+    "author": "塞万提斯·萨维德拉",
+    "nation": "西班牙",
+    "era": ""
+  },
+  {
+    "title": "迷情",
+    "author": "哈维尔·马里亚斯",
+    "nation": "西班牙",
+    "era": ""
+  },
+  {
+    "title": "春之死",
+    "author": "梅尔塞·罗多雷达",
+    "nation": "西班牙",
+    "era": ""
+  },
+  {
+    "title": "钻石广场",
+    "author": "梅尔塞·罗多雷达",
+    "nation": "西班牙",
+    "era": ""
+  },
+  {
+    "title": "碎镜",
+    "author": "梅尔塞·罗多雷达",
+    "nation": "西班牙",
+    "era": ""
+  },
+  {
+    "title": "奇迹之城",
+    "author": "爱德华多·门多萨",
+    "nation": "西班牙",
+    "era": ""
+  },
+  {
+    "title": "伪装成独白的爱情",
+    "author": "马洛伊·山多尔",
+    "nation": "匈牙利",
+    "era": ""
+  },
+  {
+    "title": "金人",
+    "author": "约卡伊·莫伊",
+    "nation": "匈牙利",
+    "era": ""
+  },
+  {
+    "title": "鹿",
+    "author": "萨博·玛格达",
+    "nation": "匈牙利",
+    "era": ""
+  },
+  {
+    "title": "壁画",
+    "author": "萨博·玛格达",
+    "nation": "匈牙利",
+    "era": ""
+  },
+  {
+    "title": "奇婚记",
+    "author": "卡·米克沙特",
+    "nation": "匈牙利",
+    "era": ""
+  },
+  {
+    "title": "反抗的忧郁",
+    "author": "拉斯洛·卡撒兹纳霍凯",
+    "nation": "匈牙利",
+    "era": ""
+  },
+  {
+    "title": "撒旦探戈",
+    "author": "拉斯洛·卡撒兹纳霍凯",
+    "nation": "匈牙利",
+    "era": ""
+  },
+  {
+    "title": "太阳花",
+    "author": "克鲁迪·玖洛",
+    "nation": "匈牙利",
+    "era": ""
+  },
+  {
+    "title": "英国旗",
+    "author": "凯尔泰斯·伊姆雷",
+    "nation": "匈牙利",
+    "era": ""
+  },
+  {
+    "title": "无形的命运",
+    "author": "凯尔泰斯·伊姆雷",
+    "nation": "匈牙利",
+    "era": ""
+  },
+  {
+    "title": "修道院纪事",
+    "author": "若泽·萨拉马戈",
+    "nation": "葡萄牙",
+    "era": ""
+  },
+  {
+    "title": "失明症漫记",
+    "author": "若泽·萨拉马戈",
+    "nation": "葡萄牙",
+    "era": ""
+  },
+  {
+    "title": "复明症漫记",
+    "author": "若泽·萨拉马戈",
+    "nation": "葡萄牙",
+    "era": ""
+  },
+  {
+    "title": "阿马罗神父的罪恶",
+    "author": "埃萨·德·克罗兹",
+    "nation": "葡萄牙",
+    "era": ""
+  },
+  {
+    "title": "马亚一家",
+    "author": "埃萨·德·克罗兹",
+    "nation": "葡萄牙",
+    "era": ""
+  },
+  {
+    "title": "小约翰",
+    "author": "弗雷德里克·凡·伊登",
+    "nation": "荷兰",
+    "era": ""
+  },
+  {
+    "title": "西班牙星光之路",
+    "author": "塞斯·诺特博姆",
+    "nation": "荷兰",
+    "era": ""
+  },
+  {
+    "title": "众灵日",
+    "author": "塞斯·诺特博姆",
+    "nation": "荷兰",
+    "era": ""
+  },
+  {
+    "title": "万灵节",
+    "author": "塞斯·诺特博姆",
+    "nation": "荷兰",
+    "era": ""
+  },
+  {
+    "title": "仪式",
+    "author": "塞斯·诺特博姆",
+    "nation": "荷兰",
+    "era": ""
+  },
+  {
+    "title": "大唐狄公案",
+    "author": "高罗佩",
+    "nation": "荷兰",
+    "era": ""
+  },
+  {
+    "title": "绿衣亨利",
+    "author": "高特弗利特·凯勒",
+    "nation": "瑞士",
+    "era": ""
+  },
+  {
+    "title": "海蒂",
+    "author": "约翰娜·斯比丽",
+    "nation": "瑞士",
+    "era": ""
+  },
+  {
+    "title": "莱芒湖畔的少女",
+    "author": "夏尔·费迪南·拉缪",
+    "nation": "瑞士",
+    "era": ""
+  },
+  {
+    "title": "四十朵玫瑰",
+    "author": "托马斯·霍利曼",
+    "nation": "瑞士",
+    "era": ""
+  },
+  {
+    "title": "游泳回家",
+    "author": "罗尔夫·拉佩特",
+    "nation": "瑞士",
+    "era": ""
+  },
+  {
+    "title": "好兵帅克历险记",
+    "author": "哈谢克",
+    "nation": "捷克",
+    "era": ""
+  },
+  {
+    "title": "玩笑",
+    "author": "米兰·昆德拉",
+    "nation": "捷克",
+    "era": ""
+  },
+  {
+    "title": "不能承受的生命之轻",
+    "author": "米兰·昆德拉",
+    "nation": "捷克",
+    "era": ""
+  },
+  {
+    "title": "外祖母",
+    "author": "鲍日娜·聂姆佐娃",
+    "nation": "捷克",
+    "era": ""
+  },
+  {
+    "title": "鲵鱼之乱",
+    "author": "卡雷尔·恰佩克",
+    "nation": "捷克",
+    "era": ""
+  },
+  {
+    "title": "绞刑架下的报告",
+    "author": "尤利乌斯·伏契克",
+    "nation": "捷克",
+    "era": ""
+  },
+  {
+    "title": "过于喧嚣的孤独",
+    "author": "博胡米尔·赫拉巴尔",
+    "nation": "捷克",
+    "era": ""
+  },
+  {
+    "title": "我曾侍候过英国国王",
+    "author": "博胡米尔·赫拉巴尔",
+    "nation": "捷克",
+    "era": ""
+  },
+  {
+    "title": "一日情人",
+    "author": "伊凡·克里玛",
+    "nation": "捷克",
+    "era": ""
+  },
+  {
+    "title": "没有圣人，没有天使",
+    "author": "伊凡·克里玛",
+    "nation": "捷克",
+    "era": ""
+  },
+  {
+    "title": "尤利西斯",
+    "author": "詹姆斯·乔伊斯",
+    "nation": "爱尔兰",
+    "era": ""
+  },
+  {
+    "title": "芬尼根的守灵夜",
+    "author": "詹姆斯·乔伊斯",
+    "nation": "爱尔兰",
+    "era": ""
+  },
+  {
+    "title": "都柏林人",
+    "author": "詹姆斯·乔伊斯",
+    "nation": "爱尔兰",
+    "era": ""
+  },
+  {
+    "title": "梦的解析",
+    "author": "西格蒙德·弗洛伊德",
+    "nation": "爱尔兰",
+    "era": ""
+  },
+  {
+    "title": "等待戈多",
+    "author": "塞缪尔·贝克特",
+    "nation": "爱尔兰",
+    "era": ""
+  },
+  {
+    "title": "马龙之死",
+    "author": "塞缪尔·贝克特",
+    "nation": "爱尔兰",
+    "era": ""
+  },
+  {
+    "title": "牛虻",
+    "author": "艾捷尔·丽莲·伏尼契",
+    "nation": "爱尔兰",
+    "era": ""
+  },
+  {
+    "title": "德古拉",
+    "author": "布莱姆·斯托克",
+    "nation": "爱尔兰",
+    "era": ""
+  },
+  {
+    "title": "布鲁克林",
+    "author": "科尔姆·托宾",
+    "nation": "爱尔兰",
+    "era": ""
+  },
+  {
+    "title": "变形记",
+    "author": "弗兰兹·卡夫卡",
+    "nation": "奥地利",
+    "era": ""
+  },
+  {
+    "title": "城堡",
+    "author": "弗兰兹·卡夫卡",
+    "nation": "奥地利",
+    "era": ""
+  },
+  {
+    "title": "审判",
+    "author": "弗兰兹·卡夫卡",
+    "nation": "奥地利",
+    "era": ""
+  },
+  {
+    "title": "人类的群星闪耀时",
+    "author": "斯蒂芬·茨威格",
+    "nation": "奥地利",
+    "era": ""
+  },
+  {
+    "title": "一个陌生女人的来信",
+    "author": "斯蒂芬·茨威格",
+    "nation": "奥地利",
+    "era": ""
+  },
+  {
+    "title": "昨日的世界：一个欧洲人的回忆",
+    "author": "斯蒂芬·茨威格",
+    "nation": "奥地利",
+    "era": ""
+  },
+  {
+    "title": "无欲的悲歌",
+    "author": "彼得·汉德克",
+    "nation": "奥地利",
+    "era": ""
+  },
+  {
+    "title": "钢琴教师",
+    "author": "埃尔弗里德·耶利内克",
+    "nation": "奥地利",
+    "era": ""
+  },
+  {
+    "title": "没有个性的人",
+    "author": "罗伯特·穆齐尔",
+    "nation": "奥地利",
+    "era": ""
+  },
+  {
+    "title": "拉德茨基进行曲",
+    "author": "约瑟夫·罗特",
+    "nation": "奥地利",
+    "era": ""
+  },
+  {
+    "title": "沉默的先知",
+    "author": "约瑟夫·罗特",
+    "nation": "奥地利",
+    "era": ""
+  },
+  {
+    "title": "大雪将至",
+    "author": "罗伯特·泽塔勒",
+    "nation": "奥地利",
+    "era": ""
+  },
+  {
+    "title": "马尔特手记",
+    "author": "里尔克",
+    "nation": "奥地利",
+    "era": ""
+  },
+  {
+    "title": "荆棘鸟",
+    "author": "考琳·麦卡洛",
+    "nation": "澳大利亚",
+    "era": ""
+  },
+  {
+    "title": "辛德勒名单",
+    "author": "托马斯·基尼利",
+    "nation": "澳大利亚",
+    "era": ""
+  },
+  {
+    "title": "人树",
+    "author": "帕特里克·怀特",
+    "nation": "澳大利亚",
+    "era": ""
+  },
+  {
+    "title": "风暴眼",
+    "author": "帕特里克·怀特",
+    "nation": "澳大利亚",
+    "era": ""
+  },
+  {
+    "title": "偷书贼",
+    "author": "马克斯·苏萨克",
+    "nation": "澳大利亚",
+    "era": ""
+  },
+  {
+    "title": "百年孤独",
+    "author": "加西亚·马尔克斯",
+    "nation": "哥伦比亚",
+    "era": ""
+  },
+  {
+    "title": "霍乱时期的爱情",
+    "author": "加西亚·马尔克斯",
+    "nation": "哥伦比亚",
+    "era": ""
+  },
+  {
+    "title": "苦妓回忆录",
+    "author": "加西亚·马尔克斯",
+    "nation": "哥伦比亚",
+    "era": ""
+  },
+  {
+    "title": "一桩事先张扬的凶杀案",
+    "author": "加西亚·马尔克斯",
+    "nation": "哥伦比亚",
+    "era": ""
+  },
+  {
+    "title": "没有人给他写信的上校",
+    "author": "加西亚·马尔克斯",
+    "nation": "哥伦比亚",
+    "era": ""
+  },
+  {
+    "title": "枯枝败叶",
+    "author": "加西亚·马尔克斯",
+    "nation": "哥伦比亚",
+    "era": ""
+  },
+  {
+    "title": "迷宫中的将军",
+    "author": "加西亚·马尔克斯",
+    "nation": "哥伦比亚",
+    "era": ""
+  },
+  {
+    "title": "族长的秋天",
+    "author": "加西亚·马尔克斯",
+    "nation": "哥伦比亚",
+    "era": ""
+  },
+  {
+    "title": "恶时辰",
+    "author": "加西亚·马尔克斯",
+    "nation": "哥伦比亚",
+    "era": ""
+  },
+  {
+    "title": "安徒生童话",
+    "author": "安徒生",
+    "nation": "丹麦",
+    "era": ""
+  },
+  {
+    "title": "致死的疾病",
+    "author": "索伦·克尔凯郭尔",
+    "nation": "丹麦",
+    "era": ""
+  },
+  {
+    "title": "漫长的旅行",
+    "author": "约翰内斯·威廉·扬森",
+    "nation": "丹麦",
+    "era": ""
+  },
+  {
+    "title": "走出非洲",
+    "author": "伊萨克·迪内森",
+    "nation": "丹麦",
+    "era": ""
+  },
+  {
+    "title": "人类重启",
+    "author": "亚历山大·温斯坦",
+    "nation": "丹麦",
+    "era": ""
+  },
+  {
+    "title": "活着的姑娘",
+    "author": "马丁·尼克索",
+    "nation": "丹麦",
+    "era": ""
+  },
+  {
+    "title": "征服者贝莱",
+    "author": "马丁·尼克索",
+    "nation": "丹麦",
+    "era": ""
+  },
+  {
+    "title": "遇见野兔的那一年",
+    "author": "亚托·帕西里纳",
+    "nation": "芬兰",
+    "era": ""
+  },
+  {
+    "title": "无名战士",
+    "author": "瓦依诺·林纳",
+    "nation": "芬兰",
+    "era": ""
+  },
+  {
+    "title": "清洗",
+    "author": "索菲·奥克萨宁",
+    "nation": "芬兰",
+    "era": ""
+  },
+  {
+    "title": "少女西丽亚",
+    "author": "弗兰斯·埃米尔·西兰帕",
+    "nation": "芬兰",
+    "era": ""
+  },
+  {
+    "title": "神圣的贫困",
+    "author": "弗兰斯·埃米尔·西兰帕",
+    "nation": "芬兰",
+    "era": ""
+  },
+  {
+    "title": "骑鹅旅行记",
+    "author": "塞尔玛·拉格洛夫",
+    "nation": "瑞典",
+    "era": ""
+  },
+  {
+    "title": "红房间",
+    "author": "奥古斯特·斯特林堡",
+    "nation": "瑞典",
+    "era": ""
+  },
+  {
+    "title": "龙文身的女孩",
+    "author": "斯蒂格·拉森",
+    "nation": "瑞典",
+    "era": ""
+  },
+  {
+    "title": "万物静默如谜",
+    "author": "维斯拉瓦·辛波斯卡",
+    "nation": "波兰",
+    "era": ""
+  },
+  {
+    "title": "太古和其他时间",
+    "author": "奥尔加·托卡尔丘克",
+    "nation": "波兰",
+    "era": ""
+  },
+  {
+    "title": "书中人物旅行记",
+    "author": "奥尔加·托卡尔丘克",
+    "nation": "波兰",
+    "era": ""
+  },
+  {
+    "title": "白天的房子，夜晚的房子",
+    "author": "奥尔加·托卡尔丘克",
+    "nation": "波兰",
+    "era": ""
+  },
+  {
+    "title": "雅各布之书",
+    "author": "奥尔加·托卡尔丘克",
+    "nation": "波兰",
+    "era": ""
+  },
+  {
+    "title": "玩偶",
+    "author": "普鲁斯",
+    "nation": "波兰",
+    "era": ""
+  },
+  {
+    "title": "你往何处去",
+    "author": "亨利克·显克维奇",
+    "nation": "波兰",
+    "era": ""
+  },
+  {
+    "title": "十字军骑士",
+    "author": "亨利克·显克维奇",
+    "nation": "波兰",
+    "era": ""
+  },
+  {
+    "title": "费尔迪杜凯",
+    "author": "维托尔德·贡布罗维奇",
+    "nation": "波兰",
+    "era": ""
+  },
+  {
+    "title": "巴卡卡伊大街",
+    "author": "维托尔德·贡布罗维奇",
+    "nation": "波兰",
+    "era": ""
+  },
+  {
+    "title": "农民",
+    "author": "弗拉迪斯拉夫·莱蒙特",
+    "nation": "波兰",
+    "era": ""
+  },
+  {
+    "title": "福地",
+    "author": "弗拉迪斯拉夫·莱蒙特",
+    "nation": "波兰",
+    "era": ""
+  },
+  {
+    "title": "惨败",
+    "author": "史坦尼斯劳·莱姆",
+    "nation": "波兰",
+    "era": ""
+  },
+  {
+    "title": "索拉里斯星",
+    "author": "史坦尼斯劳·莱姆",
+    "nation": "波兰",
+    "era": ""
+  },
+  {
+    "title": "未来学大会",
+    "author": "史坦尼斯劳·莱姆",
+    "nation": "波兰",
+    "era": ""
+  },
+  {
+    "title": "肉桂色铺子",
+    "author": "布鲁诺·舒尔茨",
+    "nation": "波兰",
+    "era": ""
+  },
+  {
+    "title": "沙漏做招牌的疗养院",
+    "author": "布鲁诺·舒尔茨",
+    "nation": "波兰",
+    "era": ""
+  },
+  {
+    "title": "奥斯维辛集中营的志愿者",
+    "author": "维托尔德·皮莱茨基",
+    "nation": "波兰",
+    "era": ""
+  },
+  {
+    "title": "苏菲的世界",
+    "author": "乔斯坦·贾德",
+    "nation": "挪威",
+    "era": ""
+  },
+  {
+    "title": "玩偶之家",
+    "author": "易卜生",
+    "nation": "挪威",
+    "era": ""
+  },
+  {
+    "title": "孤筏重洋",
+    "author": "托尔·海雅达尔",
+    "nation": "挪威",
+    "era": ""
+  },
+  {
+    "title": "大地的成长",
+    "author": "克努特·汉姆生",
+    "nation": "挪威",
+    "era": ""
+  },
+  {
+    "title": "安德森教授的夜晚",
+    "author": "达格·索尔斯塔",
+    "nation": "挪威",
+    "era": ""
+  },
+  {
+    "title": "外出偷马",
+    "author": "佩尔·帕特森",
+    "nation": "挪威",
+    "era": ""
+  },
+  {
+    "title": "去往西伯利亚",
+    "author": "佩尔·帕特森",
+    "nation": "挪威",
+    "era": ""
+  },
+  {
+    "title": "阿尔特米奥·克罗斯之死",
+    "author": "卡洛斯·富恩特斯",
+    "nation": "墨西哥",
+    "era": ""
+  },
+  {
+    "title": "佩德罗·帕拉莫",
+    "author": "胡安·鲁尔弗",
+    "nation": "墨西哥",
+    "era": ""
+  },
+  {
+    "title": "在底层的人们",
+    "author": "马里亚诺·阿苏埃拉",
+    "nation": "墨西哥",
+    "era": ""
+  },
+  {
+    "title": "伊索寓言",
+    "author": "伊索",
+    "nation": "古希腊",
+    "era": ""
+  },
+  {
+    "title": "伊利亚特",
+    "author": "荷马",
+    "nation": "古希腊",
+    "era": ""
+  },
+  {
+    "title": "奥德赛",
+    "author": "荷马",
+    "nation": "古希腊",
+    "era": ""
+  },
+  {
+    "title": "理想国",
+    "author": "柏拉图",
+    "nation": "古希腊",
+    "era": ""
+  },
+  {
+    "title": "俄狄浦斯王",
+    "author": "索福克勒斯",
+    "nation": "古希腊",
+    "era": ""
+  },
+  {
+    "title": "被缚的普罗米修斯",
+    "author": "埃斯库罗斯",
+    "nation": "古希腊",
+    "era": ""
+  },
+  {
+    "title": "尼各马可伦理学",
+    "author": "亚里士多德",
+    "nation": "古希腊",
+    "era": ""
+  },
+  {
+    "title": "达夫尼斯和赫洛亚",
+    "author": "朗格斯",
+    "nation": "古希腊",
+    "era": ""
+  },
+  {
+    "title": "远征记",
+    "author": "色诺芬",
+    "nation": "古希腊",
+    "era": ""
+  },
+  {
+    "title": "戈拉",
+    "author": "泰戈尔",
+    "nation": "印度",
+    "era": ""
+  },
+  {
+    "title": "沉船",
+    "author": "泰戈尔",
+    "nation": "印度",
+    "era": ""
+  },
+  {
+    "title": "吉檀迦利",
+    "author": "泰戈尔",
+    "nation": "印度",
+    "era": ""
+  },
+  {
+    "title": "飞鸟集",
+    "author": "泰戈尔",
+    "nation": "印度",
+    "era": ""
+  },
+  {
+    "title": "园丁集",
+    "author": "泰戈尔",
+    "nation": "印度",
+    "era": ""
+  },
+  {
+    "title": "新月集",
+    "author": "泰戈尔",
+    "nation": "印度",
+    "era": ""
+  },
+  {
+    "title": "罗摩衍那",
+    "author": "蚁垤",
+    "nation": "印度",
+    "era": ""
+  },
+  {
+    "title": "摩诃婆罗多",
+    "author": "毗耶娑",
+    "nation": "印度",
+    "era": ""
+  },
+  {
+    "title": "戈丹",
+    "author": "普列姆昌德",
+    "nation": "印度",
+    "era": ""
+  },
+  {
+    "title": "微物之神",
+    "author": "阿兰达蒂·洛伊",
+    "nation": "印度",
+    "era": ""
+  },
+  {
+    "title": "迦丹波利",
+    "author": "波那",
+    "nation": "印度",
+    "era": ""
+  },
+  {
+    "title": "戒日王传",
+    "author": "波那",
+    "nation": "印度",
+    "era": ""
+  },
+  {
+    "title": "十王子传",
+    "author": "檀丁",
+    "nation": "印度",
+    "era": ""
+  },
+  {
+    "title": "心灯",
+    "author": "巴努·穆斯塔克",
+    "nation": "印度",
+    "era": ""
+  },
+  {
+    "title": "一千零一夜",
+    "author": "佚名",
+    "nation": "阿拉伯地区",
+    "era": ""
+  },
+  {
+    "title": "卡里来和笛木乃",
+    "author": "伊本·穆加发",
+    "nation": "阿拉伯地区",
+    "era": ""
+  },
+  {
+    "title": "罗生门",
+    "author": "芥川龙之介",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "地狱变",
+    "author": "芥川龙之介",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "竹林中",
+    "author": "芥川龙之介",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "人间失格",
+    "author": "太宰治",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "斜阳",
+    "author": "太宰治",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "舞姬",
+    "author": "森鸥外",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "雪国",
+    "author": "川端康成",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "伊豆的舞女",
+    "author": "川端康成",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "古都",
+    "author": "川端康成",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "千只鹤",
+    "author": "川端康成",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "源氏物语",
+    "author": "紫式部",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "细雪",
+    "author": "谷崎润一郎",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "春琴抄",
+    "author": "谷崎润一郎",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "心",
+    "author": "夏目漱石",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "三四郎",
+    "author": "夏目漱石",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "我是猫",
+    "author": "夏目漱石",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "白夜行",
+    "author": "东野圭吾",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "恶意",
+    "author": "东野圭吾",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "棉被",
+    "author": "田山花袋",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "且听风吟",
+    "author": "村上春树",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "挪威的森林",
+    "author": "村上春树",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "海边的卡夫卡",
+    "author": "村上春树",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "1973年的弹子球",
+    "author": "村上春树",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "世界尽头与冷酷仙境",
+    "author": "村上春树",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "奇鸟行状录",
+    "author": "村上春树",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "丰饶之海",
+    "author": "三岛由纪夫",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "金阁寺",
+    "author": "三岛由纪夫",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "潮骚",
+    "author": "三岛由纪夫",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "假面的告白",
+    "author": "三岛由纪夫",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "窗边的小豆豆",
+    "author": "黑柳彻子",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "山月记",
+    "author": "中岛敦",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "枕草子",
+    "author": "清少纳言",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "强风吹拂",
+    "author": "三浦紫苑",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "白色巨塔",
+    "author": "山崎丰子",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "金色夜叉",
+    "author": "尾崎红叶",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "点与线",
+    "author": "松本清张",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "平家物语",
+    "author": "信浓前司行长",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "破戒",
+    "author": "岛崎藤村",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "没有太阳的街",
+    "author": "德永直",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "方丈记",
+    "author": "鸭长明",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "厨房",
+    "author": "吉本芭娜娜",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "哀愁的预感",
+    "author": "吉本芭娜娜",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "徒然草",
+    "author": "吉田兼好",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "好色一代女",
+    "author": "井原西鹤",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "播州平野",
+    "author": "宫本百合子",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "古事记",
+    "author": "太安万侣",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "伊势物语",
+    "author": "佚名",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "万叶集",
+    "author": "佚名",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "深河",
+    "author": "远藤周作",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "浮云",
+    "author": "二叶亭四迷",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "面影",
+    "author": "二叶亭四迷",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "平凡",
+    "author": "二叶亭四迷",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "情书",
+    "author": "岩井俊二",
+    "nation": "日本",
+    "era": ""
+  },
+  {
+    "title": "伊斯坦布尔",
+    "author": "奥尔罕·帕慕克",
+    "nation": "土耳其",
+    "era": ""
+  },
+  {
+    "title": "雪",
+    "author": "奥尔罕·帕慕克",
+    "nation": "土耳其",
+    "era": ""
+  },
+  {
+    "title": "白色城堡",
+    "author": "奥尔罕·帕慕克",
+    "nation": "土耳其",
+    "era": ""
+  },
+  {
+    "title": "寂静的房子",
+    "author": "奥尔罕·帕慕克",
+    "nation": "土耳其",
+    "era": ""
+  },
+  {
+    "title": "我的名字叫红",
+    "author": "奥尔罕·帕慕克",
+    "nation": "土耳其",
+    "era": ""
+  },
+  {
+    "title": "游荡者",
+    "author": "尤瑟夫·阿提冈",
+    "nation": "土耳其",
+    "era": ""
+  },
+  {
+    "title": "暗房",
+    "author": "哈坎·比恰克奇",
+    "nation": "土耳其",
+    "era": ""
+  },
+  {
+    "title": "旧日的保加利亚人",
+    "author": "柳宾·卡拉维洛夫",
+    "nation": "保加利亚",
+    "era": ""
+  },
+  {
+    "title": "轭下",
+    "author": "伊·伐佐夫",
+    "nation": "保加利亚",
+    "era": ""
+  },
+  {
+    "title": "耻",
+    "author": "库切",
+    "nation": "南非",
+    "era": ""
+  },
+  {
+    "title": "福",
+    "author": "库切",
+    "nation": "南非",
+    "era": ""
+  },
+  {
+    "title": "彼得堡的大师",
+    "author": "库切",
+    "nation": "南非",
+    "era": ""
+  },
+  {
+    "title": "铁器时代",
+    "author": "库切",
+    "nation": "南非",
+    "era": ""
+  },
+  {
+    "title": "幽暗之地",
+    "author": "库切",
+    "nation": "南非",
+    "era": ""
+  },
+  {
+    "title": "内陆深处",
+    "author": "库切",
+    "nation": "南非",
+    "era": ""
+  },
+  {
+    "title": "等待野蛮人",
+    "author": "库切",
+    "nation": "南非",
+    "era": ""
+  },
+  {
+    "title": "诺言",
+    "author": "戴蒙·加尔古特",
+    "nation": "南非",
+    "era": ""
+  },
+  {
+    "title": "牧羊少年奇幻之旅",
+    "author": "保罗·科埃略",
+    "nation": "巴西",
+    "era": ""
+  },
+  {
+    "title": "女奴",
+    "author": "贝尔纳多·吉马良斯",
+    "nation": "巴西",
+    "era": ""
+  },
+  {
+    "title": "金卡斯的两次死亡",
+    "author": "若热·亚马多",
+    "nation": "巴西",
+    "era": ""
+  },
+  {
+    "title": "沉默先生",
+    "author": "马查多·德·阿西斯",
+    "nation": "巴西",
+    "era": ""
+  },
+  {
+    "title": "2666",
+    "author": "罗贝托·波拉尼奥",
+    "nation": "智利",
+    "era": ""
+  },
+  {
+    "title": "幽灵之家",
+    "author": "伊莎贝尔·阿连德",
+    "nation": "智利",
+    "era": ""
+  },
+  {
+    "title": "回家的路",
+    "author": "亚历杭德罗·桑布拉",
+    "nation": "智利",
+    "era": ""
+  },
+  {
+    "title": "蔷薇园",
+    "author": "萨迪",
+    "nation": "波斯",
+    "era": ""
+  },
+  {
+    "title": "素食者",
+    "author": "韩江",
+    "nation": "韩国",
+    "era": ""
+  },
+  {
+    "title": "失语者",
+    "author": "韩江",
+    "nation": "韩国",
+    "era": ""
+  },
+  {
+    "title": "无情",
+    "author": "李光洙",
+    "nation": "韩国",
+    "era": ""
+  },
+  {
+    "title": "王道",
+    "author": "崔仁浩",
+    "nation": "韩国",
+    "era": ""
+  },
+  {
+    "title": "韩氏年代记",
+    "author": "黄晳暎",
+    "nation": "韩国",
+    "era": ""
+  },
+  {
+    "title": "我叫金三顺",
+    "author": "池秀贤",
+    "nation": "韩国",
+    "era": ""
+  },
+  {
+    "title": "你们的天国",
+    "author": "李清俊",
+    "nation": "韩国",
+    "era": ""
+  },
+  {
+    "title": "七朵水仙花",
+    "author": "金河仁",
+    "nation": "韩国",
+    "era": ""
+  },
+  {
+    "title": "像少女一样",
+    "author": "金河仁",
+    "nation": "韩国",
+    "era": ""
+  },
+  {
+    "title": "早安",
+    "author": "金河仁",
+    "nation": "韩国",
+    "era": ""
+  },
+  {
+    "title": "菊花香",
+    "author": "金河仁",
+    "nation": "韩国",
+    "era": ""
+  },
+  {
+    "title": "金药局家的女儿们",
+    "author": "朴景利",
+    "nation": "韩国",
+    "era": ""
+  },
+  {
+    "title": "不信时代",
+    "author": "朴景利",
+    "nation": "韩国",
+    "era": ""
+  },
+  {
+    "title": "自由或死亡",
+    "author": "卡赞扎基斯",
+    "nation": "希腊",
+    "era": ""
+  },
+  {
+    "title": "玉米人",
+    "author": "阿斯图里亚斯",
+    "nation": "危地马拉",
+    "era": ""
+  },
+  {
+    "title": "总统先生",
+    "author": "阿斯图里亚斯",
+    "nation": "危地马拉",
+    "era": ""
+  },
+  {
+    "title": "人间王国",
+    "author": "阿莱霍·卡彭铁尔",
+    "nation": "古巴",
+    "era": ""
+  },
+  {
+    "title": "三只忧伤的老虎",
+    "author": "卡夫雷拉·因凡特",
+    "nation": "古巴",
+    "era": ""
+  },
+  {
+    "title": "塞西丽娅·巴尔德斯",
+    "author": "西里洛·维亚贝尔德",
+    "nation": "古巴",
+    "era": ""
+  },
+  {
+    "title": "瓦解",
+    "author": "钦努阿·阿切贝",
+    "nation": "尼日利亚",
+    "era": ""
+  },
+  {
+    "title": "人民公仆",
+    "author": "钦努阿·阿切贝",
+    "nation": "尼日利亚",
+    "era": ""
+  },
+  {
+    "title": "星之书",
+    "author": "乌文·阿克潘",
+    "nation": "尼日利亚",
+    "era": ""
+  },
+  {
+    "title": "饥饿的路",
+    "author": "乌文·阿克潘",
+    "nation": "尼日利亚",
+    "era": ""
+  },
+  {
+    "title": "迷魂之歌",
+    "author": "乌文·阿克潘",
+    "nation": "尼日利亚",
+    "era": ""
+  },
+  {
+    "title": "绕颈之物",
+    "author": "奇玛曼达·恩戈齐·阿迪奇埃",
+    "nation": "尼日利亚",
+    "era": ""
+  },
+  {
+    "title": "半轮黄日",
+    "author": "奇玛曼达·恩戈齐·阿迪奇埃",
+    "nation": "尼日利亚",
+    "era": ""
+  },
+  {
+    "title": "紫木槿",
+    "author": "奇玛曼达·恩戈齐·阿迪奇埃",
+    "nation": "尼日利亚",
+    "era": ""
+  },
+  {
+    "title": "美国佬",
+    "author": "奇玛曼达·恩戈齐·阿迪奇埃",
+    "nation": "尼日利亚",
+    "era": ""
+  },
+  {
+    "title": "绿房子",
+    "author": "略萨",
+    "nation": "秘鲁",
+    "era": ""
+  },
+  {
+    "title": "酒吧长谈",
+    "author": "略萨",
+    "nation": "秘鲁",
+    "era": ""
+  },
+  {
+    "title": "城市与狗",
+    "author": "略萨",
+    "nation": "秘鲁",
+    "era": ""
+  },
+  {
+    "title": "世界末日之战",
+    "author": "略萨",
+    "nation": "秘鲁",
+    "era": ""
+  },
+  {
+    "title": "广漠的世界",
+    "author": "西罗·阿莱格里亚",
+    "nation": "秘鲁",
+    "era": ""
+  },
+  {
+    "title": "我的米海尔",
+    "author": "阿摩司·奥兹",
+    "nation": "以色列",
+    "era": ""
+  },
+  {
+    "title": "咏叹生死",
+    "author": "阿摩司·奥兹",
+    "nation": "以色列",
+    "era": ""
+  },
+  {
+    "title": "沙海无澜",
+    "author": "阿摩司·奥兹",
+    "nation": "以色列",
+    "era": ""
+  },
+  {
+    "title": "到大地尽头",
+    "author": "大卫·格罗斯曼",
+    "nation": "以色列",
+    "era": ""
+  },
+  {
+    "title": "神圣的夜晚",
+    "author": "塔哈尔·本·杰伦",
+    "nation": "摩洛哥",
+    "era": ""
+  },
+  {
+    "title": "错误之夜",
+    "author": "塔哈尔·本·杰伦",
+    "nation": "摩洛哥",
+    "era": ""
+  },
+  {
+    "title": "那耀眼的黑暗",
+    "author": "塔哈尔·本·杰伦",
+    "nation": "摩洛哥",
+    "era": ""
+  },
+  {
+    "title": "天堂",
+    "author": "阿卜杜勒-拉扎克·古尔纳",
+    "nation": "坦桑尼亚",
+    "era": ""
+  },
+  {
+    "title": "沙漠",
+    "author": "阿卜杜勒-拉扎克·古尔纳",
+    "nation": "坦桑尼亚",
+    "era": ""
+  },
+  {
+    "title": "海边",
+    "author": "阿卜杜勒-拉扎克·古尔纳",
+    "nation": "坦桑尼亚",
+    "era": ""
+  },
+  {
+    "title": "遗弃",
+    "author": "阿卜杜勒-拉扎克·古尔纳",
+    "nation": "坦桑尼亚",
+    "era": ""
+  },
+  {
+    "title": "平民史诗",
+    "author": "纳吉布·马哈福兹",
+    "nation": "埃及",
+    "era": ""
+  },
+  {
+    "title": "我们街区的孩子们",
+    "author": "纳吉布·马哈福兹",
+    "nation": "埃及",
+    "era": ""
+  },
+  {
+    "title": "梅达格胡同",
+    "author": "纳吉布·马哈福兹",
+    "nation": "埃及",
+    "era": ""
+  },
+  {
+    "title": "萨巫颂",
+    "author": "西敏·达内希瓦尔",
+    "nation": "伊朗",
+    "era": ""
+  },
+  {
+    "title": "瞎猫头鹰",
+    "author": "萨迪克·赫达亚特",
+    "nation": "伊朗",
+    "era": ""
+  },
+  {
+    "title": "沙之书",
+    "author": "博尔赫斯",
+    "nation": "阿根廷",
+    "era": ""
+  },
+  {
+    "title": "小径分岔的花园",
+    "author": "博尔赫斯",
+    "nation": "阿根廷",
+    "era": ""
+  },
+  {
+    "title": "布罗迪报告",
+    "author": "博尔赫斯",
+    "nation": "阿根廷",
+    "era": ""
+  },
+  {
+    "title": "巴别图书馆",
+    "author": "博尔赫斯",
+    "nation": "阿根廷",
+    "era": ""
+  },
+  {
+    "title": "环形废墟",
+    "author": "博尔赫斯",
+    "nation": "阿根廷",
+    "era": ""
+  },
+  {
+    "title": "动物寓言集",
+    "author": "胡里奥·科塔萨尔",
+    "nation": "阿根廷",
+    "era": ""
+  },
+  {
+    "title": "被占的宅子",
+    "author": "胡里奥·科塔萨尔",
+    "nation": "阿根廷",
+    "era": ""
+  },
+  {
+    "title": "跳房子",
+    "author": "胡里奥·科塔萨尔",
+    "nation": "阿根廷",
+    "era": ""
+  },
+  {
+    "title": "万火归一",
+    "author": "胡里奥·科塔萨尔",
+    "nation": "阿根廷",
+    "era": ""
+  },
+  {
+    "title": "蜘蛛女之吻",
+    "author": "曼努埃尔·普伊格",
+    "nation": "阿根廷",
+    "era": ""
+  }
 ]
