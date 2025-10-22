@@ -4,6 +4,7 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class MaximListDialog extends JDialog {
@@ -95,9 +96,10 @@ public class MaximListDialog extends JDialog {
     }
 
     private void showMaximDetail(Maxim maxim) {
+        DateTimeFormatter yyyyMMddhhmmss = DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss");
         if (maxim != null) {
             detailArea.setText(String.format("句子:\n%s\n\n解析:\n%s\n\n保存时间:\n%s",
-                    maxim.getSentence(), maxim.getAnalysis(), maxim.getSaveTime()));
+                    maxim.getSentence(), maxim.getAnalysis(), maxim.getSaveTime().toLocaleString()));
         } else {
             detailArea.setText("");
         }

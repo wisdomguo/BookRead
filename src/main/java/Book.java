@@ -29,29 +29,69 @@ public class Book {
     }
 
     // Getters and Setters
-    public String getTitle() { return title; }
-    public void setTitle(String title) { this.title = title; }
+    public String getTitle() {
+        return title;
+    }
 
-    public String getAuthor() { return author; }
-    public void setAuthor(String author) { this.author = author; }
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-    public String getNation() { return nation; }
-    public void setNation(String nation) { this.nation = nation; }
+    public String getAuthor() {
+        return author;
+    }
 
-    public String getEra() { return era; }
-    public void setEra(String era) { this.era = era; }
+    public void setAuthor(String author) {
+        this.author = author;
+    }
 
-    public int getReadCount() { return readCount; }
-    public void setReadCount(int readCount) { this.readCount = readCount; }
+    public String getNation() {
+        return nation;
+    }
 
-    public int getFinishedCount() { return finishedCount; }
-    public void setFinishedCount(int finishedCount) { this.finishedCount = finishedCount; }
+    public void setNation(String nation) {
+        this.nation = nation;
+    }
 
-    public boolean isRead() { return isRead; }
-    public void setRead(boolean read) { isRead = read; }
+    public String getEra() {
+        return era;
+    }
 
-    public int getMaximCount() { return maximCount; }
-    public void setMaximCount(int maximCount) { this.maximCount = maximCount; }
+    public void setEra(String era) {
+        this.era = era;
+    }
+
+    public int getReadCount() {
+        return readCount;
+    }
+
+    public void setReadCount(int readCount) {
+        this.readCount = readCount;
+    }
+
+    public int getFinishedCount() {
+        return finishedCount;
+    }
+
+    public void setFinishedCount(int finishedCount) {
+        this.finishedCount = finishedCount;
+    }
+
+    public boolean isRead() {
+        return isRead;
+    }
+
+    public void setRead(boolean read) {
+        isRead = read;
+    }
+
+    public int getMaximCount() {
+        return maximCount;
+    }
+
+    public void setMaximCount(int maximCount) {
+        this.maximCount = maximCount;
+    }
 
     // 增加阅读次数的方法
     public void incrementReadCount() {
@@ -74,15 +114,29 @@ public class Book {
     public String getDisplayText() {
         // 修复Bug3：正确显示已读次数和已读完次数
         StringBuilder sb = new StringBuilder();
-        sb.append("《").append(title).append("》 - ").append(author)
-                .append(" (").append(nation).append(", ").append(era).append(")");
+        sb.append("《").append(title).append("》");
+        if (author != null) {
+            sb.append(" - ").append(author);
+        }else {
+            sb.append(" - ").append("佚名");
+        }
+        if ((nation != null && !nation.isEmpty()) || (era != null && !era.isEmpty())) {
+
+            if (nation != null && !nation.isEmpty()) {
+                sb.append(" (").append(nation);
+                if (era != null && !era.isEmpty()) {
+                    sb.append(", ").append(era);
+                }
+                sb.append(")");
+            } else {
+                sb.append(" (").append(era).append(")");
+            }
+        }
 
         if (finishedCount > 0) {
             sb.append(" - 已读完").append(finishedCount).append("次");
-            if (readCount > finishedCount) {
-                sb.append(" - 已读").append(readCount).append("次");
-            }
-        } else if (isRead) {
+        }
+        if (isRead) {
             sb.append(" - 已读").append(readCount).append("次");
         }
 

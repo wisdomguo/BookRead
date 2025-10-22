@@ -1,1 +1,10 @@
-null
+{
+  "title" : "荀子",
+  "author" : "荀子",
+  "nation" : "中国",
+  "era" : "战国时期",
+  "readCount" : 3,
+  "finishedCount" : 3,
+  "maximCount" : 1,
+  "read" : true
+}
